@@ -1,0 +1,44 @@
+.c-article {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: var(--space-8) 0;
+}
+
+.c-article__header {
+  margin-bottom: var(--space-7);
+}
+
+.c-article__header h1 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .c-article__header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.c-article__meta {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--space-3);
+}
+
+.c-article__lead {
+  font-size: var(--text-lg);
+  color: var(--color-muted);
+  line-height: var(--leading-loose);
+  margin: 0;
+}
+
+.c-article__cover {
+  margin-bottom: var(--space-7);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.c-article__cover img {
+  width: 100%;
+  display: block;
+}

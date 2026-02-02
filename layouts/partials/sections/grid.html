@@ -1,0 +1,28 @@
+<div class="l-container l-section">
+    <div class="l-section-head">
+        {{ if .nav.label }}
+            <span class="l-section-head__label">{{.nav.label}}</span>
+        {{ end }}
+        {{ if .title }}
+            <h1 class="l-section-head__title">{{.title}}</h1>
+        {{ end }}
+        {{ if .description }}
+            <p class="l-section-head__description">{{.description}}</p>
+        {{ end }}
+    </div>
+    
+    <div class="l-section-body l-grid {{ delimit (.classes | default (slice)) " " }}">
+        {{ range .items }}
+        <div class="{{ if $.withCards }}c-card{{end}} {{ if $.onSide }}l-flex l-flex--row {{end}}" >
+            <div class="c-card__title l-flex l-flex-row">
+                {{ if .icon }}
+                    {{ partial "icon.html" .icon }}
+                {{ end }}
+                <span>{{ .title }}</span>
+            </div>
+            
+            <div class="c-card__body">{{ .content | markdownify }}</div>
+        </div>
+        {{ end }}
+    </div>
+</div>

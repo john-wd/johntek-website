@@ -1,0 +1,131 @@
+.l-container {
+  max-width: var(--container-max);
+  padding: 0 var(--space-4);
+  margin: 0 auto;
+
+
+}
+
+.l-section {
+    --section-head-width: 20rem;
+    --section-gap-x: clamp(2rem, 4vw, 5rem);
+    --section-gap-y: 2rem;
+  
+    display: grid;
+    grid-template-columns: minmax(16rem, var(--section-head-width)) minmax(0, 1fr);
+    column-gap: var(--section-gap-x);
+    row-gap: var(--section-gap-y);
+    align-items: start;
+}
+
+.l-section-head {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+    max-width: 22rem;
+    
+    & .l-section-head__label {
+        font-variant: small-caps;
+        font-size: var(--text-sm);
+        color: var(--color-accent);
+        display: inline-block;
+        margin-bottom: 0.875rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+    
+    & .l-section-head__title {
+        margin: 0;
+        font-size: var(--text-xl);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--color-heading, #0f172a);
+        text-wrap: balance;
+    }
+    
+    & .l-section-head__description {
+        margin: 1.25rem 0 0;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--color-muted, #475569);
+        max-width: 32ch;
+    }
+}
+
+.l-section-body {
+    min-width: 0;
+}
+
+.l-section-body > *:first-child {
+  margin-top: 0;
+}
+
+.l-section-body > *:last-child {
+  margin-bottom: 0;
+}
+
+.l-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.l-grid--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.l-grid--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.l-section-divider {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.l-section-divider svg {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+.l-section-divider--flip {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.l-section-divider--flip svg {
+  transform: rotate(180deg) scaleY(40%) translateY(-80%);
+}
+
+.l-flex {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.l-flex--row {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.l-flex--column {
+  flex-direction: column;
+}
+
+@media (max-width: 960px) {
+  .l-container {
+    grid-template-columns: 1fr;
+  }
+
+  .l-section-head {
+    position: static;
+    top: auto;
+    max-width: none;
+  }
+
+  .l-section-head__description {
+    max-width: 60ch;
+  }
+}

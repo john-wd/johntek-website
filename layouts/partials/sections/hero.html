@@ -1,0 +1,30 @@
+<div class="l-container">
+  <div class="c-hero__content {{ delimit (.classes | default (slice)) " " }}">
+    <div class="c-hero__content-inner">
+      <h1>{{ .title }}</h1>
+
+      {{ with .description }}
+      <p class="c-lead">{{ . | markdownify }}</p>
+      {{ end }}
+
+      {{ if or .primary .secondary }}
+      <div class="c-hero__actions">
+        {{ with .primary }}
+        <a class="c-button c-button--hero c-button--lg" href="{{ $.primary_url | default "#contact" }}">{{ . }}</a>
+        {{ end }}
+
+        {{ with .secondary }}
+        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.secondary_url | default "#services" }}">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    {{ if .image }}
+      {{ $img := resources.Get .image }}
+      <div class="c-hero__image" aria-hidden="true">
+        <img src="{{ $img.RelPermalink }}" alt="">
+      </div>
+    {{ end }}
+  </div>
+</div>

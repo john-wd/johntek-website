@@ -1,0 +1,94 @@
+basics:
+  name: "Joao Pedro de Lira Wojcikiewicz"
+  title: "Senior Backend Engineer"
+  image_url: ""
+  location: "Asunción, Paraguay"
+  email: "john@johntekconsulting.com"
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/joaowojcikiewicz/"
+    - label: "GitHub"
+      url: "https://github.com/john-wd"
+
+summary:
+  - "Backend engineer focused on reliability and cloud modernization."
+  - "Strong record of improving latency, cost, and delivery speed."
+
+skills:
+  - group: "Core technical"
+    items: ["Backend Systems Design", "Distributed Systems", "Cloud Architecture", "SOLID", "CLEAN", "Platform thinking"]
+  - group: "Backend"
+    items: ["Python", "Go", "CI/CD"]
+  - group: "Data"
+    items: ["Postgres", "MySQL", "MongoDB"]
+  - group: "Cloud"
+    items: ["AWS", "Google Cloud", "Terraform", "Pubsub architecture", "Kubernetes", "Observability"]
+  - group: "Soft skills"
+    items: ["Tech lead", "Documentation", "Project management", "Developer experience"]
+
+experience:
+  - company: Ambassador Software
+    location:
+      country: US
+      state: WA
+      city: Seattle
+    role: Senior Backend Engineer
+    start: 2022-01
+    end: Present
+    summary: Senior backend engineer working on a high-throughput SaaS platform, responsible for system reliability, observability, and architectural clarity under aggressive delivery timelines.
+    technologies: ["Python", "AWS", "Postgres", "Prometheus", "Terraform"]
+    highlights:
+      - Led end-to-end instrumentation of backend services, improving traceability and reducing customer support troubleshooting time by more than 3x.
+      - Introduced backward-compatible standard API error contracts across legacy clients.
+      - Established architectural documentation and decision records (ADR), improving accountability and long-term maintainability.
+      - Refactored core codebase and database layers with a focus on safety, clarity, and robust error handling.
+      - Reduced deployment time from over one hour to approximately 15 minutes by integrating elastic cloud resources and infrastructure-as-code.
+      - Acted as technical interface with customer support, producing clear and actionable operational documentation.
+
+  - company: League Inc
+    location:
+      country: CA
+      state: ON
+      city: Toronto
+    role: Senior Backend Engineer
+    start: 2021-05
+    end: 2024-12
+    summary: Senior engineer on the core Platform team, responsible for backend libraries, cloud infrastructure, and system extensibility serving large-scale healthcare products.
+    technologies: ["Go", "MongoDB", "Kubernetes", "GCP", "Prometheus", "Serverless"]
+    highlights:
+      - Recognized multiple times for code quality, architectural proposals, and cross-team collaboration.
+      - Led the design and delivery of an extensible user-deletion platform feature involving multiple stakeholders.
+      - Planned and executed zero-downtime API gateway deployment on existing production infrastructure.
+      - Drove platform extensibility initiatives enabling the system to scale to 10x current user volume with customer-specific customization.
+      - Frequently engaged to unblock other teams facing tight delivery deadlines.
+      
+  - company: e-Core
+    location:
+      country: BR
+      state: RS
+      city: Porto Alegre
+    role: Software Specialist
+    start: 2021-05
+    end: 2022-05
+    summary: Embedded senior engineer within a client squad operating as part of League Inc.’s platform team.
+    highlights:
+      - Fully integrated with client engineering workflows, contributing directly to platform initiatives.
+      - Shared platform and infrastructure knowledge with internal engineers.
+      
+  - company: code7
+    location:
+      country: BR
+      state: SC
+      city: Florianopolis
+    role: Fullstack and Machine Learning Engineer
+    start: 2019-05
+    end: 2020-05
+    summary: Full-stack engineer within the data science team, responsible for building a SaaS platform to deploy, manage, and consume machine learning models.
+    technologies: ["Python", "Scikit Learn", "Angular", "Django", "PostgreSQL", "Docker"]
+    highlights:
+      - Delivered the first production-ready version of the platform (backend and frontend) in under six months.
+      - Designed backend services using Django and Django REST Framework with Redis and PostgreSQL.
+      - Built Angular-based frontend to simplify model consumption by analysts, significantly improving productivity.
+      - Defined deployment and training protocols allowing new models to be deployed in seconds.
+      
+  # TODO: add all my experience

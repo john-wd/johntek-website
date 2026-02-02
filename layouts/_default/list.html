@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main class="l-container">
+  <header class="c-page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="c-lead">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="l-grid l-grid--3">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="c-card">
+      <div class="c-card__image{{ if not .Params.image }} c-card__image--placeholder{{ end }}">
+        {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
+        {{ else }}
+        <span>No image</span>
+        {{ end }}
+      </div>
+      <div class="c-card__body">
+        <p class="c-card__meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </p>
+        <h2 class="c-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with .Params.description }}
+        <p class="c-card__excerpt">{{ . }}</p>
+        {{ else }}
+        {{ with .Summary }}<p class="c-card__excerpt">{{ . | plainify | truncate 120 }}</p>{{ end }}
+        {{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

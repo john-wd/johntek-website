@@ -1,0 +1,11 @@
+.c-technologies ul {
+    margin-bottom: 0;
+}
+
+.c-technologies .c-card {
+    padding: var(--space-4) var(--space-4);
+}
+
+.c-technologies h3 {
+    font-size: var(--text-lg);
+}

@@ -1,0 +1,123 @@
+.c-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-main-bg);
+  color: #fff;
+  padding: calc(var(--space-8) + 12rem) 0 var(--space-8) !important;
+}
+
+.c-hero__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 36rem;
+}
+
+@media (max-width: 48rem) {
+  .c-hero__content {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+  
+  .c-hero__content-inner {
+   width: 100%; 
+  }
+  
+  .c-hero__image {
+    right: -8rem;
+    width: 0;
+    opacity: 0.12;
+  }
+}
+
+.c-hero__content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    var(--color-main-bg) 0%,
+    var(--color-main-bg) 38%,
+    rgba(0, 18, 45, 0.72) 58%,
+    rgba(0, 18, 45, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+.c-hero__content-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 42rem;
+}
+
+.c-hero__image {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.c-hero__image img {
+  width: 100%;
+  max-width: 42rem;
+  height: auto;
+  opacity: 0.55;
+}
+
+@media (min-width: 48rem) {
+  .c-hero {
+    padding: calc(6rem + 5rem) 0 6rem;
+  }
+}
+
+.c-hero h1 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-5);
+  color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .c-hero h1 {
+    font-size: 2.75rem;
+  }
+}
+
+.c-hero .c-lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-loose);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.c-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.c-button--hero {
+  background: #fff;
+  color: var(--color-accent);
+  border-color: #fff;
+}
+
+.c-button--hero:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.c-button--hero-outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.c-button--hero-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}

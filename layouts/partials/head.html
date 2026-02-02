@@ -1,0 +1,21 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+{{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+
+{{ $styles := slice }}
+{{ $styles = $styles | append (resources.Match "css/tokens.css") }}
+{{ $styles = $styles | append (resources.Match "css/base.css") }}
+{{ $styles = $styles | append (resources.Match "css/layout.css") }}
+{{ $styles = $styles | append (resources.Match "css/utilities.css") }}
+{{ $styles = $styles | append (resources.Match "css/components/*.css") }}
+
+{{ $css := $styles | resources.Concat "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{{ range .Site.Params.Fonts }}
+    <link href="https://fonts.googleapis.com/css2?family={{ .name | safeHTML }}:wght@400;700&display=swap" rel="stylesheet">
+{{ end }}

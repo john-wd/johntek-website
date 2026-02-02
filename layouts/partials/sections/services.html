@@ -1,0 +1,16 @@
+<div class="l-container l-section">
+    <div class="l-section-head">
+        {{ if .nav.label }}
+            <span class="l-section-head__label">{{.nav.label}}</span>
+        {{ end }}
+        {{ if .title }}
+            <h1 class="l-section-head__title">{{.title}}</h1>
+        {{ end }}
+        {{ if .description }}
+            <p class="l-section-head__description">{{.description}}</p>
+        {{ end }}
+    </div>
+    <div class="l-section-body c-services {{ delimit (.classes | default (slice)) " " }}">
+        {{ .content }}
+    </div>
+</div>

@@ -1,0 +1,54 @@
+.c-icon {
+    --icon-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: fit-content;
+    height: fit-content;
+    align-self: flex-start;
+  
+    border: 2px solid var(--color-border);
+    padding: var(--space-2);
+    border-radius: var(--radius-lg);
+  
+    line-height: 0;
+}
+
+.c-icon svg {
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    overflow: visible;
+    stroke: var(--color-accent);
+    stroke-width: 2px;
+}
+
+.c-icon--fill {
+    background: var(--color-surface);
+}
+
+.c-icon--transparent {
+    background: transparent;
+    border: none;
+}
+
+.c-icon--lg {
+    --icon-size: 48px;
+}
+
+.c-icon--xl {
+    --icon-size: 64px;
+}
+
+.c-icon--md {
+    --icon-size: 32px;
+}
+
+.c-icon--sm {
+    --icon-size: 24px;
+}
+
+.c-icon-xs {
+    --icon-size: 16px;
+}

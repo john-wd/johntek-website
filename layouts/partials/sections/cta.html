@@ -1,0 +1,11 @@
+<div class="l-container">
+  <div class="c-cta {{ delimit (.classes | default (slice)) " " }}">
+    <div class="c-cta__content">
+        {{ .content | markdownify }}
+    </div>
+    <a class="c-button c-button--primary c-button--lg" href="{{ .primary_url | default "#contact" }}">{{ .primary }}</a>
+    {{ with .secondary }}
+    <a class="c-button c-button--lg" href="{{ $.secondary_url | default "#experience" }}">{{ . }}</a>
+    {{ end }}
+  </div>
+</div>

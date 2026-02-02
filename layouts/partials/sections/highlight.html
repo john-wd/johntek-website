@@ -1,0 +1,19 @@
+<div class="l-section-divider c-highlight-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 100">
+        <path class="u-svg-shadow" d="M0 0v4l250 64 125-32 250 64 375-96V0H0z" fill="var(--color-bg)"></path>
+    </svg>
+</div>
+<div class="l-container c-highlight-container">
+    <div class="c-highlight {{ delimit (.classes | default (slice)) " " }}">
+        <div class="c-highlight-quote" >
+        <p class="c-highlight-quote__text">
+            {{.content | markdownify}}
+        </p>
+        </div>
+    </div>
+</div>
+<div class="l-section-divider--flip c-highlight-divider--flip">
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 100">
+        <path d="M0 0v4l250 64 125-32 250 64 375-96V0H0z" fill="var(--color-bg)"></path>
+    </svg>
+</div>

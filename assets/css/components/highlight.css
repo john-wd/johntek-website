@@ -1,0 +1,86 @@
+.c-highlight-section {
+    padding-bottom: 0 !important;
+    margin-bottom: -7%; /* hack to adjust height used by divider--flip*/
+}
+.c-highlight-container {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url("/back.jpg");
+    background-size: 1080px;
+    background-attachment: fixed;
+    max-width: unset;
+}
+
+.u-svg-shadow {
+  filter:  drop-shadow( 10px 5px 3px rgba(0, 0, 0, 0.9))
+}
+
+.c-highlight {
+    padding: calc(var(--space-8)*3) 0;
+}
+
+.c-highlight-divider {
+    transform: translateY(38px);
+}
+
+.c-highlight-divider--flip {
+    transform-origin: bottom;
+    transform: translateY(-99%);
+}
+
+.c-highlight-quote {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  padding-top: 3rem;
+  padding-left: 3.5rem;
+  justify-self: center;
+  max-width: 70%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.c-highlight-quote::before {
+  content: "“";
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+
+  color: var(--color-accent);
+  opacity: 0.9;
+}
+
+.c-highlight-quote__text {
+  margin: 0;
+  font-size: var(--text-xl);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.c-highlight-quote__emphasis {
+  display: inline-block;
+  margin-top: 0.22em;
+  padding: 0.12em 0.32em 0.18em;
+  border-radius: 0.28em;
+  background: var(--color-accent);
+  color: #fff;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@media (max-width: 640px) {
+  .c-highlight-quote {
+    border-radius: 1rem;
+  }
+
+  .c-highlight-quote__text {
+    max-width: 14ch;
+    line-height: 1.12;
+  }
+}

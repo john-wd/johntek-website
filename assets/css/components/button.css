@@ -1,0 +1,42 @@
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.c-button:hover {
+  border-color: var(--color-muted);
+  text-decoration: none;
+}
+
+.c-button--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.c-button--primary:hover {
+  background: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  box-shadow: var(--shadow-md);
+}
+
+.c-button--lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-md);
+}

@@ -1,0 +1,35 @@
+<div class="l-container l-section">
+    <div class="l-section-head">
+        {{ if .nav.label }}
+            <span class="l-section-head__label">{{.nav.label}}</span>
+        {{ end }}
+        {{ if .title }}
+            <h1 class="l-section-head__title">{{.title}}</h1>
+        {{ end }}
+        {{ if .description }}
+            <p class="l-section-head__description">{{.description}}</p>
+        {{ end }}
+    </div>
+    
+    <div class="l-section-body c-testimonials {{ delimit (.classes | default (slice)) " " }}">
+        {{ with site.Data.testimonials}}
+        {{ range .testimonials }}
+            <div class="c-testimonial c-card">
+                {{ if .image }}
+                <div class="c-testimonial__head">
+                    <img src="{{ .image }}" alt="{{ .author }}">
+                </div>
+                {{ end }}
+                <div class="c-testimonial__body">
+                    <blockquote class="c-testimonial__quote">
+                        {{ .quote }}
+                    </blockquote>
+                    <div class="c-testimonial__author">
+                        <span>{{ .author }} @ {{ .company }}</span>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>

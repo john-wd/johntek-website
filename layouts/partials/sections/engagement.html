@@ -1,0 +1,42 @@
+<div class="l-container l-section">
+    <div class="l-section-head">
+        {{ if .nav.label }}
+            <span class="l-section-head__label">{{.nav.label}}</span>
+        {{ end }}
+        {{ if .title }}
+            <h1 class="l-section-head__title">{{.title}}</h1>
+        {{ end }}
+        {{ if .description }}
+            <p class="l-section-head__description">{{.description}}</p>
+        {{ end }}
+    </div>
+
+    <div class="l-section-body c-engagement {{ delimit (.classes | default (slice)) " " }}">
+        {{ range .items }}
+        <div class="c-engagement__item c-card {{ delimit (.classes | default (slice)) " " }}">
+            <div class="c-card__title">
+            {{ if .icon }}
+                {{ partial "icon.html" .icon }}
+            {{ end }}
+            </div>
+
+            <div class="c-card__body">
+            {{ .content | markdownify }}
+            
+            {{ if .steps }}
+            <div class="c-engagement-stepper">
+                {{ range $i, $step := .steps }}
+                <div class="c-engagement-stepper__step">
+                    <span class="c-engagement-stepper__step--number">{{ add $i 1 }}</span>
+                    <span class="c-engagement-stepper__step--name">{{ $step.name }}</span>
+                    <span class="c-engagement-stepper__step--description">{{ $step.description }}</span>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+</div>

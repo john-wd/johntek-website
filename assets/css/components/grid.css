@@ -1,0 +1,7 @@
+.c-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-5);
+}

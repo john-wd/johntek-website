@@ -1,0 +1,44 @@
+baseUrl: https://johntekconsulting.com/
+languageCode: en-us
+title: Johntek Consulting LLC
+
+disableKinds: ["taxonomy", "term", "sitemap", "robotstxt"]
+
+params:
+  tagline: Driving Evolution
+  description: Remote backend and cloud engineering for teams that value clarity, reliability, and long-term maintainability.
+  fonts:
+    - name: "Montserrat"
+    - name: "IBM Plex Mono"
+  calendly_url: "https://calendly.com/john-johntekconsulting/30min"
+  social:
+    - name: "Email"
+      url: "mailto:john@johntekconsulting.com"
+      icon: 
+        name: icon-mail
+        fill: true
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/joaowojcikiewicz/"
+      icon: 
+        name: icon-linkedin
+        fill: true
+    - name: "GitHub"
+      url: "https://github.com/john-wd"
+      icon: 
+        name: icon-github
+        fill: true
+
+menus:
+  main:
+    - name: "Home"
+      pageRef: "/"
+      weight: 10
+    - name: "Resume"
+      pageRef: "/resume/"
+      weight: 20
+    - name: "Blog"
+      pageRef: "/blog/"
+      weight: 30
+    - name: "Contact"
+      pageRef: "/contact/"
+      weight: 40

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0"
+  }
+}

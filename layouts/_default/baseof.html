@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body{{ if .IsHome }} class="has-hero"{{ end }}>
+    {{ partial "navbar.html" . }} 
+    {{ block "main" . }} {{ end }} 
+    
+    {{ partial "footer.html" . }}
+
+    {{ if .IsHome }}
+    
+    <!--Little script that transitions transparent navbar with opaque, if scrolled -->
+    <script>
+      (function () {
+        var nav = document.querySelector('.c-nav');
+        var cls = 'is-scrolled';
+        function check() {
+          if (window.scrollY > 50) nav.classList.add(cls);
+          else nav.classList.remove(cls);
+        }
+        window.addEventListener('scroll', check, { passive: true });
+        check();
+      })();
+    </script>
+    {{ end }}
+  </body>
+</html>

@@ -1,0 +1,172 @@
+/* Vertical line */
+.c-timeline {
+  position: relative;
+  padding: var(--space-5) 0;
+}
+
+.c-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+  transform: translateX(-50%);
+}
+
+/* Each item */
+.c-timeline__item {
+  position: relative;
+  display: flex;
+  margin-bottom: var(--space-7);
+}
+
+.c-timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Node on the line */
+.c-timeline__node {
+  position: absolute;
+  left: 50%;
+  top: var(--space-5);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 0 2px var(--color-accent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Card */
+.c-timeline__card {
+  width: calc(60% - var(--space-7));
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+
+.c-timeline__card:hover {
+  background-color: var(--color-surface);
+  filter: brightness(1.04);
+}
+
+/* Left card: sits on the left side */
+.c-timeline__item--left {
+  justify-content: flex-start;
+}
+
+.c-timeline__item--left .c-timeline__card {
+  margin-left: calc(-1 * var(--space-5));
+  transition: margin-left 0.3s ease-in-out;
+  transform: translateX(-20%);
+
+  &:hover {
+    margin-left: calc(-1 * var(--space-6));
+  }
+}
+
+/* Right card: sits on the right side */
+.c-timeline__item--right {
+  justify-content: flex-end;
+}
+
+.c-timeline__item--right .c-timeline__card {
+  margin-right: calc(-1 * var(--space-5));
+  transition: margin-right 0.3s ease-in-out;
+  transform: translateX(20%);
+
+  &:hover {
+    margin-right: calc(-1 * var(--space-6));
+  }
+}
+
+/* Card content */
+.c-timeline__date {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.c-timeline__role {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-1);
+}
+
+.c-timeline__company {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--space-3);
+}
+
+.c-timeline__skills {
+  margin-top: var(--space-4);
+}
+
+.c-timeline__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c-timeline__highlights li {
+  position: relative;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.c-timeline__highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.c-timeline__highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Right-aligned cards: bullets should stay on left */
+.c-timeline__item--left .c-timeline__highlights {
+  text-align: left;
+}
+
+/* Mobile: single column */
+@media (max-width: 47.99rem) {
+  .c-timeline::before {
+    left: 6px;
+  }
+
+  .c-timeline__node {
+    left: 6px;
+  }
+
+  .c-timeline__item--left,
+  .c-timeline__item--right {
+    justify-content: flex-end;
+  }
+
+  .c-timeline__card {
+    width: calc(100% - var(--space-7));
+    text-align: left;
+  }
+
+  .c-timeline__item--left .c-timeline__card {
+    text-align: left;
+  }
+}

@@ -1,0 +1,15 @@
+{{ if . }}
+{{ $styles := ""}}
+{{ if .color }}
+    {{ $styles = printf "background-color: %s;" .color }}
+{{ end }}
+
+<div 
+    class="c-icon {{ if .fill }} c-icon--fill {{ end }} c-icon--{{.size | default "md" }} {{ if .transparent }} c-icon--transparent {{ end }}"
+    {{ if $styles }} style="{{ $styles | safeCSS }}" {{ end }}
+>
+    {{ $imgfile := printf "/icons/%s.svg" .name }}
+    {{ $img := resources.Get $imgfile }}
+    {{ $img.Content | safeHTML }}
+</div>
+{{ end }}

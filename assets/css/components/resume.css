@@ -1,0 +1,144 @@
+.c-resume {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-2);
+}
+
+/* Stacked paper idea, got from https://codepen.io/mlms13/pen/ngbMxq */
+.c-resume {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+.c-resume:before, .c-resume:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.c-resume:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-1.5deg);
+}
+.c-resume:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(1.4deg);
+}
+
+/* Header */
+.c-resume__header {
+  text-align: center;
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-7);
+}
+
+.c-resume__name {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.c-resume__title {
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.c-resume__location {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--space-4);
+}
+
+.c-resume__links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.c-resume__link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.c-resume__link:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+.c-resume__section {
+  margin-bottom: var(--space-7);
+}
+
+.c-resume__section-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+/* Summary */
+.c-resume__summary {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto;
+  color: var(--color-text);
+  line-height: var(--leading-loose);
+}
+
+.c-resume__summary p {
+  margin-bottom: var(--space-3);
+}
+
+.c-resume__summary p:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills */
+.c-resume__skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.c-resume__skill-group {
+  text-align: center;
+}
+
+.c-resume__skill-label {
+  font-size: var(--text-sm);
+  font-weight: 650;
+  margin-bottom: var(--space-3);
+  color: var(--color-text-heading);
+}
+
+.c-resume__skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.c-resume__skill-tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+}

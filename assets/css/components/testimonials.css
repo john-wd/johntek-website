@@ -1,0 +1,51 @@
+.c-testimonials {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-5);
+}
+
+.c-testimonial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.c-testimonial__head {
+  & img {
+    height: 48px;
+  }
+}
+
+.c-testimonial__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  & .c-testimonial__quote {
+    position: flex;
+    align-items: flex-start;
+    gap: 0.35rem;
+    margin: 0;
+    font-style: italic;
+    text-align: left;
+  }
+
+  & .c-testimonial__author {
+      margin-top: 0.25rem;
+      text-align: left;
+  }
+}
+
+.c-testimonial__quote::before {
+  content: "“";
+  flex: 0 0 auto;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+
+  color: var(--color-text);
+  opacity: 0.8;
+  transform: translateY(-0.08rem);
+}

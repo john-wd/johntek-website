@@ -1,0 +1,24 @@
+.c-prose {
+  max-width: 42rem;
+  line-height: var(--leading-loose);
+}
+
+.c-prose h1 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-5);
+}
+
+.c-prose h3 {
+  font-size: var(--text-lg);
+  font-weight: 650;
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-3);
+}
+
+.c-prose p {
+  margin-bottom: var(--space-5);
+}
+
+.c-prose p:last-child {
+  margin-bottom: 0;
+}

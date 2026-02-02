@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{ $r := .Site.Data.resume }}
+
+<main class="l-container">
+  <div class="c-resume">
+
+    <!-- Header, name and contact info -->
+    <header class="c-resume__header">
+      <h1 class="c-resume__name">{{ $r.basics.name }}</h1>
+      <p class="c-resume__title">{{ $r.basics.title }}</p>
+      <p class="c-resume__location">{{ $r.basics.location }}</p>
+      {{ with $r.basics.links }}
+      <div class="c-resume__links">
+        {{ range . }}
+        <a class="c-resume__link" href="{{ .url }}">{{ .label }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </header>
+
+    <!-- Summary, description of what I specialize about -->
+    {{ with $r.summary }}
+    <section class="c-resume__section">
+      <h2 class="c-resume__section-title">Summary</h2>
+      <div class="c-resume__summary">
+        {{ range . }}
+        <p>{{ . }}</p>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- Skills, chips about my tech stack -->
+    {{ with $r.skills }}
+    <section class="c-resume__section">
+      <h2 class="c-resume__section-title">Skills</h2>
+      <div class="c-resume__skills">
+        {{ range . }}
+        <div class="c-resume__skill-group">
+          <h3 class="c-resume__skill-label">{{ .group }}</h3>
+          <div class="c-resume__skill-items">
+            {{ range .items }}
+            <span class="c-resume__skill-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- Work experience, in timeline format -->
+    {{ with $r.experience }}
+    <section class="c-resume__section">
+      <h2 class="c-resume__section-title">Experience</h2>
+      <div class="c-timeline">
+        {{ range $i, $job := . }}
+        <div class="c-timeline__item {{ if (modBool $i 2) }}c-timeline__item--right{{ else }}c-timeline__item--left{{ end }}">
+          <div class="c-timeline__node"></div>
+          <div class="c-timeline__card">
+            <p class="c-timeline__date">{{ .start }} – {{ .end }}</p>
+            <h3 class="c-timeline__role">{{ .role }}</h3>
+            <p class="c-timeline__company">{{ .company }}</p>
+            {{ if .summary }}
+            <p class="c-timeline__summary">{{ .summary }}</p>
+            {{ end }}
+            {{ with .highlights }}
+            <ul class="c-timeline__highlights">
+              {{ range . }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          {{ if .technologies }}
+          <div class="c-timeline__skills c-resume__skill-items">
+            {{ range .technologies }} <span class="c-resume__skill-tag">{{ . }}</span> {{ end }}
+          </div>
+          {{ end}}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+  </div>
+</main>
+{{ end }}

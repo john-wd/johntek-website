@@ -1,0 +1,215 @@
+.c-nav {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  position: sticky;
+  /*box-shadow: 0 2px 12px rgba(0,0,0,0.06);*/
+  top: 0;
+  z-index: 1000;
+  margin-bottom: var(--space-6);
+  
+  & li::before {
+      background: transparent
+  }
+  
+  & li {
+      margin: 0;
+      padding-left: 0;
+  }
+}
+
+.c-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+}
+
+.c-nav__brand {
+  font-weight: 650;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+
+.c-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+
+.c-nav__item {
+  position: relative;
+  list-style-type: none;
+}
+
+.c-nav__link {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-muted);
+  text-decoration: none;
+
+  &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-accent);
+      transition: width 0.3s ease;
+  }
+}
+
+.c-nav__link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &::after {
+      width: 100%
+  }
+}
+
+.c-nav__link.is-active {
+  color: var(--color-text);
+
+  &::after {
+      width: 100%;
+  }
+}
+
+/* Dropdown */
+.c-nav__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  padding: var(--space-2);
+  margin: 0;
+  margin-top: 8px
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-md);
+  z-index: 50;
+}
+
+.c-nav__dropdown-item {
+  margin: 0;
+  list-style-type: none;
+}
+
+.c-nav__dropdown-link {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.c-nav__dropdown-link:hover {
+  background: var(--color-surface);
+  text-decoration: none;
+}
+
+/* Show dropdown on hover and keyboard focus */
+.c-nav__item--has-dropdown:hover .c-nav__dropdown,
+.c-nav__item--has-dropdown:focus-within .c-nav__dropdown {
+  display: block;
+}
+
+.c-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Transparent navbar over hero */
+.has-hero .c-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* Scrolled state: solid background */
+.has-hero .c-nav.is-scrolled {
+  background: var(--color-bg);
+  border-bottom-color: var(--color-border);
+}
+
+.c-nav__logo--dark {
+    display: none;
+}
+.has-hero .c-nav__logo--light {
+    display: none;
+}
+.has-hero .c-nav__logo--dark {
+    display: inline;
+}
+
+.has-hero .c-nav.is-scrolled .c-nav__logo--light {
+  display: inline;
+}
+
+.has-hero .c-nav.is-scrolled .c-nav__logo--dark {
+  display: none;
+}
+
+.has-hero .c-nav__brand {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.has-hero .c-nav.is-scrolled .c-nav__brand {
+  color: var(--color-text);
+}
+
+.has-hero .c-nav__link {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.3s, background 0.3s;
+}
+
+.has-hero .c-nav__link:hover {
+  color: #fff;
+}
+
+.has-hero .c-nav.is-scrolled .c-nav__link {
+  color: var(--color-muted);
+}
+
+.has-hero .c-nav.is-scrolled .c-nav__link:hover {
+  color: var(--color-text);
+}
+
+.has-hero .c-nav__link.is-active {
+  color: #fff;
+}
+
+.has-hero .c-nav.is-scrolled .c-nav__link.is-active {
+  color: var(--color-text);
+}
+
+.has-hero .c-button--primary {
+  background: #fff;
+  color: var(--color-accent);
+  border-color: #fff;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.has-hero .c-nav.is-scrolled .c-button--primary {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+.has-hero .c-nav.is-scrolled .c-button--primary:hover {
+  filter: brightness(0.98);
+}

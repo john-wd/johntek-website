@@ -1,0 +1,35 @@
+<footer class="c-footer">
+  <div class="l-container">
+    <div class="c-footer__grid">
+      <div class="c-footer__about">
+        <p class="c-footer__brand">{{ site.Title }}</p>
+        <p class="c-footer__tagline">{{ site.Params.tagline }}</p>
+        <p class="c-footer__description">{{ site.Params.description }}</p>
+      </div>
+
+      <div class="c-footer__nav">
+        <p class="c-footer__heading">Navigation</p>
+        <ul class="c-footer__list">
+          {{ range .Site.Menus.main }}
+          <li><a class="c-footer__link" href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      {{ with site.Params.social }}
+      <div class="c-footer__nav">
+        <p class="c-footer__heading">Connect</p>
+        <ul class="c-footer__list">
+          {{ range . }}
+          <li><a class="c-footer__link" href="{{ .url }}">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="c-footer__bottom">
+      <p>&copy; {{ now.Year }} {{ site.Title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
