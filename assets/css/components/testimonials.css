@@ -11,9 +11,11 @@
   gap: var(--space-3);
 }
 
-.c-testimonial__head {
+.c-testimonial__author__image {
   & img {
     height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 }
 
@@ -28,15 +30,28 @@
     align-items: flex-start;
     gap: 0.35rem;
     margin: 0;
+    margin-bottom: var(--space-4);
     font-style: italic;
     text-align: left;
   }
 
   & .c-testimonial__author {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-3);
+      
       margin-top: 0.25rem;
       text-align: left;
   }
+  & .c-testimonial__author__info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+  }
 }
+
 
 .c-testimonial__quote::before {
   content: "“";

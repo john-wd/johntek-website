@@ -1,10 +1,9 @@
 testimonials:
-  - quote: "Breddy good"
-    author: "Guy"
-    company: "Acme Inc."
-    image: https://api.dicebear.com/9.x/lorelei/svg
-
-  - quote: "Breddy good"
-    author: "Guy"
-    company: "Acme Inc."
-    image: https://api.dicebear.com/9.x/lorelei/svg
+  - quote: |
+      I worked with João at Flex for 2 years building a web-based ML scoring system for cold-call campaigns. 
+      He led architecture (front/back) and implemented nearly everything. 
+      Skilled, proactive, and collaborative, he delivered fast and solved a major bottleneck. 
+      I'd gladly work with him again.
+    author: "Sr Data Engineer — Wesley A. Bortolozo Jr."
+    company: "Canoe Intelligence"
+    image: /lp/pfp-wesley.jpeg

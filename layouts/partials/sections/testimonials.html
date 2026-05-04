@@ -15,17 +15,22 @@
         {{ with site.Data.testimonials}}
         {{ range .testimonials }}
             <div class="c-testimonial c-card">
-                {{ if .image }}
-                <div class="c-testimonial__head">
-                    <img src="{{ .image }}" alt="{{ .author }}">
-                </div>
-                {{ end }}
+
                 <div class="c-testimonial__body">
                     <blockquote class="c-testimonial__quote">
                         {{ .quote }}
                     </blockquote>
                     <div class="c-testimonial__author">
-                        <span>{{ .author }} @ {{ .company }}</span>
+                        <div class="c-testimonial__author__image">
+                        {{ if .image }}
+                            <img src="{{ .image }}" alt="{{ .author }}">
+                        {{ end }}
+                        </div>
+                        
+                        <div class="c-testimonial__author__info">
+                            <span>{{ .author }}</span>
+                            <span>{{ .company }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
