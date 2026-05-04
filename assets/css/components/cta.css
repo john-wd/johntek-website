@@ -9,7 +9,31 @@
 .c-cta {
   padding: var(--space-7) 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  gap: var(--space-5) var(--space-7);
+}
+
+.c-cta__content {
+    flex: 1 1 36rem;
+    min-width: min(100%, 36rem);
+}
+
+.c-cta__content > :first-child {
+  margin-top: 0;
+}
+
+.c-cta__content > :last-child {
+  margin-bottom: 0;
+}
+
+.c-cta__actions {
+  display: flex;
+  min-width: min(100%, 28rem);
+  align-items: center;
+  justify-content: flex-end;
   gap: var(--space-4);
+  flex: 0 1 28rem;
 }
