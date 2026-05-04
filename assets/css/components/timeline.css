@@ -64,7 +64,7 @@
 .c-timeline__item--left .c-timeline__card {
   margin-left: calc(-1 * var(--space-5));
   transition: margin-left 0.3s ease-in-out;
-  transform: translateX(-20%);
+  transform: translateX(-10%);
 
   &:hover {
     margin-left: calc(-1 * var(--space-6));
@@ -79,7 +79,7 @@
 .c-timeline__item--right .c-timeline__card {
   margin-right: calc(-1 * var(--space-5));
   transition: margin-right 0.3s ease-in-out;
-  transform: translateX(20%);
+  transform: translateX(10%);
 
   &:hover {
     margin-right: calc(-1 * var(--space-6));
@@ -146,27 +146,70 @@
   text-align: left;
 }
 
-/* Mobile: single column */
-@media (max-width: 47.99rem) {
-  .c-timeline::before {
-    left: 6px;
+@media (max-width: 1080px) {
+  .c-timeline {
+    position: relative;
+    padding: var(--space-4) 0;
   }
 
-  .c-timeline__node {
-    left: 6px;
+  .c-timeline::before {
+    left: 0.5rem;
+    transform: none;
+  }
+
+  .c-timeline__item {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--space-6);
+    padding-left: 2rem;
   }
 
   .c-timeline__item--left,
   .c-timeline__item--right {
-    justify-content: flex-end;
+    justify-content: initial;
+  }
+
+  .c-timeline__node {
+    left: 0.5rem;
+    top: 1.25rem;
+    transform: translateX(-50%);
   }
 
   .c-timeline__card {
-    width: calc(100% - var(--space-7));
-    text-align: left;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: var(--space-4);
   }
 
-  .c-timeline__item--left .c-timeline__card {
-    text-align: left;
+  .c-timeline__role {
+    font-size: var(--text-base);
+    line-height: 1.25;
+  }
+
+  .c-timeline__summary,
+  .c-timeline__highlights {
+    font-size: var(--text-sm);
+  }
+
+  .c-timeline__highlights {
+    padding-left: var(--space-4);
+  }
+
+  .c-timeline__skills {
+    justify-content: flex-start;
+  }
+
+  .c-timeline__item--left .c-timeline__card,
+  .c-timeline__item--right .c-timeline__card {
+      margin-left: 0;
+      margin-right: 0;
+      transform: none;
+  }
+  
+  .c-timeline__item--left .c-timeline__card:hover,
+  .c-timeline__item--right .c-timeline__card:hover {
+        margin-left: 0;
+        margin-right: 0; 
   }
 }

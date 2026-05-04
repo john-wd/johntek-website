@@ -1,6 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
   color-scheme: light dark;
+  overflow-x: hidden;
 }
 
 body {
