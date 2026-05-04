@@ -11,6 +11,10 @@
   gtag('config', 'G-Z521FBBG2C');
 </script>
 
+<!-- Custom script for simple UX -->
+{{ $js := resources.Get "scripts/main.js" }}
+<script src="{{ $js.RelPermalink }}"></script>
+
 <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
 {{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 

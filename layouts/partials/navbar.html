@@ -7,56 +7,69 @@
       <img class="c-nav__logo--dark" src="{{ $imgdark.Permalink }}" height="64px" alt="Logo" />
     </a>
 
-    <ul class="c-nav__list" role="list">
-      {{ $current := . }} 
-      {{ range .Site.Menus.main }} 
-        {{- $item := . -}} 
-        {{- $page := $item.Page -}} 
-        {{- $isActive := or ($current.IsMenuCurrent "main" $item) ($current.HasMenuCurrent "main" $item) -}} 
-        {{- $hasAnchors := and $page (isset $page.Params "sections") (gt (len $page.Params.sections) 0) -}}
-
-      <li
-        class="c-nav__item {{ if $hasAnchors }}c-nav__item--has-dropdown{{ end }}"
-      >
-        <a
-          class="c-nav__link {{ if $isActive }}is-active{{ end }}"
-          href="{{ $item.URL }}"
-          {{ if $isActive }}aria-current="page" {{ end }}
-          {{ if $hasAnchors }}aria-haspopup="true" aria-expanded="false"  {{ end }}
-        >
-          {{ $item.Name }}
-        </a>
-
-        {{ if $hasAnchors }}
-        <ul
-          class="c-nav__dropdown"
-          role="list"
-          aria-label="{{ $item.Name }} sections"
-        >
-            {{ range $page.Params.sections }}
-          {{ if isset . "nav" }}
-          <li class="c-nav__dropdown-item">
+    <button
+      class="c-nav__toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="primary-menu"
+    >
+        <!--Hamburger lines -->
+      <span class="c-nav__toggle--line"></span>
+      <span class="c-nav__toggle--line"></span>
+      <span class="c-nav__toggle--line"></span>
+    </button>
+    
+    <div class="c-nav__menu" id="primary-menu">
+        <ul class="c-nav__list" role="list">
+        {{ $current := . }} 
+        {{ range .Site.Menus.main }} 
+            {{- $item := . -}} 
+            {{- $page := $item.Page -}} 
+            {{- $isActive := or ($current.IsMenuCurrent "main" $item) ($current.HasMenuCurrent "main" $item) -}} 
+            {{- $hasAnchors := and $page (isset $page.Params "sections") (gt (len $page.Params.sections) 0) -}}
+    
+        <li class="c-nav__item {{ if $hasAnchors }}c-nav__item--has-dropdown{{ end }}">
             <a
-              class="c-nav__dropdown-link"
-              href="{{ $page.RelPermalink }}#{{ .nav.id }}"
+            class="c-nav__link {{ if $isActive }}is-active{{ end }}"
+            href="{{ $item.URL }}"
+            {{ if $isActive }}aria-current="page" {{ end }}
+            {{ if $hasAnchors }}aria-haspopup="true" aria-expanded="false"  {{ end }}
             >
-              {{ .nav.label }}
+            {{ $item.Name }}
             </a>
-          </li>
-          {{ end }}
-          {{ end }}
-        </ul>
+    
+            {{ if $hasAnchors }}
+            <ul
+            class="c-nav__dropdown"
+            role="list"
+            aria-label="{{ $item.Name }} sections"
+            >
+                {{ range $page.Params.sections }}
+            {{ if isset . "nav" }}
+            <li class="c-nav__dropdown-item">
+                <a
+                class="c-nav__dropdown-link"
+                href="{{ $page.RelPermalink }}#{{ .nav.id }}"
+                >
+                {{ .nav.label }}
+                </a>
+            </li>
+            {{ end }}
+            {{ end }}
+            </ul>
+            {{ end }}
+        </li>
         {{ end }}
-      </li>
-      {{ end }}
-    </ul>
-
-    <div class="c-nav__actions">
-      {{ $ctaURL := default "/contact/" .Site.Params.cta_url }} {{ $ctaLabel :=
-      default "Book a kickoff call" .Site.Params.cta_label }}
-      <a class="c-button c-button--primary" href="{{ $ctaURL }}"
-        >{{ $ctaLabel }}</a
-      >
+        </ul>
+    
+        <div class="c-nav__actions">
+        {{ $ctaURL := default "/contact/" .Site.Params.cta_url }} {{ $ctaLabel :=
+        default "Book a kickoff call" .Site.Params.cta_label }}
+        <a class="c-button c-button--primary" href="{{ $ctaURL }}"
+            >{{ $ctaLabel }}</a
+        >
+        </div>
     </div>
   </div>
 </nav>
