@@ -33,6 +33,7 @@
   --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.1);
 
   --color-bg: #fbfbfb;
+  --color-bg-alt: #fff;
   --color-surface: #F1F2FC;
   --color-text: #374151;
   --color-text-heading: #111827;
@@ -52,7 +53,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0b1220;
+    --color-bg: #1B1212;
+    --color-bg-alt: #000;
     --color-surface: #111827;
     --color-text: #d1d5db;
     --color-text-heading: #f3f4f6;

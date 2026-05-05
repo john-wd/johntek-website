@@ -4,7 +4,7 @@
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #fff;
+  background: var(--color-bg-alt);
   box-shadow: var(--shadow-sm);
   padding: var(--space-5) var(--space-6);
   transition: transform 0.2s ease;

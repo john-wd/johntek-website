@@ -83,7 +83,7 @@ sections:
     title: Technical work tied to operational impact
     description: |
       The goal is more stable systems, lower operational drag, and better delivery capacity.
-    backgroundColor: "#F1F2FC"
+    backgroundColor: "var(--color-surface)"
     classes: ["l-grid--2", "c-impact"]
     onSide: true
     items:
@@ -170,7 +170,7 @@ sections:
       label: When to Engage
     title: Transform your product
     classes: ["u-checks"]
-    backgroundColor: "#F1F2FC"
+    backgroundColor: "var(--color-surface)"
     styles:
       - "margin-bottom: var(--space-8)"
     content: |

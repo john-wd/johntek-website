@@ -342,3 +342,12 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+    .c-nav__logo--light {
+        display: none !important;
+    }
+    .c-nav__logo--dark {
+        display: inline !important;
+    }
+}

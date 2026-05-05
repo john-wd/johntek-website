@@ -48,7 +48,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  background: #fff;
+  background: var(--color-bg-alt);
 }
 
 .c-timeline__card:hover {

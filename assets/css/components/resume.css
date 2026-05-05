@@ -6,7 +6,7 @@
 
 /* Stacked paper idea, got from https://codepen.io/mlms13/pen/ngbMxq */
 .c-resume {
-  background: #fff;
+  background: var(--color-bg-alt);
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   position: relative;
 }
@@ -18,14 +18,14 @@
   z-index: -1;
 }
 .c-resume:before {
-  background: #fafafa;
+  background: color-mix(in srgb, var(--color-bg-alt) 96%, black);
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   left: -5px;
   top: 4px;
   transform: rotate(-1.5deg);
 }
 .c-resume:after {
-  background: #f6f6f6;
+  background: color-mix(in srgb, var(--color-bg-alt) 96%, black);
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
   right: -3px;
   top: 1px;
@@ -213,4 +213,13 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.72rem;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-resume:before {
+      background: color-mix(in srgb, var(--color-bg-alt) 96%, white);
+    }
+    .c-resume:after {
+      background: color-mix(in srgb, var(--color-bg-alt) 96%, white);
+    } 
 }

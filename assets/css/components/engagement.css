@@ -41,7 +41,7 @@
   font-weight: 600;
 
   color: var(--color-accent);
-  background: #F1F2FC;
+  background: var(--color-surface);
   border-radius: 999px;
   z-index: 2;
 }
@@ -62,7 +62,7 @@
 
   font-size: 0.95rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--color-text-heading);
 }
 .c-engagement-stepper__step--description {
   display: block;

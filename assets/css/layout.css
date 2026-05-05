@@ -41,7 +41,7 @@
         font-size: var(--text-xl);
         line-height: 1.05;
         letter-spacing: -0.03em;
-        color: var(--color-heading, #0f172a);
+        color: var(--color-text-heading, #0f172a);
         text-wrap: balance;
     }
     
