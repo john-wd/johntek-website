@@ -7,3 +7,13 @@ testimonials:
     author: "Sr Data Engineer — Wesley A. Bortolozo Jr."
     company: "Canoe Intelligence"
     image: /lp/pfp-wesley.jpeg
+
+  - quote: |
+      João was my colleague for 2.5 years at Flex, and his skills are impressive. 
+      He was always able to come up with polished and comprehensive solutions from 
+      the get-go. He single-handedly built a model serving infrastructure from scratch, 
+      which was responsive, intuitive and robust all at once. He can certainly support 
+      pretty much any technical challenge you throw at him.
+    author: Sr Risk Data Engineer — Eduardo Wojcikiewicz
+    company: Wise 
+    image: /lp/pfp-eduardowoj.png
