@@ -12,29 +12,40 @@
     </div>
     
     <div class="l-section-body c-testimonials {{ delimit (.classes | default (slice)) " " }}">
-        {{ with site.Data.testimonials}}
-        {{ range .testimonials }}
-            <div class="c-testimonial c-card">
-
-                <div class="c-testimonial__body">
-                    <blockquote class="c-testimonial__quote">
-                        {{ .quote }}
-                    </blockquote>
-                    <div class="c-testimonial__author">
-                        <div class="c-testimonial__author__image">
-                        {{ if .image }}
-                            <img src="{{ .image }}" alt="{{ .author }}">
-                        {{ end }}
-                        </div>
-                        
-                        <div class="c-testimonial__author__info">
-                            <span>{{ .author }}</span>
-                            <span>{{ .company }}</span>
+        <div class="c-carousel" data-carousel>
+            <div class="c-carousel__track">
+            {{ with site.Data.testimonials}}
+            {{ range .testimonials }}
+                <div class="c-carousel__item c-testimonial c-card">
+                    <div class="c-testimonial__body">
+                        <blockquote class="c-testimonial__quote">
+                            {{ .quote }}
+                        </blockquote>
+                        <div class="c-testimonial__author">
+                            <div class="c-testimonial__author__image">
+                            {{ if .image }}
+                                <img src="{{ .image }}" alt="{{ .author }}">
+                            {{ end }}
+                            </div>
+                            
+                            <div class="c-testimonial__author__info">
+                                <span>{{ .author }}</span>
+                                <span>{{ .company }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            {{ end }}
+            {{ end }}
             </div>
-        {{ end }}
-        {{ end }}
+            <div class="c-carousel__controls">
+                <button type="button" data-carousel-prev aria-label="Previous testimonial">
+                    ←
+                </button>
+                <button type="button" data-carousel-next aria-label="Next testimonial">
+                    →
+                </button>
+            </div>
+        </div>
     </div>
 </div>

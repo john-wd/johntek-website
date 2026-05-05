@@ -6,6 +6,7 @@
 
 .c-testimonial {
   display: flex;
+  flex: 0 0 clamp(340px, 42vw, 520px);
   flex-direction: row;
   align-items: center;
   gap: var(--space-3);
