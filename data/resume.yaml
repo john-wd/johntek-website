@@ -1,9 +1,16 @@
 basics:
   name: "Joao Pedro de Lira Wojcikiewicz"
   title: "Senior Backend Engineer"
+  description: >
+    Senior Backend and Platform Engineer with 7 years of experience designing, operating, 
+    and evolving cloud-native systems in production. Specialized in backend architecture, 
+    platform extensibility, and reliability for SaaS products. Proven track record of leading 
+    critical initiatives under tight deadlines, reducing operational risk, and improving developer 
+    experience in distributed systems.
   image_url: ""
-  location: "Asunción, Paraguay"
+  location: "Fort Lauderdale, Florida, United States"
   email: "john@johntekconsulting.com"
+  phone: "+595 0992533120"
   links:
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/joaowojcikiewicz/"
