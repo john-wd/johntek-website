@@ -70,45 +70,65 @@
 %----------------------------------------------------------------------------------------
 % CERTIFICATIONS
 %----------------------------------------------------------------------------------------
+{{ with .certifications }}
 \begin{rSection}{CERTIFICATIONS}
 
-\textbf{Google Cloud Professional Cloud Architect} \hfill 2024 -- 2026 \\
-\href{https://www.credly.com/badges/e688a1c1-3432-4e77-972a-1351b9c20cd8/linked_in_profile}{Credential Link}
+{{ range $i, $cert := .}}
+{{ if $i }} 
+    \vspace{0.1cm}
+{{ end }}
 
-\vspace{0.1cm}
+\textbf{ {{- $cert.name -}} } \hfill {{ $cert.period.start }} -- {{ $cert.period.end }} \\
+\href{ {{ $cert.link }} }{Credential Link}
 
-Designed, developed, and managed secure, scalable, and highly available solutions on Google Cloud Platform, supporting production workloads and business-critical systems.
+{{ $cert.description }}
+{{ end }}
 
 \end{rSection}
+{{ end }}
 
 %----------------------------------------------------------------------------------------
 % EDUCATION
 %----------------------------------------------------------------------------------------
+{{ with .education }}
 \begin{rSection}{EDUCATION}
 
-\textbf{M.Sc. Theoretical and Mathematical Physics} \hfill 2017 -- 2019 \\
-Federal University of Santa Catarina \\
-GPA: 9.88 / 10.0
+{{ range $i, $edu := .}}
+{{ if $i }} 
+    \vspace{0.1cm}
+{{ end }}
 
-\vspace{0.1cm}
+\textbf{ {{- $edu.title -}} } \hfill {{ $edu.period.start }} -- {{ $edu.period.end }} \\
+{{- $edu.institution -}} \\
+{{ if (has $edu "gpa") }}
+    {{- $edu.gpa -}} \\
+{{ end }}
 
-\textbf{B.Sc. Physics} \hfill 2012 -- 2016 \\
-Federal University of Santa Catarina \\
-GPA: 8.77 / 10.0 \\
-Merit Award Recipient
+{{ if (has $edu "description") }}
+    {{- $edu.description -}} \\
+{{ end }}
+
+{{ end }}
 
 \end{rSection}
+{{end}}
 
 %----------------------------------------------------------------------------------------
 % PERSONAL PROJECTS
 %----------------------------------------------------------------------------------------
+{{ with .personalProjects }}
 \begin{rSection}{PERSONAL PROJECTS}
 
 \begin{itemize}
-    \item Built a configurable real estate crawler aggregating listings from multiple sources and notifying a Telegram group of new listings and price changes.
-    \item Developed a Spotify-like web application consuming a public API for video game music playback, built with Angular and TypeScript. \href{https://github.com/john-wd/scm-frontend}{[GitHub]}
+    {{ range . }}
+    \item {{ .description -}}
+    {{- if (has . "link") -}}
+        \href{ {{ .link.source }} }{[{{ .link.label }}]}
+    {{- end -}}
+    {{ end}}
 \end{itemize}
 
 \end{rSection}
+{{ end }}
 
 \end{document}

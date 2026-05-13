@@ -8,7 +8,7 @@ basics:
     critical initiatives under tight deadlines, reducing operational risk, and improving developer 
     experience in distributed systems.
   image_url: ""
-  location: "Fort Lauderdale, Florida, United States"
+  location: "Asuncion, Paraguay"
   email: "john@johntekconsulting.com"
   phone: "+595 0992533120"
   links:
@@ -98,4 +98,38 @@ experience:
       - Built Angular-based frontend to simplify model consumption by analysts, significantly improving productivity.
       - Defined deployment and training protocols allowing new models to be deployed in seconds.
       
-  # TODO: add all my experience
+certifications:
+   - name: Google Cloud Professional Cloud Architect
+     description: >
+       Designed, developed, and managed secure, scalable, and highly available solutions on Google Cloud Platform, supporting production workloads and business-critical systems.
+     link: https://www.credly.com/badges/e688a1c1-3432-4e77-972a-1351b9c20cd8/linked_in_profile
+     period:
+        start: 2024
+        end: 2026
+
+education:
+   - title: M.Sc. Theoretical and Mathematical Physics
+     period:
+        start: 2017
+        end: 2019
+     institution: Universidade Federal de Santa Catarina
+     gpa: 9.88 / 10.0
+     
+   - title: B.Sc. Physics
+     period:
+       start: 2012
+       end: 2016
+     institution: Universidade Federal de Santa Catarina
+     gpa: 8.77 / 10.0
+     description: Merit Award Recipient
+
+personalProjects:
+   - description: >
+       Built a configurable real estate crawler aggregating listings from multiple sources and notifying a 
+       Telegram group of new listings and price changes.
+   - description: >
+       Developed a Spotify-like web application consuming a public API for video game 
+       music playback, built with Angular and TypeScript.
+     link: 
+       source: https://github.com/john-wd/scm-frontend
+       label: GitHub
