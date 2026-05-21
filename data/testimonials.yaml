@@ -1,19 +1,27 @@
 testimonials:
-  - quote: |
-      I worked with João at Flex for 2 years building a web-based ML scoring system for cold-call campaigns. 
-      He led architecture (front/back) and implemented nearly everything. 
-      Skilled, proactive, and collaborative, he delivered fast and solved a major bottleneck. 
+  - quote: >
+      John has a strong bias for action. He routinely takes the initiative to solve tough problems, gathers feedback,
+      and delivers high-quality results quickly. He’s also a highly collaborative teammate who keeps everyone aligned through
+      clear documentation, open discussion and proactively giving feedback to elevate those around him!
+    author: "Staff Backend Engineer — Shanjeef Satchi"
+    company: "League Inc."
+    image: /lp/pfp-shanjeef.jpeg
+
+  - quote: >
+      I worked with João at Flex for 2 years building a web-based ML scoring system for cold-call campaigns.
+      He led architecture (front/back) and implemented nearly everything.
+      Skilled, proactive, and collaborative, he delivered fast and solved a major bottleneck.
       I'd gladly work with him again.
     author: "Sr Data Engineer — Wesley A. Bortolozo Jr."
     company: "Canoe Intelligence"
     image: /lp/pfp-wesley.jpeg
 
-  - quote: |
-      João was my colleague for 2.5 years at Flex, and his skills are impressive. 
-      He was always able to come up with polished and comprehensive solutions from 
-      the get-go. He single-handedly built a model serving infrastructure from scratch, 
-      which was responsive, intuitive and robust all at once. He can certainly support 
+  - quote: >
+      João was my colleague for 2.5 years at Flex, and his skills are impressive.
+      He was always able to come up with polished and comprehensive solutions from
+      the get-go. He single-handedly built a model serving infrastructure from scratch,
+      which was responsive, intuitive and robust all at once. He can certainly support
       pretty much any technical challenge you throw at him.
     author: Sr Risk Data Engineer — Eduardo
-    company: Wise 
+    company: Wise
     image: /lp/pfp-eduardowoj.png
