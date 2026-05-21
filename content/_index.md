@@ -17,7 +17,7 @@ sections:
     primary: "Book a call"
     primary_url: "/contact/"
     secondary: "View Experience"
-    secondary_url: "#services"
+    secondary_url: "/resume"
     image: "/images/lp/hero.png"
     
   - type: grid
