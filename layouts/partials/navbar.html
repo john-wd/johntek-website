@@ -28,6 +28,21 @@
             {{- $page := $item.Page -}} 
             {{- $isActive := or ($current.IsMenuCurrent "main" $item) ($current.HasMenuCurrent "main" $item) -}} 
             {{- $hasAnchors := and $page (isset $page.Params "sections") (gt (len $page.Params.sections) 0) -}}
+            {{ if $hasAnchors }}
+            
+            {{/* this checks if there are any non-hero sections. If yes, then we should display a dropdown, otherwise, for pages with only hero sections, nothing is displayed */}}
+            {{ with $page.Params.sections }}
+                {{ $nonhero := false }}
+                {{ range . }}
+                    {{ if not (eq .type "hero") }}
+                        {{ $nonhero = true }}
+                    {{ end }}
+                {{ end }}
+                {{ if not $nonhero }}
+                    {{ $hasAnchors = false }}
+                {{ end }}
+            {{ end }}
+            {{ end }}
     
         <li class="c-nav__item {{ if $hasAnchors }}c-nav__item--has-dropdown{{ end }}">
             <a

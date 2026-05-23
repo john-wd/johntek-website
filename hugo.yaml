@@ -33,6 +33,9 @@ menus:
     - name: "Home"
       pageRef: "/"
       weight: 10
+    - name: "About"
+      pageRef: "/about/"
+      weight: 15
     - name: "Resume"
       pageRef: "/resume/"
       weight: 20
