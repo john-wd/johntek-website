@@ -4,7 +4,16 @@
     {{ partial "head.html" . }}
 
   </head>
-  <body{{ if .IsHome }} class="has-hero"{{ end }}>
+  {{ $hasHero := false }}
+  {{ with .Params.sections }}
+  {{ range . }}
+    {{ if eq .type "hero" }}
+      {{ $hasHero = true }}
+    {{ end }}
+  {{ end }}
+  {{ end }}
+  
+  <body{{ if $hasHero }} class="has-hero"{{ end }}>
     {{ partial "navbar.html" . }} 
     {{ block "main" . }} {{ end }} 
     

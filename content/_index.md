@@ -1,5 +1,6 @@
 ---
 title: Johntek Consulting - Driving Evolution in Backend and Cloud Systems
+layout: "landingpage"
 sections:
   - type: hero
     sectionClasses: ["c-hero"]

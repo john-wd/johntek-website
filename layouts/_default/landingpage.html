@@ -37,6 +37,15 @@
     
    </section>
   {{ end }}
+
+  <!-- Add markdown content if given -->
+  {{ if .Content }}
+    <section class="c-section">
+        <div class="l-container">
+            {{ .Content }}
+        </div>
+    </section>
+  {{ end }}
 </main>
 
 {{ end }}
