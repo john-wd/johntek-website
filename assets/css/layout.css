@@ -37,7 +37,7 @@
     }
     
     & .l-section-head__title {
-        margin: 0;
+        margin: 0 0 1.25rem 0;
         font-size: var(--text-xl);
         line-height: 1.05;
         letter-spacing: -0.03em;
@@ -46,11 +46,15 @@
     }
     
     & .l-section-head__description {
-        margin: 1.25rem 0 0;
         font-size: 1rem;
         line-height: 1.7;
         color: var(--color-muted, #475569);
         max-width: 32ch;
+    }
+
+    & .l-section-head__image {
+        max-width: 100%;
+        height: auto;
     }
 }
 

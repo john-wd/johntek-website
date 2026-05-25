@@ -2,6 +2,11 @@
 .u-text-center { text-align: center; }
 .u-hidden { display: none !important; }
 .u-sm-heading { font-size: var(--font-size-sm); }
+.u-heading-top-aligned {
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+    }
+}
 
 .u-sr-only {
   position: absolute;

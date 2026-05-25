@@ -48,7 +48,7 @@
   
   --color-main-bg: #00122D;
 
-  --container-max: 68rem;
+  --container-max: 86rem;
 }
 
 @media (prefers-color-scheme: dark) {

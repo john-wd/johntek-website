@@ -1,63 +1,75 @@
 ---
 title: About Johntek Consulting
 layout: "landingpage"
+navDropdown: false
 sections:
   - type: hero
     sectionClasses: ["c-hero", "c-about"]
     styles:
       - "margin-bottom: var(--space-8)"
-    title: About Johntek Consulting
+    title: About
     description: Independent backend and cloud consulting focused on scalable, reliable systems.
     image: "/images/me.jpg"
+  - type: prose
+    nav:
+      label: About The Company
+    title: Built for Long-Term Impact
+    content: |
+      Software systems naturally evolve. The challenge is ensuring they evolve without becoming fragile, opaque or difficult to maintain.
+
+      My work focuses on backend architecture, cloud infrastructure, observability and long-term maintainability, granting businesses systems that can be understood, operated and confidently extended.
+      
+  - type: grid
+    classes: ["l-grid--2"]
+    nav:
+      label: Values
+    withCards: true
+    items:
+      - content: |
+          ### Reliability
+          Systems that perform consistently under real-world conditions.
+      - content: |
+          ### Clarity
+          Maintainable architectures and well-reasoned decisions.
+      - content: |
+          ### Ownership
+          Direct accountability and senior level involvement.
+      - content: |
+          ### Pragmatism
+          Technology that serves the business, not the other way around.
+
+  - type: layout-side
+    nav:
+      label: About the Founder
+    classes: ["u-checks", "u-heading-top-aligned"]
+    backgroundColor: "var(--color-surface)"
+    image: "/images/me.jpg"
+    items:
+      - content: |
+          # John Wojcikiewicz
+          
+          Backend and cloud engineer specializing in scalable systems, infrastructure, and reliability.
+    
+          My background includes designing backend architectures, managing cloud environments, building observability into systems and improving performance and operational tooling across production systems.
+    
+          I created Johntek to provide a more direct and focused engineering partnership, centered on clarity and long-term system health.
+      - content: |
+          #### Experience Highlights
+
+          - Scalable backend systems serving thousands of millions of users
+          - Cloud migration and architecture modernization
+          - Reliability and observability improvements that reduce incidentss and downtime
+          - Performance optimization and scalability under read-world load
+          - Doveloper productivity and operational tooling that empowers teams
+  - type: cta
+    sectionClasses: ["c-cta__section"]
+    backgroundColor: "var(--color-main-bg)"
+    styles:
+      - "margin-bottom: var(--space-8)"
+    primary: "Book a kickoff call"
+    primary_url: "/contact/"
+    content: |
+      # Let’s Build Systems That Evolve
+      
+      If you are building systems that need to scale reliably and evolve cleanly over time, I'd be happy to discuss your goals and current challenges.
 ---
-
-# About the Company
-
-### Driving Evolution Through Pragmatic Engineering
-
-Johntek Consulting is an independent backend and cloud engineering consultancy focused on scalable, reliable systems.
-
-The work centers around backend architecture, cloud infrastructure, observability, and long-term maintainability. The goal is to help teams evolve their systems without adding unnecessary complexity.
-
-Clients work directly with a senior engineer throughout the engagement, whether through focused project work or embedded collaboration within an existing team.
-
-### Engineering Philosophy
-
-Software systems naturally evolve over time. The challenge is ensuring they evolve without becoming fragile, opaque, or difficult to operate.
-
-Johntek emphasizes:
-
-- Clear and maintainable architectures
-- Pragmatic technology decisions
-- Reliability under real-world conditions
-- Sustainable operational complexity
-- Long-term scalability
-
-I want to help you build systems that teams can understand, operate, and confidently extend as the business grows.
-
-### Values
-
-- Reliability
-- Transparency
-- Ownership
-- Clarity
-
---- 
-
-# About the Founder
-
-### John Wojcikiewicz
-
-I am a backend and cloud engineer specializing in scalable systems, infrastructure, and reliability.
-
-My work has focused on backend architecture, cloud environments, observability, and operational tooling across production systems that need to perform reliably under growth and real-world operational demands.
-
-I created Johntek to provide a more direct and focused engineering partnership, centered on clarity, maintainability, and long-term system health.
-
-My approach is pragmatic, collaborative, and strongly focused on building systems that teams can confidently operate and evolve over time.
-
----
-
-# Let's Connect
-
-If you are building systems that need to scale reliably and evolve cleanly over time, I’d be happy to discuss your goals and current challenges.

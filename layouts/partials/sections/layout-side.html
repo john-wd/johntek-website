@@ -14,8 +14,11 @@
         {{ end }}
     </div>
 
-    <div class="l-section-body c-prose {{ delimit (.classes | default (slice)) " " }}">
-        {{ .content | markdownify }}
+    <div class="l-section-body l-flex l-flex--row {{ delimit (.classes | default (slice)) " " }}">
+        {{ range .items }}
+        <div>
+            {{ .content | markdownify }}
+        </div>
+        {{ end }}
     </div>
-
 </div>
