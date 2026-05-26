@@ -1,7 +1,14 @@
 <div class="l-container">
-  <div class="c-hero__content {{ delimit (.Params.classes | default (slice)) " " }}">
+  <div class="c-hero__content {{ delimit (.Params.classes | default (slice)) " " -}} {{- if $.Params.overlay -}}c-hero__content--overlay{{- end -}}">
     <div class="c-hero__content-inner">
-      <h1>{{ .Title }}</h1>
+      {{ with .Params.label }}
+      <div class="c-hero__label">{{ . }}</div>
+      {{ end }}
+      <h1 class="c-hero__title">{{ .Title }}</h1>
+
+      {{ with .Params.divider | default true }}
+      <div class="c-hero__divider"></div>
+      {{ end }}
 
       {{ with .Content }}
       <div class="c-lead">{{ . }}</div>
@@ -14,7 +21,7 @@
         {{ end }}
 
         {{ with .Params.secondary }}
-        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.Params.secondary_url | default "#services" }}">{{ . }}</a>
+        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.Params.secondary_url | default "/resume" }}">{{ . }}</a>
         {{ end }}
       </div>
       {{ end }}
@@ -23,7 +30,7 @@
     {{ with .Params.image }}
       {{ $img := resources.Get (strings.TrimPrefix "/" .) }}
       {{ with $img }}
-      <div class="c-hero__image" aria-hidden="true">
+      <div class="c-hero__image" style="opacity: {{ $.Params.opacity | default 1 }};" aria-hidden="true">
         <img src="{{ .RelPermalink }}" alt="">
       </div>
       {{ end }}
