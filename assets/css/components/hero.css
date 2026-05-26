@@ -4,6 +4,7 @@
   background: var(--color-main-bg);
   color: #fff;
   padding: calc(var(--space-8) + 12rem) 0 var(--space-8) !important;
+  margin-bottom: var(--space-8);
 }
 
 .c-hero__content {

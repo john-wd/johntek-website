@@ -1,0 +1,19 @@
+{{ $params := .Params }}
+
+<div class="l-section-head">
+  {{ with $params.nav.label }}
+    <span class="l-section-head__label">{{ . }}</span>
+  {{ end }}
+
+  {{ with .Title }}
+    <h2 class="l-section-head__title">{{ . }}</h2>
+  {{ end }}
+
+  {{ with $params.description }}
+    <p class="l-section-head__description">{{ . }}</p>
+  {{ end }}
+
+  {{ with $params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" class="l-section-head__image" />
+  {{ end }}
+</div>

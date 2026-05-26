@@ -1,12 +1,12 @@
 <div class="l-container">
-  <div class="c-cta {{ delimit (.classes | default (slice)) " " }}">
+  <div class="c-cta {{ delimit (.Params.classes | default (slice)) " " }}">
     <div class="c-cta__content">
-        {{ .content | markdownify }}
+        {{ .Content }}
     </div>
     <div class="c-cta__actions">
-        <a class="c-button c-button--primary c-button--lg" href="{{ .primary_url | default "#contact" }}">{{ .primary }}</a>
-        {{ with .secondary }}
-        <a class="c-button c-button--lg" href="{{ $.secondary_url | default "#experience" }}">{{ . }}</a>
+        <a class="c-button c-button--primary c-button--lg" href="{{ .Params.primary_url | default "#contact" }}">{{ .Params.primary }}</a>
+        {{ with .Params.secondary }}
+        <a class="c-button c-button--lg" href="{{ $.Params.secondary_url | default "#experience" }}">{{ . }}</a>
         {{ end }}
     </div>
   </div>

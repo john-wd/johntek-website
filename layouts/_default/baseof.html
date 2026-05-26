@@ -5,12 +5,12 @@
 
   </head>
   {{ $hasHero := false }}
-  {{ with .Params.sections }}
-  {{ range . }}
-    {{ if eq .type "hero" }}
+  {{ $sections := where site.RegularPages "Section" "landing-sections" }}
+  {{ $sections = where $sections "Params.landingPage" .Params.landingSections }}
+  {{ range $sections }}
+    {{ if eq .Params.type "hero" }}
       {{ $hasHero = true }}
     {{ end }}
-  {{ end }}
   {{ end }}
   
   <body{{ if $hasHero }} class="has-hero"{{ end }}>

@@ -1,30 +1,32 @@
 <div class="l-container">
-  <div class="c-hero__content {{ delimit (.classes | default (slice)) " " }}">
+  <div class="c-hero__content {{ delimit (.Params.classes | default (slice)) " " }}">
     <div class="c-hero__content-inner">
-      <h1>{{ .title }}</h1>
+      <h1>{{ .Title }}</h1>
 
-      {{ with .description }}
-      <p class="c-lead">{{ . | markdownify }}</p>
+      {{ with .Content }}
+      <div class="c-lead">{{ . }}</div>
       {{ end }}
 
-      {{ if or .primary .secondary }}
+      {{ if or .Params.primary .Params.secondary }}
       <div class="c-hero__actions">
-        {{ with .primary }}
-        <a class="c-button c-button--hero c-button--lg" href="{{ $.primary_url | default "#contact" }}">{{ . }}</a>
+        {{ with .Params.primary }}
+        <a class="c-button c-button--hero c-button--lg" href="{{ $.Params.primary_url | default "#contact" }}">{{ . }}</a>
         {{ end }}
 
-        {{ with .secondary }}
-        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.secondary_url | default "#services" }}">{{ . }}</a>
+        {{ with .Params.secondary }}
+        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.Params.secondary_url | default "#services" }}">{{ . }}</a>
         {{ end }}
       </div>
       {{ end }}
     </div>
 
-    {{ if .image }}
-      {{ $img := resources.Get .image }}
+    {{ with .Params.image }}
+      {{ $img := resources.Get (strings.TrimPrefix "/" .) }}
+      {{ with $img }}
       <div class="c-hero__image" aria-hidden="true">
-        <img src="{{ $img.RelPermalink }}" alt="">
+        <img src="{{ .RelPermalink }}" alt="">
       </div>
+      {{ end }}
     {{ end }}
   </div>
 </div>

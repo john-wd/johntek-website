@@ -28,21 +28,23 @@
             {{- $page := $item.Page -}} 
             {{- $isActive := or ($current.IsMenuCurrent "main" $item) ($current.HasMenuCurrent "main" $item) -}} 
             {{ $hasAnchors := false}}
+            {{ $sections := slice }}
             {{ if $page.Params.navDropdown | default true }}
-                {{- $hasAnchors = and $page (isset $page.Params "sections") (gt (len $page.Params.sections) 0) -}}
+                {{ $sections = where site.RegularPages "Section" "landing-sections" }}
+                {{ $sections = where $sections "Params.landingPage" $page.Params.landingSections }}
+                {{ $sections = sort $sections "Weight" }}
+                {{- $hasAnchors = gt (len $sections) 0 -}}
                 {{ if $hasAnchors }}
                 {{/* this checks if there are any non-hero sections. If yes, then we should display a dropdown, otherwise, for pages with only hero sections, nothing is displayed */}}
-                {{ with $page.Params.sections }}
                     {{ $nonhero := false }}
-                    {{ range . }}
-                        {{ if not (eq .type "hero") }}
+                    {{ range $sections }}
+                        {{ if not (eq .Params.type "hero") }}
                             {{ $nonhero = true }}
                         {{ end }}
                     {{ end }}
                     {{ if not $nonhero }}
                         {{ $hasAnchors = false }}
                     {{ end }}
-                {{ end }}
                 {{ end }}
             {{ end }}
     
@@ -62,14 +64,15 @@
             role="list"
             aria-label="{{ $item.Name }} sections"
             >
-                {{ range $page.Params.sections }}
-            {{ if isset . "nav" }}
+                {{ range $sections }}
+            {{ $section := . }}
+            {{ with .Params.nav }}
             <li class="c-nav__dropdown-item">
                 <a
                 class="c-nav__dropdown-link"
-                href="{{ $page.RelPermalink }}#{{ .nav.id }}"
+                href="{{ $page.RelPermalink }}#{{ .id | default $section.File.ContentBaseName }}"
                 >
-                {{ .nav.label }}
+                {{ .label }}
                 </a>
             </li>
             {{ end }}

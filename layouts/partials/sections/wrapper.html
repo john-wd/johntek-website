@@ -1,0 +1,37 @@
+{{ $params := .Params }}
+{{ $sectionClasses := $params.sectionClasses | default slice }}
+{{ $styles := $params.styles | default slice }}
+{{ $anchor := $params.nav.id | default .File.ContentBaseName }}
+{{ $type := $params.type | default "prose" }}
+
+<section
+  id="{{ $anchor }}"
+  class="{{ delimit $sectionClasses " " }} c-section"
+  {{ if $styles }}style="{{ delimit $styles ";" | safeCSS }};"{{ end }}
+>
+  {{ with $params.backgroundColor }}
+  <div class="l-section-divider--flip">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path
+        d="M1000 100C500 100 500 4 0 4V0h1000v100Z"
+        fill="{{ . }}">
+      </path>
+    </svg>
+  </div>
+  {{ end }}
+
+  <div class="c-section--content" {{ with $params.backgroundColor }}style="background-color: {{ . | safeCSS }}"{{ end }}>
+    {{ partial (printf "sections/%s.html" $type) . }}
+  </div>
+
+  {{ with $params.backgroundColor }}
+  <div class="l-section-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path
+        d="M1000 100C500 100 500 4 0 4V0h1000v100Z"
+        fill="{{ . }}">
+      </path>
+    </svg>
+  </div>
+  {{ end }}
+</section>

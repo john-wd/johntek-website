@@ -4,11 +4,11 @@
     </svg>
 </div>
 <div class="l-container c-highlight-container">
-    <div class="c-highlight {{ delimit (.classes | default (slice)) " " }}">
+    <div class="c-highlight {{ delimit (.Params.classes | default (slice)) " " }}">
         <div class="c-highlight-quote" >
-        <p class="c-highlight-quote__text">
-            {{.content | markdownify}}
-        </p>
+        <div class="c-highlight-quote__text">
+            {{ .Content }}
+        </div>
         </div>
     </div>
 </div>

@@ -1,44 +1,12 @@
 {{ define "main" }}
 
-<!--Main router component, it picks a section from the sections array and renders the corresponding partial -->
 <main>
-  {{ range .Params.sections }} 
-  {{ $styles := .styles | default (slice) }}
-  
-  <section 
-       {{ if .nav.id }} id="{{.nav.id}}" {{ end }} 
-       class="{{ delimit (.sectionClasses | default (slice)) " " }} c-section" 
-       {{ if $styles }} style="{{ delimit $styles ";" | safeCSS}};"{{ end }}
-   >
-  {{ if .backgroundColor }}
-  <!--Got separator graphics in https://www.svgbackgrounds.com/elements/svg-shape-dividers/-->
-  <div class="l-section-divider--flip">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path
-              d="M1000 100C500 100 500 4 0 4V0h1000v100Z"
-              fill="{{ .backgroundColor | default "#000" }}">
-          </path>
-      </svg>
-  </div>
-  {{ end }}
-  <div class="c-section--content" {{ if .backgroundColor }} style="background-color: {{ .backgroundColor | safeCSS }}"{{ end }}>
-     {{ partial (printf "sections/%s.html" .type) . }}
-  </div>
-    {{ if .backgroundColor }}
-    <div class="l-section-divider">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-            <path
-                d="M1000 100C500 100 500 4 0 4V0h1000v100Z"
-                fill="{{ .backgroundColor | default "#000" }}">
-            </path>
-        </svg>
-    </div>
-    {{ end }}
-    
-   </section>
+  {{ $sections := where site.RegularPages "Section" "landing-sections" }}
+  {{ $sections = where $sections "Params.landingPage" .Params.landingSections }}
+  {{ range sort $sections "Weight" }}
+    {{ partial "sections/wrapper.html" . }}
   {{ end }}
 
-  <!-- Add markdown content if given -->
   {{ if .Content }}
     <section class="c-section">
         <div class="l-container">

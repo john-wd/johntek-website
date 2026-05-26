@@ -1,5 +1,5 @@
 baseUrl: https://johntekconsulting.com/
-languageCode: en-us
+locale: en-US
 title: Johntek Consulting LLC
 
 disableKinds: ["taxonomy", "term", "sitemap", "robotstxt"]
