@@ -1,7 +1,7 @@
 ---
 type: testimonials
 landingPage: home
-weight: 90
+weight: 35
 nav:
   id: testimonials
   label: Testimonials

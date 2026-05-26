@@ -11,6 +11,8 @@ backgroundColor: var(--color-surface)
 classes:
   - l-grid--2
   - c-impact
+sectionClasses:
+  - u-margin-bottom--lg
 onSide: true
 items:
   - content: |

@@ -8,6 +8,7 @@ sectionClasses:
   - c-hero
   - c-about
 image: /images/me.jpg
+variant: portrait
 opacity: 1
 overlay: false
 ---
