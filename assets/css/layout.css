@@ -132,4 +132,9 @@
   .l-section-head__description {
     max-width: 60ch;
   }
+
+  .l-flex--row {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 }
