@@ -23,6 +23,7 @@ sections:
     classes: ["l-grid--2"]
     nav:
       label: Values
+    description: These are the principles that drive how Johntek helps systems evolve over time.
     withCards: true
     items:
       - content: |
@@ -45,7 +46,8 @@ sections:
     backgroundColor: "var(--color-surface)"
     image: "/images/me.jpg"
     items:
-      - content: |
+      - size: 3
+        content: |
           # John Wojcikiewicz
           
           Backend and cloud engineer specializing in scalable systems, infrastructure, and reliability.
@@ -53,14 +55,15 @@ sections:
           My background includes designing backend architectures, managing cloud environments, building observability into systems and improving performance and operational tooling across production systems.
     
           I created Johntek to provide a more direct and focused engineering partnership, centered on clarity and long-term system health.
-      - content: |
+      - size: 2
+        content: |
           #### Experience Highlights
 
           - Scalable backend systems serving thousands of millions of users
           - Cloud migration and architecture modernization
           - Reliability and observability improvements that reduce incidentss and downtime
           - Performance optimization and scalability under read-world load
-          - Doveloper productivity and operational tooling that empowers teams
+          - Developer productivity and operational tooling that empowers teams
   - type: cta
     sectionClasses: ["c-cta__section"]
     backgroundColor: "var(--color-main-bg)"

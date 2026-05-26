@@ -16,7 +16,7 @@
 
     <div class="l-section-body l-flex l-flex--row {{ delimit (.classes | default (slice)) " " }}">
         {{ range .items }}
-        <div>
+        <div {{if .size}}style="flex: {{.size}};"{{end}}>
             {{ .content | markdownify }}
         </div>
         {{ end }}
