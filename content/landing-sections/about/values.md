@@ -13,16 +13,28 @@ items:
       ### Reliability
 
       Systems that perform consistently under real-world conditions.
+    icon: 
+      name: icon-shield
+      fill: true
   - content: |
       ### Clarity
 
       Maintainable architectures and well-reasoned decisions.
+    icon:
+      name: icon-search
+      fill: true
   - content: |
       ### Ownership
 
       Direct accountability and senior level involvement.
+    icon:
+      name: icon-person
+      fill: true
   - content: |
       ### Pragmatism
 
       Technology that serves the business, not the other way around.
+    icon:
+      name: icon-code
+      fill: true
 ---
