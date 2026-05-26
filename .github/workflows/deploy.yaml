@@ -35,6 +35,7 @@ jobs:
       - name: Deploy with rsync
         run: |
           rsync -az --delete \
+            --exclude '.htaccess' \
             -e "ssh -i ~/.ssh/hostinger_key -p ${{ secrets.HOSTINGER_PORT }}" \
             public/ \
             "${{ secrets.HOSTINGER_USER }}@${{ secrets.HOSTINGER_HOST }}:${{ secrets.HOSTINGER_TARGET }}"
