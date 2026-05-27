@@ -150,20 +150,21 @@
 .c-hero__content--portrait {
     & .c-hero__image {
         position: absolute;
-        right: -15vw;
+        right: 0;
+        bottom: -10vw;
 
         & img {
             width: unset;
-            max-width: unset;
+            max-width: 20vw;
             z-index: 3;
         }
 
         &::before {
           content: "";
           position: absolute;
-          width: 70%;
+          width: 500px;
           aspect-ratio: 1;
-          bottom: 4rem;
+          top: 4rem;
           left: 50%;
           transform: translateX(-50%);
           border-radius: 999px;
@@ -173,7 +174,7 @@
             rgba(37, 99, 235, 0.08) 50%,
             transparent 72%
           );
-          filter: blur(32px);
+          filter: blur(22px);
           z-index: 2;
         }
     }
