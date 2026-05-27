@@ -40,8 +40,8 @@ experience:
       state: WA
       city: Seattle
     role: Senior Backend Engineer
-    start: 2022-01
-    end: Present
+    start: 2024-12
+    end: 2026-05
     summary: Senior backend engineer working on a high-throughput SaaS platform, responsible for system reliability, observability, and architectural clarity under aggressive delivery timelines.
     technologies: ["Python", "AWS", "Postgres", "Prometheus", "Terraform"]
     highlights:
@@ -51,6 +51,7 @@ experience:
       - Refactored core codebase and database layers with a focus on safety, clarity, and robust error handling.
       - Reduced deployment time from over one hour to approximately 15 minutes by integrating elastic cloud resources and infrastructure-as-code.
       - Acted as technical interface with customer support, producing clear and actionable operational documentation.
+      - Built a modular, auditable, reliable and reusable rewards/payment system, serving thousands of users of our clients, with approval processes in place.
 
   - company: League Inc
     location:
