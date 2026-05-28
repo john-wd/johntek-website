@@ -8,6 +8,12 @@ testimonials:
     image: /lp/pfp-shanjeef.jpeg
 
   - quote: >
+      John joined our team at the end of 2024 and immediately raised the bar introducing tools and good practice in backend code development and CI that brought structure to our codebase from day one. As a Senior Backend Engineer, he led the hardest parts of our platform revamp, turning chaos into clean, scalable architecture with solid bases to continue growing. Any team building serious backend systems would be lucky to have him.
+    author: "Hernán Contigiani - Tech Lead"
+    company: "Ambassador"
+    image: /lp/pfp-hernan.jpeg
+
+  - quote: >
       I worked with João at Flex for 2 years building a web-based ML scoring system for cold-call campaigns.
       He led architecture (front/back) and implemented nearly everything.
       Skilled, proactive, and collaborative, he delivered fast and solved a major bottleneck.
