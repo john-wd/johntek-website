@@ -118,6 +118,19 @@
   flex-direction: column;
 }
 
+.l-flex--1 {
+    flex: 1;
+}
+.l-flex--2 {
+    flex: 2;
+}
+.l-flex--3 {
+    flex: 3;
+}
+.l-flex--4 {
+    flex: 4;
+}
+
 @media (max-width: 960px) {
   .l-container {
     grid-template-columns: 1fr;

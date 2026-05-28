@@ -99,9 +99,35 @@ function setupCarousel() {
   });
 }
 
+function setupMobileShare() {
+  document.addEventListener("click", async (event) => {
+      const button = event.target.closest(".c-share-native");
+      if (!button) return;
+  
+      const title = button.dataset.title;
+      const url = button.dataset.url;
+  
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, url });
+        } catch (err) {
+          // User cancelled share sheet; ignore.
+        }
+      } else {
+        await navigator.clipboard.writeText(url);
+        button.textContent = "Copied";
+        setTimeout(() => {
+          button.textContent = "Share";
+        }, 1500);
+      }
+    });
+
+}
+
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
     setupNavigation();
     setupCarousel();
+    setupMobileShare();
   });
 })();

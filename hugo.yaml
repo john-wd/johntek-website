@@ -11,6 +11,11 @@ params:
     - name: "Montserrat"
     - name: "IBM Plex Mono"
   calendly_url: "https://calendly.com/john-johntekconsulting/30min"
+  author:
+    name: John Wojcikiewicz
+    role: Founder
+    picture: /images/me.jpg
+    description: "Backend & cloud engineering consultancy focused on scalable systems, modernization, and reliability"
   social:
     - name: "Email"
       url: "mailto:john@johntekconsulting.com"
