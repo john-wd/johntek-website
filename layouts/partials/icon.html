@@ -8,8 +8,13 @@
     class="c-icon {{ if .fill }} c-icon--fill {{ end }} c-icon--{{.size | default "md" }} {{ if .transparent }} c-icon--transparent {{ end }}"
     {{ if $styles }} style="{{ $styles | safeCSS }}" {{ end }}
 >
-    {{ $imgfile := printf "/icons/%s.svg" .name }}
-    {{ $img := resources.Get $imgfile }}
-    {{ $img.Content | safeHTML }}
+    {{ with .name }}
+        {{ $imgfile := printf "/icons/%s.svg" . }}
+        {{ $img := resources.Get $imgfile }}
+        {{ $img.Content | safeHTML }}
+    {{ end }}
+    {{ with .fa }}
+        <i class="{{ . }}"></i>
+    {{ end }}
 </div>
 {{ end }}

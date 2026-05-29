@@ -24,6 +24,18 @@
     stroke-width: 2px;
 }
 
+.c-icon i {
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    overflow: visible;
+    color: var(--color-accent);
+    align-content: center;
+    text-align: center;
+    font-size: calc(var(--icon-size) - 12px);
+}
+
+
 .c-icon--fill {
     background: var(--color-surface);
 }
