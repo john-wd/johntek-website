@@ -1,12 +1,12 @@
 {{ define "main" }}
 <main class="l-container">
     <article class="l-article">
-      <aside class="c-article-sidebar" aria-label="Article actions">
-        <a class="c-article-sidebar__back" href="{{ .Section | relURL }}" aria-label="Return to articles">
+      <aside class="c-article-controlbar" aria-label="Article actions">
+        <a class="c-article-controlbar__back" href="{{ .Section | relURL }}" aria-label="Return to articles">
           ←
         </a>
       
-        <span class="c-article-sidebar__divider" aria-hidden="true"></span>
+        <span class="c-article-controlbar__divider" aria-hidden="true"></span>
       
         <div class="c-share">
             <span class="c-share-label">Share</span>
@@ -51,32 +51,48 @@
                 {{ .TableOfContents }}
                 </details>
             </header>
+
+            <figure class="c-article__cover">
+              <img src="{{ .Params.cover | default .Params.image }}" alt="{{ .Title }}">
+            </figure>
         
             <div class="c-prose">
             {{ .Content }}
             </div>
         </div>
-        <div class="c-blog__sidebar">
-            <div class="c-blog__author">
+        <div class="c-article__sidebar">
+            <div class="c-article__author">
                 <h3>Author</h3>
                 {{ $authorName := .Params.author | default .Site.Params.Author.name }}
                 {{ $authorDesc := .Params.authorDescription | default .Site.Params.Author.description }}
                 {{ $authorRole := .Params.authorRole | default .Site.Params.Author.role }}
-                <img src="{{ .Params.author.picture | default .Site.Params.Author.picture }}" alt="{{ $authorName }}" class="c-blog__author__picture" />
-                <div class="c-blog__author__info">
+                <img src="{{ .Params.authorPicture | default .Site.Params.Author.picture }}" alt="{{ $authorName }}" class="c-article__author__picture" />
+                <div class="c-article__author__info">
                     <div>
-                    <h4 class="c-blog__author__name">{{ $authorName }}</h4>
-                    <p class="c-blog__author__role">{{ $authorRole }}</p>
+                    <h4 class="c-article__author__name">{{ $authorName }}</h4>
+                    <p class="c-article__author__role">{{ $authorRole }}</p>
                     </div>
                     <div>
-                    <p class="c-blog__author__description">{{ $authorDesc }}</p>
+                    <p class="c-article__author__description">{{ $authorDesc }}</p>
                     </div>
                 </div>
             </div>
-            <div class="c-blog__toc">
+            <div class="c-article__toc">
                 <h4>Table of Contents</h4>
                 {{ .TableOfContents }}
             </div>
+            {{ with .GetTerms "categories" }}
+            <div >
+            <span class="c-category__title">Categories</span>
+              <ul class="c-category">
+                {{ range . }}
+                  <li class="c-category__item">
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
         </div>
       </div>
     </article>
