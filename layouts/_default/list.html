@@ -1,33 +1,219 @@
 {{ define "main" }}
-<main class="l-container">
-  <header class="c-page-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.description }}<p class="c-lead">{{ . }}</p>{{ end }}
-  </header>
+  {{ $posts := .RegularPages.ByDate.Reverse }}
 
-  <div class="l-grid l-grid--3">
-    {{ range .Pages.ByDate.Reverse }}
-    <article class="c-card">
-      <div class="c-card__image{{ if not .Params.image }} c-card__image--placeholder{{ end }}">
-        {{ with .Params.image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
-        {{ else }}
-        <span>No image</span>
+  {{ $featured := false }}
+  {{ $featuredPosts := first 1 (where $posts "Params.featured" true) }}
+
+  {{ if gt (len $featuredPosts) 0 }}
+    {{ $featured = index $featuredPosts 0 }}
+  {{ else if gt (len $posts) 0 }}
+    {{ $featured = index $posts 0 }}
+  {{ end }}
+
+  {{ $listPosts := $posts }}
+
+  {{ with $featured }}
+    {{ $listPosts = where $posts "RelPermalink" "ne" .RelPermalink }}
+  {{ end }}
+
+  {{ $paginator := .Paginate $listPosts 8 }}
+
+  {{ $ctaURL := "/contact/" }}
+  {{ with site.Params.cta.url }}
+    {{ $ctaURL = . }}
+  {{ end }}
+
+  <main class="c-blog-index">
+
+    <section class="c-blog-hero">
+      <p class="c-blog-eyebrow">Engineering Notes</p>
+
+      <h1 class="c-blog-hero__title">
+        {{ .Title }}
+      </h1>
+
+      <p class="c-blog-hero__description">
+        {{ .Description }}
+      </p>
+
+      <nav class="c-blog-topics" aria-label="Blog topics">
+        <a class="c-blog-topic c-blog-topic--active" href="{{ "/blog/" | relURL }}">All</a>
+
+        {{ range .Site.Taxonomies.categories.Alphabetical }}
+          <a class="c-blog-topic" href="{{ .Page.RelPermalink}}">
+            {{ .Page.Title }}
+          </a>
         {{ end }}
-      </div>
-      <div class="c-card__body">
-        <p class="c-card__meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </nav>
+    </section>
+
+    {{ if and $featured (eq $paginator.PageNumber 1) }}
+      <section class="c-blog-section" aria-labelledby="featured-article">
+        <p class="c-blog-section__label" id="featured-article">
+          Featured Article
         </p>
-        <h2 class="c-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ with .Params.description }}
-        <p class="c-card__excerpt">{{ . }}</p>
-        {{ else }}
-        {{ with .Summary }}<p class="c-card__excerpt">{{ . | plainify | truncate 120 }}</p>{{ end }}
-        {{ end }}
-      </div>
-    </article>
+
+        <article class="c-featured-post">
+          <a class="c-featured-post__media" href="{{ $featured.RelPermalink }}" aria-label="{{ $featured.Title }}">
+            {{ $cover := $featured.Params.cover | default $featured.Params.image }}
+
+            {{ with $cover }}
+              <img src="{{ . | relURL }}" alt="{{ $featured.Title }}">
+            {{ else }}
+              <span class="c-featured-post__placeholder" aria-hidden="true"></span>
+            {{ end }}
+          </a>
+
+          <div class="c-featured-post__body">
+            <time class="c-post-date" datetime="{{ $featured.Date.Format "2006-01-02" }}">
+              {{ $featured.Date.Format "Jan 2, 2006" }}
+            </time>
+
+            <h2 class="c-featured-post__title">
+              <a href="{{ $featured.RelPermalink }}">{{ $featured.Title }}</a>
+            </h2>
+
+            <p class="c-featured-post__summary">
+              {{ with $featured.Description }}
+                {{ . }}
+              {{ else }}
+                {{ $featured.Summary | plainify | truncate 170 }}
+              {{ end }}
+            </p>
+
+            <a class="c-post-link" href="{{ $featured.RelPermalink }}">
+              Read article →
+            </a>
+          </div>
+        </article>
+      </section>
     {{ end }}
-  </div>
-</main>
+
+    <section class="c-blog-section" aria-labelledby="latest-articles">
+      <p class="c-blog-section__label" id="latest-articles">
+        {{ if eq $paginator.PageNumber 1 }}
+          Latest Articles
+        {{ else }}
+          Articles
+        {{ end }}
+      </p>
+
+      {{ if gt (len $paginator.Pages) 0 }}
+        <div class="c-blog-grid">
+          {{ range $paginator.Pages }}
+            {{ $topic := "Engineering" }}
+
+            {{ with .GetTerms "categories" }}
+              {{ $topic = (index . 0).LinkTitle }}
+            {{ else }}
+              {{ with .GetTerms "tags" }}
+                {{ $topic = (index . 0).LinkTitle }}
+              {{ end }}
+            {{ end }}
+
+            <article class="c-post-card">
+              <a class="c-post-card__media" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+                {{ $cover := .Params.cover | default .Params.image }}
+
+                {{ with $cover }}
+                  <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+                {{ else }}
+                  <span class="c-post-card__placeholder" aria-hidden="true"></span>
+                {{ end }}
+              </a>
+
+              <div class="c-post-card__body">
+                <p class="c-post-card__topic">{{ $topic }}</p>
+
+                <time class="c-post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                  {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+
+                <h2 class="c-post-card__title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+
+                <p class="c-post-card__summary">
+                  {{ with .Description }}
+                    {{ . }}
+                  {{ else }}
+                    {{ .Summary | plainify | truncate 120 }}
+                  {{ end }}
+                </p>
+
+                <a class="c-post-link" href="{{ .RelPermalink }}">
+                  Read article →
+                </a>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+
+        {{ if gt $paginator.TotalPages 1 }}
+          <nav class="c-pagination" aria-label="Blog pagination">
+            {{ if $paginator.HasPrev }}
+              <a class="c-pagination__link" href="{{ $paginator.Prev.URL }}">
+                ← Newer
+              </a>
+            {{ else }}
+              <span class="c-pagination__link c-pagination__link--disabled">
+                ← Newer
+              </span>
+            {{ end }}
+
+            <div class="c-pagination__pages">
+              {{ range $paginator.Pagers }}
+                {{ if eq . $paginator }}
+                  <span class="c-pagination__page c-pagination__page--current" aria-current="page">
+                    {{ .PageNumber }}
+                  </span>
+                {{ else }}
+                  <a class="c-pagination__page" href="{{ .URL }}">
+                    {{ .PageNumber }}
+                  </a>
+                {{ end }}
+              {{ end }}
+            </div>
+
+            {{ if $paginator.HasNext }}
+              <a class="c-pagination__link" href="{{ $paginator.Next.URL }}">
+                Older →
+              </a>
+            {{ else }}
+              <span class="c-pagination__link c-pagination__link--disabled">
+                Older →
+              </span>
+            {{ end }}
+          </nav>
+        {{ end }}
+      {{ else }}
+        <div class="c-blog-empty">
+          <h2>No articles yet</h2>
+          <p>Published articles will appear here.</p>
+        </div>
+      {{ end }}
+    </section>
+
+    {{/* TODO: extract this cta into a reusable partial and use it in all pages */}}
+    {{ if eq $paginator.PageNumber 1 }}
+      <section class="c-blog-cta">
+        <div class="c-blog-cta__icon" aria-hidden="true">
+          <span></span>
+        </div>
+
+        <div class="c-blog-cta__body">
+          <h2>Let’s build something great together</h2>
+          <p>
+            Have a project in mind or want to discuss modernizing your platform?
+            Let’s start the conversation.
+          </p>
+        </div>
+
+        <a class="c-button c-button--primary" href="{{ $ctaURL | relURL }}">
+          Book a kickoff call →
+        </a>
+      </section>
+    {{ end }}
+
+  </main>
 {{ end }}

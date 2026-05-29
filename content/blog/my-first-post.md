@@ -3,7 +3,9 @@ date: '2026-02-02T08:40:11-03:00'
 draft: true
 title: 'My First Post'
 description: 'A brief introduction to what this blog will cover.'
-image: '/images/placeholder.jpg'
+image: '/images/posts/placeholder.png'
+categories: 
+  - backend
 ---
 # Et deseret quondam
 
