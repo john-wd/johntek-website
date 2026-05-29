@@ -1,0 +1,64 @@
+{{ define "main" }}
+  <main class="c-error-page" aria-labelledby="error-title">
+    <section class="c-error-hero l-container">
+      <p class="c-error-hero__code">404</p>
+
+      <h1 id="error-title" class="c-error-hero__title">
+        Page not found
+      </h1>
+
+      <p class="c-error-hero__description">
+        The page you're looking for doesn't exist, was moved, or the URL may be incorrect.
+      </p>
+
+      <div class="c-error-hero__actions">
+        <a class="c-button c-button--primary c-button--lg" href="{{ "/" | relURL }}">
+          Go to homepage
+        </a>
+
+        <a class="c-button c-button--lg" href="{{ "/blog/" | relURL }}">
+          Browse blog
+        </a>
+      </div>
+    </section>
+
+    <section class="c-error-links l-container" aria-labelledby="error-links-title">
+      <div class="c-error-links__head">
+        <h2 id="error-links-title">Let's get you back on track</h2>
+        <p>Here are a few places you can explore.</p>
+      </div>
+
+      <div class="c-error-links__grid l-grid l-grid--3">
+        <a class="c-card c-error-card" href="{{ "/#services" | relURL }}">
+          {{ partial "icon.html" (dict "name" "icon-layers" "fill" true "size" "sm") }}
+
+          <span class="c-card__body">
+            <strong class="c-card__title">Services</strong>
+            <small class="c-card__excerpt">Explore how Johntek helps teams build scalable, reliable systems.</small>
+            <em class="c-error-card__link">View services →</em>
+          </span>
+        </a>
+
+        <a class="c-card c-error-card" href="{{ "/about/" | relURL }}">
+          {{ partial "icon.html" (dict "name" "icon-person" "fill" true "size" "sm") }}
+
+          <span class="c-card__body">
+            <strong class="c-card__title">About Johntek</strong>
+            <small class="c-card__excerpt">Learn more about the mission, approach, and experience.</small>
+            <em class="c-error-card__link">About us →</em>
+          </span>
+        </a>
+
+        <a class="c-card c-error-card" href="{{ "/blog/" | relURL }}">
+          {{ partial "icon.html" (dict "name" "icon-article" "fill" true "size" "sm") }}
+
+          <span class="c-card__body">
+            <strong class="c-card__title">Latest Articles</strong>
+            <small class="c-card__excerpt">Read insights on backend engineering, cloud, and modernization.</small>
+            <em class="c-error-card__link">Read blog →</em>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+{{ end }}
