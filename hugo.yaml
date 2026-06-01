@@ -5,6 +5,7 @@ title: Johntek Consulting LLC
 params:
   tagline: Driving Evolution
   description: Remote backend and cloud engineering for teams that value clarity, reliability, and long-term maintainability.
+  meta_description: Johntek Consulting provides focused backend and cloud engineering to help businesses modernize platforms, improve reliability, and scale with confidence.
   fonts:
     - name: "Montserrat"
     - name: "IBM Plex Mono"
