@@ -7,4 +7,6 @@ cascade:
   build:
     render: link
     list: always
+  sitemap:
+    disable: true
 ---
