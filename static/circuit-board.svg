@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1568 882" role="img" aria-labelledby="title desc">
+  <title id="title">Glowing blue circuit board</title>
+  <desc id="desc">A dark blue circuit board with routed traces, processor blocks, vias, and cyan indicator lights.</desc>
+  <defs>
+    <radialGradient id="background" cx=".52" cy=".48" r=".82">
+      <stop stop-color="#074eac"/>
+      <stop offset=".52" stop-color="#033579"/>
+      <stop offset="1" stop-color="#00183f"/>
+    </radialGradient>
+    <linearGradient id="trace" x1="0" x2="1">
+      <stop stop-color="#0755c9"/>
+      <stop offset=".5" stop-color="#08b7ff"/>
+      <stop offset="1" stop-color="#0755c9"/>
+    </linearGradient>
+    <linearGradient id="bright-trace" x1="0" x2="1" y1="1" y2="0">
+      <stop stop-color="#0872e8"/>
+      <stop offset=".55" stop-color="#0cc8ff"/>
+      <stop offset="1" stop-color="#0869df"/>
+    </linearGradient>
+    <radialGradient id="led">
+      <stop stop-color="#d8ffff"/>
+      <stop offset=".18" stop-color="#22ffff"/>
+      <stop offset=".62" stop-color="#00dff5"/>
+      <stop offset="1" stop-color="#00aee8"/>
+    </radialGradient>
+    <filter id="glow" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#0b61bb" stroke-opacity=".08"/>
+    </pattern>
+    <g id="via">
+      <circle r="11" fill="#0787ed"/>
+      <circle r="5" fill="#064485"/>
+    </g>
+    <g id="node">
+      <circle r="12" fill="url(#led)" filter="url(#glow)"/>
+      <circle r="6" fill="#65ffff"/>
+    </g>
+    <g id="pin-row">
+      <rect width="12" height="36" rx="6"/>
+      <rect x="22" width="12" height="36" rx="6"/>
+      <rect x="44" width="12" height="36" rx="6"/>
+      <rect x="66" width="12" height="36" rx="6"/>
+      <rect x="88" width="12" height="36" rx="6"/>
+      <rect x="110" width="12" height="36" rx="6"/>
+      <rect x="132" width="12" height="36" rx="6"/>
+      <rect x="154" width="12" height="36" rx="6"/>
+    </g>
+    <g id="chip">
+      <rect width="144" height="144" fill="#0878e3" stroke="#16bdff" stroke-width="6"/>
+      <rect x="12" y="12" width="120" height="120" fill="#086cd4" opacity=".62"/>
+    </g>
+  </defs>
+
+  <rect width="1568" height="882" fill="url(#background)"/>
+  <rect width="1568" height="882" fill="url(#grid)"/>
+
+  <g fill="none" stroke="url(#trace)" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="6">
+      <path d="M0 101h45l62 62h248l55 55h81l73 73h83"/>
+      <path d="M0 228h107l65 65h164l68 68h90l56 56h81"/>
+      <path d="M0 245h96l64 64h163l69 69h91l54 54h103"/>
+      <path d="M0 393h280l82 82h190l51-51h70"/>
+      <path d="M0 413h269l82 82h211l51-51h73"/>
+      <path d="M0 468h292l37 37h251l43-43h50"/>
+      <path d="M0 487h282l38 38h271l43-43h42"/>
+      <path d="M0 554h363l67-67h249"/>
+      <path d="M0 575h375l67-67h238"/>
+      <path d="M0 614h372l103-103h205"/>
+      <path d="M0 711h164l28-28h228"/>
+      <path d="M0 731h176l29-29h218"/>
+      <path d="M0 751h337l88-88h177"/>
+      <path d="M0 771h349l88-88h167"/>
+      <path d="M107 0v84l104 104h173l77 77h93"/>
+      <path d="M127 0v72l96 96h170l78 78h81"/>
+      <path d="M585 0v201l68 68v198"/>
+      <path d="M605 0v190l68 68v207"/>
+      <path d="M625 0v179l68 68v219"/>
+      <path d="M645 0v168l68 68v232"/>
+      <path d="M785 0v174l-64 64v201"/>
+      <path d="M805 0v184l-64 64v194"/>
+      <path d="M825 0v195l-64 64v181"/>
+      <path d="M845 0v206l-64 64v171"/>
+      <path d="M873 0v178l62 62h93"/>
+      <path d="M893 0v168l62 62h83"/>
+      <path d="M913 0v158l62 62h73"/>
+      <path d="M933 0v148l62 62h63"/>
+      <path d="M1184 0v89l115 115v108"/>
+      <path d="M1204 0v79l115 115v118"/>
+      <path d="M1224 0v69l115 115v128"/>
+      <path d="M1244 0v59l115 115v138"/>
+      <path d="M1568 67h-46l-76 76v176l-91 91h-211"/>
+      <path d="M1568 87h-36l-66 66v176l-91 101h-220"/>
+      <path d="M1568 107h-26l-56 56v176l-91 111h-229"/>
+      <path d="M1568 419h-17l-84 84v191"/>
+      <path d="M1568 439h-7l-74 74v192"/>
+      <path d="M1568 620h-38l-75-75h-122"/>
+      <path d="M1568 640h-48l-75-75h-115"/>
+      <path d="M972 882V665l-77-77"/>
+      <path d="M992 882V655l-77-77"/>
+      <path d="M1067 882V705l81-81h103"/>
+      <path d="M1087 882V715l81-81h83"/>
+      <path d="M1107 882V725l81-81h63"/>
+      <path d="M1265 882V774l61-61V545"/>
+      <path d="M1285 882V784l61-61V545"/>
+      <path d="M1305 882V794l61-61V545"/>
+      <path d="M1392 882V712l-53-53V548"/>
+      <path d="M1412 882V702l-53-53V548"/>
+      <path d="M1432 882V692l-53-53V548"/>
+    </g>
+    <g stroke-width="4">
+      <path d="M0 338h218l21 21v24"/>
+      <path d="M0 675h47l22 22h98"/>
+      <path d="M27 882v-96h174l38 38h119"/>
+      <path d="M52 882v-76h139l38 38h129"/>
+      <path d="M77 882v-56h104l38 38h139"/>
+      <path d="M214 0v109M244 0v109M274 0v109M304 0v109"/>
+      <path d="M214 109h292M244 109h262M274 109h232M304 109h202"/>
+      <path d="M958 0v82l31 31v39M989 0v72l31 31v49"/>
+      <path d="M1299 0v34M1327 0v34M1355 0v34M1383 0v34"/>
+      <path d="M1535 106v249l-65 65"/>
+      <path d="M1557 129v236l-67 67"/>
+      <path d="M587 882V605l47-47h50"/>
+      <path d="M607 882V615l47-47h30"/>
+      <path d="M627 882V625l47-47h10"/>
+      <path d="M733 882V721h117l47-47"/>
+      <path d="M733 802h117l47-47M733 777h117l47-47M733 752h117l47-47"/>
+      <path d="M953 558h52l42 42h203"/>
+      <path d="M953 583h42l42 42h213"/>
+      <path d="M953 608h32l42 42h223"/>
+      <path d="M1058 436h149l62 62h125"/>
+      <path d="M1376 448h125M1376 468h103"/>
+      <path d="M1094 310h-77l-63 63"/>
+      <path d="M1040 229h-87l-65 65v74"/>
+      <path d="M1132 204h-53l-42 42h-76"/>
+      <path d="M80 633h276l82-82h198"/>
+      <path d="M80 653h286l82-82h188"/>
+    </g>
+  </g>
+
+  <g fill="none" stroke="url(#bright-trace)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 199h91l70 70h286l75 75" stroke-width="13"/>
+    <path d="M873 472l113-113h304l53 53h87l74-74" stroke-width="21"/>
+    <path d="M274 882l97-104h91l24-25V647l48-48" stroke-width="34"/>
+    <path d="M654 882V701l47-47" stroke-width="26"/>
+    <path d="M1370 515v168l31 31v168" stroke-width="25"/>
+  </g>
+
+  <g fill="#0784ea">
+    <use href="#chip" x="712" y="483"/>
+    <rect x="939" y="135" width="64" height="49"/>
+    <rect x="205" y="14" width="49" height="47"/>
+    <rect x="262" y="14" width="47" height="47"/>
+    <rect x="317" y="14" width="47" height="47"/>
+    <rect x="373" y="14" width="47" height="47"/>
+    <rect x="1242" y="535" width="48" height="48"/>
+    <rect x="1242" y="591" width="48" height="48"/>
+    <rect x="1242" y="647" width="48" height="48"/>
+    <rect x="1242" y="703" width="48" height="48"/>
+    <rect x="1175" y="96" width="26" height="85" rx="13"/>
+    <rect x="1255" y="177" width="111" height="21" rx="11"/>
+  </g>
+
+  <g fill="#078af0">
+    <use href="#pin-row" x="1067" y="291"/>
+    <use href="#pin-row" x="590" y="706" transform="rotate(90 590 706)"/>
+  </g>
+
+  <g fill="none" stroke="#087de3" stroke-width="7">
+    <circle cx="410" cy="352" r="41"/><circle cx="410" cy="352" r="26"/><circle cx="410" cy="352" r="11"/>
+    <circle cx="1383" cy="288" r="41"/><circle cx="1383" cy="288" r="26"/><circle cx="1383" cy="288" r="11"/>
+  </g>
+
+  <g>
+    <use href="#via" x="52" y="53"/><use href="#via" x="13" y="263"/><use href="#via" x="27" y="354"/>
+    <use href="#via" x="27" y="436"/><use href="#via" x="27" y="483"/><use href="#via" x="27" y="620"/>
+    <use href="#via" x="27" y="675"/><use href="#via" x="67" y="537"/><use href="#via" x="239" y="377"/>
+    <use href="#via" x="277" y="429"/><use href="#via" x="400" y="254"/><use href="#via" x="506" y="84"/>
+    <use href="#via" x="582" y="312"/><use href="#via" x="588" y="376"/><use href="#via" x="679" y="502"/>
+    <use href="#via" x="741" y="449"/><use href="#via" x="878" y="471"/><use href="#via" x="878" y="527"/>
+    <use href="#via" x="878" y="578"/><use href="#via" x="950" y="558"/><use href="#via" x="950" y="624"/>
+    <use href="#via" x="1058" y="436"/><use href="#via" x="1200" y="493"/><use href="#via" x="1267" y="493"/>
+    <use href="#via" x="1376" y="448"/><use href="#via" x="1392" y="493"/><use href="#via" x="1407" y="526"/>
+    <use href="#via" x="1459" y="804"/><use href="#via" x="1550" y="423"/><use href="#via" x="1549" y="573"/>
+    <use href="#via" x="732" y="729"/><use href="#via" x="732" y="754"/><use href="#via" x="732" y="779"/>
+    <use href="#via" x="732" y="804"/><use href="#via" x="732" y="829"/>
+  </g>
+
+  <g>
+    <use href="#node" x="86" y="26"/><use href="#node" x="22" y="200"/><use href="#node" x="82" y="468"/>
+    <use href="#node" x="36" y="577"/><use href="#node" x="194" y="358"/><use href="#node" x="300" y="657"/>
+    <use href="#node" x="302" y="110"/><use href="#node" x="354" y="255"/><use href="#node" x="540" y="287"/>
+    <use href="#node" x="539" y="375"/><use href="#node" x="529" y="489"/><use href="#node" x="533" y="837"/>
+    <use href="#node" x="557" y="160"/><use href="#node" x="610" y="343"/><use href="#node" x="634" y="428"/>
+    <use href="#node" x="650" y="287"/><use href="#node" x="665" y="103"/><use href="#node" x="678" y="547"/>
+    <use href="#node" x="678" y="573"/><use href="#node" x="678" y="599"/><use href="#node" x="709" y="438"/>
+    <use href="#node" x="733" y="810"/><use href="#node" x="784" y="205"/><use href="#node" x="784" y="449"/>
+    <use href="#node" x="804" y="42"/><use href="#node" x="804" y="393"/><use href="#node" x="864" y="430"/>
+    <use href="#node" x="878" y="538"/><use href="#node" x="878" y="613"/><use href="#node" x="900" y="341"/>
+    <use href="#node" x="900" y="740"/><use href="#node" x="991" y="592"/><use href="#node" x="1027" y="674"/>
+    <use href="#node" x="1077" y="542"/><use href="#node" x="1150" y="770"/><use href="#node" x="1182" y="270"/>
+    <use href="#node" x="1254" y="40"/><use href="#node" x="1265" y="239"/><use href="#node" x="1265" y="314"/>
+    <use href="#node" x="1366" y="526"/><use href="#node" x="1415" y="469"/><use href="#node" x="1460" y="168"/>
+    <use href="#node" x="1464" y="800"/><use href="#node" x="1528" y="61"/><use href="#node" x="1551" y="623"/>
+  </g>
+</svg>

@@ -6,7 +6,7 @@
     background-image: linear-gradient(
       rgba(0, 0, 0, 0.7), 
       rgba(0, 0, 0, 0.7)
-    ), url("/back.jpg");
+    ), url("/circuit-board.svg");
     background-size: 1080px;
     background-attachment: fixed;
     max-width: unset;
