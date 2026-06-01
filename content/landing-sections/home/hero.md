@@ -9,7 +9,7 @@ primary: Book a call
 primary_url: /contact/
 secondary: View Experience
 secondary_url: /resume
-image: /images/lp/hero.png
+image: /images/lp/hero.svg
 overlay: true
 opacity: 1
 ---
