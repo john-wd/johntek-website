@@ -1,10 +1,8 @@
 <nav class="c-nav" aria-label="Primary">
   <div class="l-container c-nav__inner">
     <a class="c-nav__brand" href="{{ .Site.Home.RelPermalink }}">
-      {{ $img := resources.Get "logo.png"}}
-      {{ $imgdark := resources.Get "logo-dark.png"}}
-      <img class="c-nav__logo--light" src="{{ $img.Permalink }}" height="64px" alt="Logo" />
-      <img class="c-nav__logo--dark" src="{{ $imgdark.Permalink }}" height="64px" alt="Logo" />
+        {{ $logo := resources.Get "logo.svg" }}
+        {{ $logo.Content | safeHTML}}
     </a>
 
     <button
