@@ -1,9 +1,9 @@
 ---
-date: '2026-05-28T09:40:11-03:00'
+date: 2026-05-28T09:40:11-03:00
 draft: false
-title: 'Hello, World!'
-description: 'The first post written to Johntek blog.'
-image: '/images/posts/20260528/hello.png'
+title: Hello, World!
+description: The first post written to Johntek blog.
+image: /images/posts/20260528/cover.jpg
 categories: 
   - johntek
 ---
