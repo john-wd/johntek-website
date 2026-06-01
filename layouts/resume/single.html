@@ -15,6 +15,9 @@
         <a class="c-resume__link" href="{{ .url }}">{{ .label }}</a>
         {{ end }}
       </div>
+      <div class="l-container c-resume__description">
+          {{ $r.basics.description | markdownify }}
+      </div>
       {{ end }}
     </header>
 

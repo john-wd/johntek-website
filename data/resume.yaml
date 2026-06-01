@@ -1,12 +1,16 @@
 basics:
   name: "Joao Pedro de Lira Wojcikiewicz"
   title: "Senior Backend Engineer"
-  description: >
-    Senior Backend and Platform Engineer with 7 years of experience designing, operating, 
-    and evolving cloud-native systems in production. Specialized in backend architecture, 
+  description: |
+    Senior Backend and Platform Engineer with 7 years of experience designing with a Msc degree on Theoretical Physics, 
+    operating,  and evolving cloud-native systems in production. Specialized in backend architecture, 
     platform extensibility, and reliability for SaaS products. Proven track record of leading 
     critical initiatives under tight deadlines, reducing operational risk, and improving developer 
     experience in distributed systems.
+
+    My academic background in Theoretical Physics has provided me with a strong foundation in analytical thinking,
+    problem-solving and understanding of complex systems, which has been instrumental in my professional work
+    as a Senior Software Engineer.
   image_url: ""
   location: "Asuncion, Paraguay"
   email: "john@johntekconsulting.com"
@@ -20,6 +24,7 @@ basics:
 summary:
   - "Backend engineer focused on reliability and cloud modernization."
   - "Strong record of improving latency, cost, and delivery speed."
+  - "Msc degree on Theoretical Physics."
 
 skills:
   - group: "Core technical"
