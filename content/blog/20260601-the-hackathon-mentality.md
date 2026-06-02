@@ -133,6 +133,8 @@ automation with strong architectural judgment.
 If your team is modernizing a legacy system or trying to keep a growing codebase maintainable, 
 Johntek can help define the boundaries, review the architecture, and keep implementation aligned with long-term evolution.
 
+If this is something you'd like to do, call me on [one of my channels here](/contact).
+
 
 ### Caveat
 
