@@ -1,8 +1,13 @@
 name: Deploy Hugo site to Hostinger
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "10 * * * *"
+      timezone: "America/New_York"
 
 concurrency:
   group: production-deploy
