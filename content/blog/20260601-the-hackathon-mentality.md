@@ -6,6 +6,7 @@ description: Why AI generated code fail to scale unsupervised.
 image: /images/posts/20260601/cover.jpg
 categories: 
   - ai
+  - opinion
 ---
 
 Imagine your team is building an auditability layer for a payment platform that serves millions of requests 
