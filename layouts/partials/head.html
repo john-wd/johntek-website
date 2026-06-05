@@ -1,7 +1,7 @@
 <meta charset="utf-8" />
 <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-{{ with .Params.meta_description | default .Site.Params.meta_description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
