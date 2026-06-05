@@ -1,6 +1,7 @@
 ---
 date: 2026-06-05T09:33:12-03:00
 draft: false
+featured: true
 title: AI and their Hackathon Mentality
 description: Why AI generated code fail to scale unsupervised.
 image: /images/posts/20260601/cover.jpg
