@@ -3,7 +3,7 @@ name: Deploy Hugo site to Hostinger
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
   schedule:
     - cron: "0 10 * * *"
