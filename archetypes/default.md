@@ -1,7 +1,9 @@
 ---
 date: '{{ .Date }}'
 draft: true
+featured: false
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-author: '{{ .Site.Params.author.name | default "" }}'
-tags: []
+description: ''
+image: null
+categories: []
 ---

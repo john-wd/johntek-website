@@ -36,6 +36,15 @@
                 {{ with .Date }}
                     <p>{{ .Format "Jan 2, 2006" }}</p>
                 {{ end }}
+
+                <p class="c-article-time">
+                    {{ $readingTime := div (float .WordCount) .Site.Params.reading_speed }}
+                    {{ $readingMinutes := int (math.Floor $readingTime) }}
+                    {{ $readingSeconds := math.Floor (math.Mul (math.Sub $readingTime $readingMinutes) 60) }}
+                    
+                    {{ printf "Estimated reading time: %d minutes" $readingMinutes -}}
+                    {{ if gt $readingSeconds 0 }} and {{ $readingSeconds }} seconds{{ end }}
+                </p>
     
                 <button
                   class="c-share-native"
@@ -52,9 +61,11 @@
                 </details>
             </header>
 
+            {{ with .Params.image }}
             <figure class="c-article__cover">
-              <img src="{{ .Params.cover | default .Params.image }}" alt="{{ .Title }}">
+              <img src="{{ . }}" alt="{{ $.Title }}">
             </figure>
+            {{ end }}
         
             <div class="c-prose">
             {{ .Content }}
