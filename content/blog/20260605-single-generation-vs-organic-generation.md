@@ -3,7 +3,7 @@ date: '2026-06-19T12:16:44-06:00'
 draft: false
 title: 'AI Can Generate Code, but It Struggles to Evolve It'
 description: 'AI tooling can generate text, image and assets just fine, it looks great, but it struggles to generate code that can evolve.'
-image: null
+image: /images/posts/20260605/cover.jpg
 categories: 
   - ai
 ---
