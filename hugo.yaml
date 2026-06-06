@@ -1,6 +1,7 @@
 baseUrl: https://johntekconsulting.com/
 locale: en-US
 title: Johntek Consulting LLC
+enableRobotsTXT: true
 
 params:
   tagline: Driving Evolution
