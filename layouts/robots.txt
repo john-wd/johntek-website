@@ -1,0 +1,6 @@
+# layouts/robots.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
