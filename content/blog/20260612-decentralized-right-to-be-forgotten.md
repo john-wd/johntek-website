@@ -11,6 +11,7 @@ categories:
   - data privacy
   - case study
   - architecture
+  - engineering
 ---
 Since the European General Data Protection Regulation (GDPR) began to take effect, many other countries 
 have adopted similar privacy laws. One of the policies included in these kinds of privacy laws is ["The 
