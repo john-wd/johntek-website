@@ -266,8 +266,6 @@ beforehand.
 Monitoring and alerting is invaluable and, I would say, indispensable here, catching small issues 
 with API changes early on, never getting close to the legal deadline.
 
-I believe that this use case can help you design something as robust as this for your business reality.
-
 If your user deletion process still depends on manual tickets, direct database scripts, or a central service 
 that knows too much about every domain, this is a sign that the architecture may not scale with your 
 compliance requirements.
