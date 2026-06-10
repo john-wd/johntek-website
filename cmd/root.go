@@ -4,12 +4,14 @@ Copyright © 2026 JohnW (john@johntekconsulting.com)
 package cmd
 
 import (
+	"fmt"
 	"log"
 	"os"
 
 	"github.com/gohugoio/hugo/commands"
 	"github.com/gohugoio/hugo/common/herrors"
 	"github.com/gohugoio/hugo/common/loggers"
+	cmds "github.com/john-wd/johntek-website/cmd/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -21,11 +23,12 @@ var rootCmd = &cobra.Command{
 It exposes commands to manage publishing content in social media,
 tracking published status and compiling general templates into static
 PDF files for download.`,
+	PersistentPreRunE: checkRootHugo,
 }
 
 var hugoCmd = &cobra.Command{
-	Use:   "hugo",
-	Short: "Runs the Hugo CLI.",
+	Use:                "hugo",
+	Short:              "Runs the Hugo CLI.",
 	DisableFlagParsing: true, // disable cobra's parsing to properly pass them to hugo
 	Run: func(cmd *cobra.Command, args []string) {
 		log.SetFlags(0)
@@ -37,6 +40,13 @@ var hugoCmd = &cobra.Command{
 			os.Exit(1)
 		}
 	},
+}
+
+func checkRootHugo(cmd *cobra.Command, args []string) error {
+	if !cmds.FileExists("hugo.yaml") && !cmds.FileExists("hugo.toml") {
+		return fmt.Errorf("Not in a Hugo project directory. Please run this command from the root of your Hugo project.")
+	}
+	return nil
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -53,4 +63,5 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 	rootCmd.AddCommand(hugoCmd)
+	rootCmd.AddCommand(cmds.Command)
 }
