@@ -13,7 +13,7 @@ categories:
   - architecture
 ---
 Since the European General Data Protection Regulation (GDPR) began to take effect, many other countries 
-have adopted similar privacy laws. One of the policies included in these kind of privacy laws is ["The 
+have adopted similar privacy laws. One of the policies included in these kinds of privacy laws is ["The 
 Right to be Forgotten"](https://gdpr-info.eu/art-17-gdpr/), or put simply, the right that users have to 
 request the deletion of their data from that service databases.
 
@@ -36,13 +36,13 @@ At first, implementing the right to be forgotten may seem straightforward, just 
 data and cascade deletion to related data across the database. However, it is much more nuanced than that.
 
 Any data that can be combined to identify a user should be treated as personal data and handled carefully.
-This is specially true in the health industry, where a set of health factors, journeys and records can pin 
-down to a particular user.
+This is especially true in the health industry, where a set of health factors, journeys and records can identify 
+a particular user.
 
 Moreover, we are focusing on decentralized systems, so data is stored and managed by each individual
 service, rather than a centralized authority.
 
-Finally, there are requirements in these laws that enforces the systems to be thoroughly auditable and 
+Finally, there are requirements in these laws that require the systems to be thoroughly auditable and 
 explainable in case of judicial inquiries.
 
 ## Assumptions
@@ -52,7 +52,7 @@ explicitly for clarity.
 
 - It is a complex SaaS business deployed in the cloud, with dozens of services.
 - Your system is decentralized, many services run independently and communicate with each other.
-- Service boundaries separated system domains logically (payments module, identity, cart, orders, etc).
+- Service boundaries separate system domains logically (payments module, identity, cart, orders, etc).
 - Services own the business data they are responsible for.
 - User-related data may exist outside transactional services, including logs, analytics pipelines, 
   data warehouses and third-party processors, for example.
@@ -73,13 +73,13 @@ With the assumptions in mind, we can define the solution requirements for this s
 - Each domain should handle the deletion of data they own.
 - The system should be auditable, record when the request was initiated and when each domain handled it.
 - There must be NO god service that knows about all domains.
-- The user has a regret grace period to revert the request before data any data is deleted.
+- The user has a regret grace period to revert the request before any data is deleted.
 - Data must be retained for N days due to regulatory requirements. After this time, data is deleted.
 - Deletion can be fulfilled through irreversible anonymization where legally and technically valid.
 - The system must propagate deletion requests to relevant third-party processors.
 - Monitoring and alerting must be in place to detect and respond to failures and issues on requests.
 
-The last one is particularly important as it is quite often that system's act on behalf of the user, so data may 
+The last one is particularly important as it is quite often that systems act on behalf of the user, so data may 
 exist outside your service. Think salesforce, shopify or whatever dependent services your system interacts with.
 
 ## Proposed architecture
@@ -87,10 +87,10 @@ exist outside your service. Think salesforce, shopify or whatever dependent serv
 We have decentralized microservices, each owning its specific domain data imposes quite some restrictions on system 
 designs. We explicitly called out a god service that would have an inventory of all domains in the system,
 so we cannot just have a service that connects to all databases to handle deletion requests. Even if your solution
-has just one database with segratated tables by domain, it would still be a bad idea to have this. It goes against
+has just one database with segregated tables by domain, it would still be a bad idea to have this. It goes against
 the domain ownership model of your system.
 
-Instead, we can have an event-driven architecture and fan-out deletion requests to all microservices that requires it.
+Instead, we can have an event-driven architecture and fan-out deletion requests to all microservices that require it.
 
 {{<figure
   src="/images/posts/20260612/arch.jpg"
@@ -137,7 +137,7 @@ in case of judicial requests.
 
 Here the following API is defined:
 - **Entrypoint:** user-facing endpoint that initiates the deletion request. 
-- **Status update subscription:** whenever domains finishes processing requests, messages are published to this
+- **Status update subscription:** whenever domains finish processing requests, messages are published to this
                               queue that are consumed by the deletion service.
 - **Scheduler services:** to account for the grace period, this service monitors requests and initiates the process
                       when needed and removing the retained information from the database.
@@ -150,7 +150,7 @@ in a shared library that your services can use directly to remove boilerplate.
 You can do something like this:
 
 - Define some `Event` data struct that contains the `user_id`, `date_created`, and `status` fields.
-- Define an `Forgeter` interface that accepts a custom function to handle the deletion process on a domain
+- Define a `Forgetter` interface that accepts a custom function to handle the deletion process on a domain
 - Define a custom Subscriber wrapper that subscribes a function to a Subscription and automatically handles 
   retries and error handling.
   - This wrapper publishes `StatusUpdate` messages to a queue to notify the orchestrator that the request
@@ -211,24 +211,24 @@ the system may call a notification service to tell the user their data has been 
 Notice that in this model the orchestrator does not know about all domains, rather the domains send a 
 message saying “I exist” before it can tell if requests were fulfilled or not.
 
-## Handing failure
+## Handling failure
 
 In a complex system like these, there can be a handful of ways the system can fail. You will need to 
 keep an eye on these in order to comply with the local laws of your country.
 
 ### Failed messages and monitoring
 
-In general you want to have dlqs in all subscriptions queues, so your messages are not lost on failure.
+In general you want to have DLQs in all subscription queues, so your messages are not lost on failure.
 
-In addition, consider adding alerts to those dlqs as well, so if there is at least one message 
+In addition, consider adding alerts to those DLQs as well, so if there is at least one message 
 available, your on-call engineers can take a look at the domain handler that is failing and take
-action. Sometimes business rules change and the deletion handler drugs silently, other times 
+action. Sometimes business rules change and the deletion handler fails silently, other times 
 upstream services change. Be aware of these.
 
 ### Requests not being fulfilled in time
 
 Consider also having a checker scheduled job to check the state of requests. You'll have to 
-fulfill the deletion in a given number of days and be subjected to fines if not fulfilled. 
+fulfill the deletion in a given number of days and be subject to fines if not fulfilled. 
 If it is getting closer to this deadline, consider alerting too so you can keep an eye.
 
 ### Retry mechanism
@@ -240,7 +240,7 @@ so you should be able to retry a message for a specific domain if it is stuck fo
 ### Authorization considerations
 
 Deleting user data is sensitive and not many people should be able to issue requests, not even 
-internal personnel. Make strict authorization to these endpoints and only allow a restricted 
+internal personnel. Enforce strict authorization to these endpoints and only allow a restricted 
 number of people to be able to hijack/issue requests on behalf of others.
 
 Ideally,
@@ -257,13 +257,13 @@ Ideally,
 ## Final considerations
 
 This is a complex topic with a complex architecture that orchestrates user deletion data across 
-isolated services. The solution given here is actually active and serving requests with little issues
+isolated services. The solution given here is actually active and serving requests with few issues
 for over 3 years and it is modular and extensible to new services my client wants to create. 
 They just need to provision the required cloud resources and write the deletion logic to that 
 domain and the system automatically handles that use case too without “knowing” about that domain 
 beforehand.
 
-Monitoring and alerting is invaluable and, I would say, indispensable here, catching little issues 
+Monitoring and alerting is invaluable and, I would say, indispensable here, catching small issues 
 with API changes early on, never getting close to the legal deadline.
 
 I believe that this use case can help you design something as robust as this for your business reality.
