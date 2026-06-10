@@ -1,6 +1,6 @@
 ---
 date: '2026-06-26T09:58:05-06:00'
-draft: false
+draft: true
 featured: true
 title: 'Thinking about Domains: Clarity Leads to Evolution'
 description: >
