@@ -11,7 +11,8 @@ import (
 	"github.com/gohugoio/hugo/commands"
 	"github.com/gohugoio/hugo/common/herrors"
 	"github.com/gohugoio/hugo/common/loggers"
-	cmds "github.com/john-wd/johntek-website/cmd/internal"
+	"github.com/john-wd/johntek-website/cmd/components/util"
+	"github.com/john-wd/johntek-website/cmd/internal/resume"
 	"github.com/spf13/cobra"
 )
 
@@ -43,7 +44,7 @@ var hugoCmd = &cobra.Command{
 }
 
 func checkRootHugo(cmd *cobra.Command, args []string) error {
-	if !cmds.FileExists("hugo.yaml") && !cmds.FileExists("hugo.toml") {
+	if !util.FileExists("hugo.yaml") && !util.FileExists("hugo.toml") {
 		return fmt.Errorf("Not in a Hugo project directory. Please run this command from the root of your Hugo project.")
 	}
 	return nil
@@ -63,5 +64,5 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 	rootCmd.AddCommand(hugoCmd)
-	rootCmd.AddCommand(cmds.Command)
+	rootCmd.AddCommand(resume.Command)
 }

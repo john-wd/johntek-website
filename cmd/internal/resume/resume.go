@@ -1,4 +1,4 @@
-package cmds
+package resume
 
 import (
 	"bufio"
@@ -11,6 +11,7 @@ import (
 	"text/template"
 
 	"github.com/hairyhenderson/gomplate/v5"
+	"github.com/john-wd/johntek-website/cmd/components/util"
 	"github.com/spf13/cobra"
 	"go.yaml.in/yaml/v3"
 )
@@ -19,7 +20,7 @@ var Command = &cobra.Command{
 	Use:   "resume",
 	Short: "Manages resume build and rendering.",
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
-		if !FileExists("data/resume.yaml") {
+		if !util.FileExists("data/resume.yaml") {
 			return fmt.Errorf("data/resume.yaml does not exist. Please create it first.")
 		}
 		return nil
@@ -57,7 +58,7 @@ var publishCommand = &cobra.Command{
 	Use:   "publish",
 	Short: "Publishes the resume on the public folder.",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		if !FileExists("templates/resume/resume.pdf") {
+		if !util.FileExists("templates/resume/resume.pdf") {
 			err := renderRunFn(cmd, args)
 			if err != nil {
 				return err
@@ -90,7 +91,7 @@ var publishCommand = &cobra.Command{
 }
 
 func renderRunFn(cmd *cobra.Command, args []string) error {
-	err := EnsureBinary("tectonic")
+	err := util.EnsureBinary("tectonic")
 	if err != nil {
 		return err
 	}
