@@ -1,5 +1,5 @@
 ---
-date: '2026-06-12T13:24:10-06:00'
+date: '2026-06-12T10:24:10-06:00'
 draft: false
 featured: true
 title: "Case Study: How to Implement the Right to Be Forgotten in Decentralized Systems"
