@@ -47,6 +47,7 @@ jobs:
         run: |
           rsync -az --delete \
             --exclude '.htaccess' \
+            --exclude 'resume.pdf' \
             -e "ssh -i ~/.ssh/hostinger_key -p ${{ secrets.HOSTINGER_PORT }}" \
             public/ \
             "${{ secrets.HOSTINGER_USER }}@${{ secrets.HOSTINGER_HOST }}:${{ secrets.HOSTINGER_TARGET }}"
