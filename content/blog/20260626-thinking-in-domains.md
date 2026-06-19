@@ -68,7 +68,7 @@ The four layers are, in descending order:
   services.
 - **Infrastructure**: implements technical concerns such as persistence, messaging and external service integrations.
 
-This separation removes a lot of cognitive load from understanding an application because it makes each responsibility
+This separation reduces a lot of cognitive load from understanding an application because it makes each responsibility
 clear. It also promotes code hygiene and separation of concerns. If you are not mixing UI code with database models, it
 is much easier to iterate on and maintain your code.
 
