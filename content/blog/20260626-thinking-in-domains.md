@@ -154,7 +154,7 @@ and product requirements, but the example is sufficient to illustrate the modeli
 
 ## Thinking in domains
 
-To summarize, whenever you are modeling domains, keep these ideas close :
+To summarize, whenever you are modeling domains, keep these ideas close to your heart:
 
 - Separate the logical capabilities of your application.
 - Think about how domains interact with each other.
