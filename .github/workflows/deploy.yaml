@@ -41,7 +41,7 @@ jobs:
           extended: true
 
       - name: Build site
-        run: hugo --minify
+        run: hugo -e production --minify
 
       - name: Deploy with rsync
         run: |
