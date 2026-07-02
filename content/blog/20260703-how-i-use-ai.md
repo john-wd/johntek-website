@@ -1,5 +1,5 @@
 ---
-date: '2026-07-03T10:28:38-06:00'
+date: '2026-07-02T09:28:38-06:00'
 draft: false
 featured: true
 title: "How do I use AI to boost my productivity? A Senior Engineer's Perspective"
@@ -63,6 +63,12 @@ That is why I treat AI as a powerful assistant, but not as the owner of the code
 One of my favorite strategies is using AI to brainstorm ideas. Here I usually have a good understanding of the
 problem space and requirements and I already have a high-level working architecture in mind.
 
+{{<figure
+  src="/images/posts/20260703/brainstorming.jpg"
+  width="80%"
+  alt="brainstorming solutions"
+>}}
+
 So I outline the components, system patterns and implementation details I am considering, then I ask the AI for
 direct feedback.
 
@@ -76,10 +82,27 @@ how big the impact may be.
 Here I am directing the design of the system. The AI gives me a broader perspective by bringing edge cases to my
 attention before they become baked into the infrastructure.
 
+A typical prompt here is:
+
+> Here is the architecture I am considering. Stress-test it for reliability, security,
+> operational complexity, data consistency and failure modes. Focus on what I may be missing.
+> 
+> \-\-\-
+>
+> \<paste your architecture summary\>
+
+Avoid generic "design this for me" prompts.
+
 ### Architectural Alternatives and Trade-Off Analysis
 
 After the initial design feedback, I like to run a comparison against my own choice. Not only for robustness, but
 also to see if there are better architectures I could have chosen given my constraints.
+
+{{<figure
+  src="/images/posts/20260703/competitive.jpg"
+  width="80%"
+  alt="competitive analysis"
+>}}
 
 After all, our job as engineers is choosing the better solution considering the requirements, since rarely there is
 a single right solution. It is always an art of finding the right balance.
@@ -91,7 +114,7 @@ Finally, I ask it to format the result as a comparison matrix table so I can eas
 alternative, and use it in my decision documentation.
 
 Comparing these AI-generated alternatives against my original plan ensures that my final technical choices are
-intentional, justified and thoroughly vetted.
+intentional, better justified and easier to document.
 
 ### Rapid Proof of Concepts
 
@@ -100,6 +123,12 @@ roadmap. This is where code generation shines, provided you treat the output cor
 
 I will feed a segment of the codebase into the AI and ask it to draft a rough implementation of a pattern or
 feature just to see the code working.
+
+{{<figure
+  src="/images/posts/20260703/poc.jpg"
+  width="80%"
+  alt="rapid pocing"
+>}}
 
 The crucial rule here is to treat this generated code as temporary, exploratory scaffolding. You should never
 copy-paste an AI POC directly into production. Relying 100% on AI-generated production code introduces serious
@@ -117,6 +146,12 @@ A well-architected solution will always evolve slightly during implementation, s
 a 100% replica of the original technical design document.
 
 Once a feature is deployed and working smoothly, I like to use AI to kickstart the documentation process.
+
+{{<figure
+  src="/images/posts/20260703/documentation.jpg"
+  width="80%"
+  alt="bootstrap documentation"
+>}}
 
 There is usually some preliminary documentation on the decision-making process, things like problem and solution
 definitions, architecture decisions and other related context. But once the feature is finished, it is always good
@@ -136,6 +171,12 @@ A well-documented system enhances developer experience by providing clear, up-to
 AI tooling better by providing useful, rich and accurate context about the codebase.
 
 ### Targeted Unit Testing and the 2-Example Rule
+
+{{<figure
+  src="/images/posts/20260703/tests.jpg"
+  width="80%"
+  alt="filling test gaps"
+>}}
 
 Writing unit tests is easily the most impactful daily use case for AI, but letting an agent loose on an empty test
 file is a mistake.
