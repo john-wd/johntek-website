@@ -49,7 +49,11 @@ and ready for future changes.
 
 AI agents do not understand the nuances and best practices of your solution. They often hallucinate new patterns
 that do not fit your codebase. This introduces drift that
+<<<<<<< HEAD
 [can be difficult to reason about and serve as reference in future iterations](/blog/20260619-single-generation-vs-organic-generation).
+=======
+[can be difficult to reason about and serve as reference in future iterations](/blog/20260619-single-generation-vs-organic-generation/).
+>>>>>>> develop
 
 Even if you sit down and write many skills for each pattern, business context and task detail, the problem of
 context rot may still kick in. New unwanted code can still be introduced.
