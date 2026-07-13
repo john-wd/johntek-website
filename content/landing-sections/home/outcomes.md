@@ -16,9 +16,21 @@ sectionClasses:
 onSide: true
 items:
   - content: |
+      ### Faster engineering delivery (DevEx)
+
+      Trimming PR cycles, isolating flaky tests, tuning CI resource compute and building internal developer 
+      platforms that minimize cognitive load.
+    icon:
+      name: icon-zap
+      color: "#FFF"
+      fill: true
+  - content: |
       ### Reduced system bottlenecks
 
-      Identify slow paths, inefficient queries, and architectural constraints that limit growth.
+      Build explainable platforms with explicit system boundaries. 
+      
+      Establishing a clean dependency graph isolates component logic, minimizes cognitive load 
+      and keeps codebases adaptable at scale.
     icon:
       name: icon-gauge
       color: "#FFF"
@@ -26,7 +38,7 @@ items:
   - content: |
       ### Improved production reliability
 
-      Strengthen monitoring, alerts, deployment workflows, and operational readiness.
+      Safeguarding platform stability so developers can ship with confidence.
     icon:
       name: icon-shield
       color: "#FFF"
@@ -34,17 +46,9 @@ items:
   - content: |
       ### Clearer system ownership
 
-      Make architecture, dependencies, and failure modes easier for the team to understand.
+      Make architecture, dependencies and failure modes easier for the team to understand.
     icon:
       name: icon-monitor
-      color: "#FFF"
-      fill: true
-  - content: |
-      ### Faster engineering delivery
-
-      Remove repetitive manual steps and reduce friction across development workflows.
-    icon:
-      name: icon-zap
       color: "#FFF"
       fill: true
 ---
