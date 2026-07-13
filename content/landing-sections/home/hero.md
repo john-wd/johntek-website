@@ -10,13 +10,13 @@ primary_url: /contact/
 secondary: View Experience
 secondary_url: /resume
 image: /images/lp/hero.svg
-overlay: true
+overlay: false
 opacity: 1
 ---
 
-Senior backend and cloud consulting for teams that need scalable architecture, production reliability, and faster delivery without unnecessary complexity.
+Independent platform capability for scaling engineering teams. Trimming open-to-shipped loops from hours to minutes while safeguarding backend stability.
 
-- Cloud modernization
+- Developer experience
 - Backend architecture
 - Observability
 

@@ -11,6 +11,7 @@ secondary: See my experience
 secondary_url: /resume/
 ---
 
-## Let's make your systems scale reliably
+## Let’s accelerate your engineering velocity
 
-Book a 30-minute call to discuss architecture, reliability, infrastructure, or delivery bottlenecks.
+Book a brief 15 minute introductory call to pinpoint current platform constraints, eliminate delivery 
+friction and prepare your backend architecture to scale confidently.

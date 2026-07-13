@@ -8,4 +8,4 @@ sectionClasses:
 
 Good architecture must be explainable, reliable and future proof.
 
-A system that cannot be explained clearly will not scale technically or organizationally.
+Resilient backend architecture is the ultimate engine for **developer velocity**.
