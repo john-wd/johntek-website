@@ -1,0 +1,30 @@
+{{- $service := .service -}}
+{{- $special := .special | default false -}}
+<article class="c-service-card{{ if $special }} c-service-card--special{{ end }}">
+    {{ if $special }}
+    <div class="c-service-badge">Ongoing partnership</div>
+    {{ end }}
+
+    <h2>{{ $service.Title }}</h2>
+
+    <div class="c-service-price">
+        {{ if $special }}
+        $ {{ $service.Params.PricePerHour }} <span class="c-service-price__unit">per hour</span>
+        {{ else }}
+        $ {{ $service.Params.Price }}
+        {{ end }}
+    </div>
+
+    <p>{{ $service.Params.BestFor }}</p>
+
+    <h3>Deliverables</h3>
+    <ul class="u-checks">
+        {{ range $service.Params.Deliverables }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    <a href="{{ $service.Permalink }}" class="c-service-explore">
+        Explore Service
+    </a>
+</article>

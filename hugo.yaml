@@ -41,12 +41,15 @@ menus:
     - name: "About"
       pageRef: "/about/"
       weight: 15
+    - name: "Services"
+      pageRef: "/services/"
+      weight: 20
     - name: "Resume"
       pageRef: "/resume/"
-      weight: 20
+      weight: 30
     - name: "Blog"
       pageRef: "/blog/"
-      weight: 30
+      weight: 40
     - name: "Contact"
       pageRef: "/contact/"
       weight: 40
