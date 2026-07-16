@@ -8,6 +8,60 @@
     gap: var(--space-6);
 }
 
+.l-service-groups {
+    display: grid;
+    gap: var(--space-8);
+}
+
+.c-service-group {
+    --service-group-color: var(--color-accent);
+
+    padding: var(--space-6);
+    background-color: color-mix(in srgb, var(--service-group-color) 9%, transparent);
+    border: 1px solid color-mix(in srgb, var(--service-group-color) 28%, transparent);
+    border-radius: var(--radius-2xl);
+}
+
+.c-service-group .l-service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 30rem));
+    justify-content: center;
+}
+
+.c-service-group--accelerate-delivery {
+    --service-group-color: var(--color-accent);
+}
+
+.c-service-group--improve-operational-confidence {
+    --service-group-color: var(--color-success);
+}
+
+.c-service-group--evolve-technical-foundations {
+    --service-group-color: var(--color-purple);
+}
+
+.c-service-group--extend-engineering-capacity {
+    --service-group-color: var(--color-cyan);
+}
+
+.c-service-group--extend-engineering-capacity .l-service-grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 64.001rem) {
+    .c-service-group--accelerate-delivery .l-service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.c-service-group__title {
+    margin-bottom: var(--space-5);
+    color: var(--service-group-color);
+    font-size: var(--text-lg);
+    font-variant-caps: all-small-caps;
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: 0.08em;
+}
+
 .c-service-list__content {
     margin-top: var(--space-8);
     margin-bottom: var(--space-8);
@@ -312,6 +366,10 @@
     .c-service-card--raised,
     .c-service-card--special:hover {
         transform: none;
+    }
+
+    .c-service-group {
+        padding: var(--space-4);
     }
 
     .c-service-page__layout {

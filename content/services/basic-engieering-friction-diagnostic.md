@@ -3,6 +3,7 @@ date: 2026-07-16T09:00:00
 draft: false
 featured: true
 weight: 0
+group: Accelerate delivery
 price: 3500
 duration: One week
 highlight: Basic package

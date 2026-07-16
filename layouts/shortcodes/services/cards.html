@@ -3,11 +3,23 @@
 {{- $special := index (where $services ".Params.special" true) 0 -}}
 
 <div class="c-service-list__content" id="catalog">
-    <div class="l-service-grid">
-        {{ range $filtered }}
-        {{ partial "services/card.html" (dict "service" . "special" false) }}
+    <div class="l-service-groups">
+        {{ range $filtered.GroupByParam "group" }}
+        <section class="c-service-group c-service-group--{{ .Key | anchorize }}" aria-labelledby="service-group-{{ .Key | anchorize }}">
+            <h2 class="c-service-group__title" id="service-group-{{ .Key | anchorize }}">{{ .Key }}</h2>
+            <div class="l-service-grid">
+                {{ range .Pages }}
+                {{ partial "services/card.html" (dict "service" . "special" false) }}
+                {{ end }}
+            </div>
+        </section>
         {{ end }}
 
-        {{ partial "services/card.html" (dict "service" $special "special" true) }}
+        <section class="c-service-group c-service-group--{{ $special.Params.group | anchorize }}" aria-labelledby="service-group-{{ $special.Params.group | anchorize }}">
+            <h2 class="c-service-group__title" id="service-group-{{ $special.Params.group | anchorize }}">{{ $special.Params.group }}</h2>
+            <div class="l-service-grid">
+                {{ partial "services/card.html" (dict "service" $special "special" true) }}
+            </div>
+        </section>
     </div>
 </div>

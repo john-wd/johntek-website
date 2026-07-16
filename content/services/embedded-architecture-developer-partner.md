@@ -4,6 +4,7 @@ draft: false
 special: true
 pricePerHour: 160
 weight: 60
+group: Extend engineering capacity
 title: Embedded Architecture and Developer Experience Partner
 description: >
   Add senior architecture and developer experience expertise directly to the engineering team.

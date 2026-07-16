@@ -3,6 +3,7 @@ date: 2026-07-16T09:00:00
 draft: false
 featured: true
 weight: 10
+group: Accelerate delivery
 price: 9500
 title: CI/CD and Release Assessment
 # highlight: Most popular

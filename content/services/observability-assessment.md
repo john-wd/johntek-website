@@ -2,6 +2,7 @@
 date: 2026-07-16T09:00:00
 draft: false
 weight: 50
+group: Improve operational confidence
 price: 10500
 title: Observability and Operational Insight Assessment
 description: >

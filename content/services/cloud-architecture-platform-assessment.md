@@ -2,6 +2,7 @@
 date: 2026-07-16T09:00:00
 draft: false
 weight: 40
+group: Evolve technical foundations
 price: 12000
 title: Cloud Architecture and Platform Assessment
 description: >

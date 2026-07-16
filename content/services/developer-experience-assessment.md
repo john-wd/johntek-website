@@ -3,6 +3,7 @@ date: 2026-07-16T09:00:00
 draft: false
 featured: true
 weight: 20
+group: Accelerate delivery
 price: 15000
 title: Developer Experience Assessment
 highlight: Comprehensive

@@ -3,6 +3,7 @@ date: 2026-07-16T09:00:00
 draft: false
 featured: true
 weight: 30
+group: Evolve technical foundations
 price: 14000
 title: Architecture Evolution Assessment    
 description: >
