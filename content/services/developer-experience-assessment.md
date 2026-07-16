@@ -32,7 +32,7 @@ deliverables:
 
 ## Remove friction from everyday engineering work
 
-Developer experience is shaped by the entire path from onboarding and local setup to testing, review, deployment, and production support. Small delays across that path compound into slower delivery, more interruptions, and reduced confidence as the team grows.
+Developer experience is shaped by the entire path from onboarding and local setup to testing, review, deployment and production support. Small delays across that path compound into slower delivery, more interruptions and reduced confidence as the team grows.
 
 ## Audience
 
@@ -52,10 +52,10 @@ The focus remains on the systems around developers—not on measuring individual
 
 ## How the engagement works
 
-The assessment combines stakeholder interviews, workflow observation, technical review, and available delivery evidence. Findings are grouped by impact and effort so leaders can distinguish immediate fixes from platform or architecture investments.
+The assessment combines stakeholder interviews, workflow observation, technical review and available delivery evidence. Findings are grouped by impact and effort so leaders can distinguish immediate fixes from platform or architecture investments.
 
 Recommendations are grounded in the team's actual constraints. The result is a shared view of where engineering time is going and a credible sequence for improving it.
 
 ## Investment
 
-The fixed price for this assessment is **${{% param "price" %}}**. The participating teams, workflows, and technical systems are confirmed during scoping.
+The fixed price for this assessment is **${{% param "price" %}}**. The participating teams, workflows and technical systems are confirmed during scoping.

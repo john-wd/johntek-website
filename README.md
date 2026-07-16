@@ -2,13 +2,13 @@
 
 This is the source for the Johntek Consulting website. It is a Hugo site with custom layouts, content sections, blog posts, resume data, static images and a Go command for site management and hugo wrapper.
 
-Most of the day to day work happens in `content`, `layouts`, `assets`, `data`, and `static`. The generated site lands in `public` after a build, as it is expected from Hugo.
+Most of the day to day work happens in `content`, `layouts`, `assets`, `data` and `static`. The generated site lands in `public` after a build, as it is expected from Hugo.
 
 ## What is in here
 
-1. `content` has the pages, blog posts, and landing page sections.
+1. `content` has the pages, blog posts and landing page sections.
 2. `layouts` has the Hugo templates that turn the content into pages.
-3. `assets` has CSS, scripts, icons, and source images that Hugo can process. CSS is autodetected and merged during build time.
+3. `assets` has CSS, scripts, icons and source images that Hugo can process. CSS is autodetected and merged during build time.
 4. `static` has files copied directly into the published site.
 5. `data` has structured content such as the resume and testimonials.
 6. `cmd` has the Go command entry point for the local site tooling.
@@ -83,4 +83,4 @@ The GitHub workflow in `.github/workflows/deploy.yaml` builds with:
 hugo --minify
 ```
 
-Then it syncs `public` to Hostinger over SSH. Deploys run on pushes to `main`, on a schedule, and by manual dispatch.
+Then it syncs `public` to Hostinger over SSH. Deploys run on pushes to `main`, on a schedule and by manual dispatch.

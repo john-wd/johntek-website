@@ -121,7 +121,7 @@ For build artifacts, this can be docker layers, dependent binaries or compiled o
 Not every workflow needs to run on every PR, maybe not even on every commit. Going even further, the
 entire suite does not need to run for some types of changes.
 
-Let's say you want to just change documentation on your repository, or edit some skill. Why run
+Let's say you want to just change documentation on your repository or edit some skill. Why run
 unit tests, build and everything else?
 
 {{<figure

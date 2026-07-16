@@ -11,24 +11,32 @@ items:
   - icon:
       name: icon-layers
       fill: true
+    link:
+      text: "**Explore services ➜**"
+      url: /services
     content: |
       ### Project-Based Engagement
 
-      Best for defined problems such as migrations, architecture reviews, performance improvements, or delivery of a specific technical initiative.
+      Best for defined problems such as migrations, architecture reviews, performance improvements or delivery of a specific technical initiative.
     steps:
-      - name: Assessment
-        description: Find constraints.
-      - name: Design
-        description: Define a path.
+      - name: Discover
+        description: Understand the business context, technical environment and primary constraints.
+      - name: Assess
+        description: Review systems, repositories, infrastructure, workflows and relevant engineering data.
+      - name: Recommend
+        description: Deliver findings, diagrams, priorities, trade-offs and an incremental roadmap.
       - name: Implement
-        description: Build cleanly.
-      - name: Validate
-        description: Verify results.
+        description: >
+          **[Optional]** 
+          Execute the roadmap alongside the client’s engineering team.
   - icon:
       name: icon-branch
       color: "#FFF"
     classes:
       - c-engagement__bg-highlight
+    link:
+      text: "**Explore ➜**"
+      url: /services/embedded-architecture-developer-partner
     content: |
       ### Embedded Engineering
 
@@ -36,6 +44,6 @@ items:
 
       - Work directly with your engineering team
       - Contribute to backend and infrastructure delivery
-      - Improve reliability, tooling, and architecture over time
+      - Improve reliability, tooling and architecture over time
       - Flexible support based on team needs
 ---

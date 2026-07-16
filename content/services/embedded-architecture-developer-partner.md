@@ -52,10 +52,10 @@ Depending on the selected priorities, outcomes can include:
 
 ## How the engagement works
 
-I work within the team's existing planning, communication, and delivery practices while bringing principal-level attention to architecture and developer effectiveness. Work is made visible through agreed priorities, regular progress updates, documented decisions, and clear escalation of risks.
+I work within the team's existing planning, communication and delivery practices while bringing principal-level attention to architecture and developer effectiveness. Work is made visible through agreed priorities, regular progress updates, documented decisions and clear escalation of risks.
 
 The engagement can combine strategic guidance with implementation. That means recommendations can be tested against the real system and transferred to the team as maintainable working changes.
 
 ## Investment
 
-This embedded engagement is billed at **${{% param "pricePerHour" %}} per hour**. Expected availability, priorities, communication cadence, and an initial review point are agreed before work begins.
+This embedded engagement is billed at **${{% param "pricePerHour" %}} per hour**. Expected availability, priorities, communication cadence and an initial review point are agreed before work begins.

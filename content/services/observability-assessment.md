@@ -30,7 +30,7 @@ deliverables:
 
 ## Turn telemetry into operational understanding
 
-Collecting logs and metrics is not the same as knowing whether customers are receiving a reliable service. This assessment connects telemetry, incident workflows, and user journeys so teams can detect meaningful problems earlier and diagnose them faster.
+Collecting logs and metrics is not the same as knowing whether customers are receiving a reliable service. This assessment connects telemetry, incident workflows and user journeys so teams can detect meaningful problems earlier and diagnose them faster.
 
 ## Audience
 
@@ -50,10 +50,10 @@ The focus is on useful signals and decisions, not simply increasing telemetry vo
 
 ## How the engagement works
 
-We begin with critical services, user journeys, and recent operational pain. Existing telemetry and incident evidence are then reviewed to determine what the team can detect, explain, and measure today.
+We begin with critical services, user journeys and recent operational pain. Existing telemetry and incident evidence are then reviewed to determine what the team can detect, explain and measure today.
 
-The resulting plan prioritizes signals tied to customer and business impact, removes noisy or low-value practices, and establishes a realistic path toward stronger operational insight.
+The resulting plan prioritizes signals tied to customer and business impact, removes noisy or low-value practices and establishes a realistic path toward stronger operational insight.
 
 ## Investment
 
-The fixed price for this assessment is **${{% param "price" %}}**. The services, environments, and observability tooling included in the review are agreed before kickoff.
+The fixed price for this assessment is **${{% param "price" %}}**. The services, environments and observability tooling included in the review are agreed before kickoff.

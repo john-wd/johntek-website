@@ -4,8 +4,8 @@ basics:
   description: |
     Senior Backend and Platform Engineer with 7 years of experience designing with a Msc degree on Theoretical Physics, 
     operating,  and evolving cloud-native systems in production. Specialized in backend architecture, 
-    platform extensibility, and reliability for SaaS products. Proven track record of leading 
-    critical initiatives under tight deadlines, reducing operational risk, and improving developer 
+    platform extensibility and reliability for SaaS products. Proven track record of leading 
+    critical initiatives under tight deadlines, reducing operational risk and improving developer 
     experience in distributed systems.
 
     My academic background in Theoretical Physics has provided me with a strong foundation in analytical thinking,
@@ -23,7 +23,7 @@ basics:
 
 summary:
   - "Backend engineer focused on reliability and cloud modernization."
-  - "Strong record of improving latency, cost, and delivery speed."
+  - "Strong record of improving latency, cost and delivery speed."
   - "Msc degree on Theoretical Physics."
 
 skills:
@@ -47,13 +47,13 @@ experience:
     role: Senior Backend Engineer
     start: 2024-12
     end: 2026-05
-    summary: Senior backend engineer working on a high-throughput SaaS platform, responsible for system reliability, observability, and architectural clarity under aggressive delivery timelines.
+    summary: Senior backend engineer working on a high-throughput SaaS platform, responsible for system reliability, observability and architectural clarity under aggressive delivery timelines.
     technologies: ["Python", "AWS", "Postgres", "Prometheus", "Terraform"]
     highlights:
       - Led end-to-end instrumentation of backend services, improving traceability and reducing customer support troubleshooting time by more than 3x.
       - Introduced backward-compatible standard API error contracts across legacy clients.
       - Established architectural documentation and decision records (ADR), improving accountability and long-term maintainability.
-      - Refactored core codebase and database layers with a focus on safety, clarity, and robust error handling.
+      - Refactored core codebase and database layers with a focus on safety, clarity and robust error handling.
       - Reduced deployment time from over one hour to approximately 15 minutes by integrating elastic cloud resources and infrastructure-as-code.
       - Acted as technical interface with customer support, producing clear and actionable operational documentation.
       - Built a modular, auditable, reliable and reusable rewards/payment system, serving thousands of users of our clients, with approval processes in place.
@@ -66,10 +66,10 @@ experience:
     role: Senior Backend Engineer
     start: 2021-05
     end: 2024-12
-    summary: Senior engineer on the core Platform team, responsible for backend libraries, cloud infrastructure, and system extensibility serving large-scale healthcare products.
+    summary: Senior engineer on the core Platform team, responsible for backend libraries, cloud infrastructure and system extensibility serving large-scale healthcare products.
     technologies: ["Go", "MongoDB", "Kubernetes", "GCP", "Prometheus", "Serverless"]
     highlights:
-      - Recognized multiple times for code quality, architectural proposals, and cross-team collaboration.
+      - Recognized multiple times for code quality, architectural proposals and cross-team collaboration.
       - Led the design and delivery of an extensible user-deletion platform feature involving multiple stakeholders.
       - Planned and executed zero-downtime API gateway deployment on existing production infrastructure.
       - Drove platform extensibility initiatives enabling the system to scale to 10x current user volume with customer-specific customization.
@@ -96,7 +96,7 @@ experience:
     role: Fullstack and Machine Learning Engineer
     start: 2019-05
     end: 2020-05
-    summary: Full-stack engineer within the data science team, responsible for building a SaaS platform to deploy, manage, and consume machine learning models.
+    summary: Full-stack engineer within the data science team, responsible for building a SaaS platform to deploy, manage and consume machine learning models.
     technologies: ["Python", "Scikit Learn", "Angular", "Django", "PostgreSQL", "Docker"]
     highlights:
       - Delivered the first production-ready version of the platform (backend and frontend) in under six months.
@@ -107,7 +107,7 @@ experience:
 certifications:
    - name: Google Cloud Professional Cloud Architect
      description: >
-       Designed, developed, and managed secure, scalable, and highly available solutions on Google Cloud Platform, supporting production workloads and business-critical systems.
+       Designed, developed and managed secure, scalable and highly available solutions on Google Cloud Platform, supporting production workloads and business-critical systems.
      link: https://www.credly.com/badges/e688a1c1-3432-4e77-972a-1351b9c20cd8/linked_in_profile
      period:
         start: 2024

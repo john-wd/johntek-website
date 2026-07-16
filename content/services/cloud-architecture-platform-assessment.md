@@ -32,7 +32,7 @@ deliverables:
 
 ## Prepare the cloud platform for the next stage of growth
 
-Cloud environments often accumulate complexity as products, teams, and operational requirements expand. This assessment determines whether the current platform can scale reliably and securely without creating unnecessary cost or slowing developers down.
+Cloud environments often accumulate complexity as products, teams and operational requirements expand. This assessment determines whether the current platform can scale reliably and securely without creating unnecessary cost or slowing developers down.
 
 ## Audience
 
@@ -44,7 +44,7 @@ The review covers the architecture and operating model of the cloud platform:
 
 {{< range_param key="scope" >}}
 
-The assessment considers reliability, security, operability, and cost together rather than optimizing any one dimension in isolation.
+The assessment considers reliability, security, operability and cost together rather than optimizing any one dimension in isolation.
 
 ## What you will receive
 
@@ -52,10 +52,10 @@ The assessment considers reliability, security, operability, and cost together r
 
 ## How the engagement works
 
-We establish the expected growth, reliability, and compliance needs before reviewing representative infrastructure, configurations, deployment paths, and operational evidence. Current strengths are documented alongside gaps so useful platform investments are preserved.
+We establish the expected growth, reliability and compliance needs before reviewing representative infrastructure, configurations, deployment paths and operational evidence. Current strengths are documented alongside gaps so useful platform investments are preserved.
 
 The recommendations distinguish urgent risk reduction from longer-term platform evolution and provide an ordered path toward the target architecture.
 
 ## Investment
 
-The fixed price for this assessment is **${{% param "price" %}}**. Cloud environments, applications, and access requirements are confirmed before kickoff.
+The fixed price for this assessment is **${{% param "price" %}}**. Cloud environments, applications and access requirements are confirmed before kickoff.

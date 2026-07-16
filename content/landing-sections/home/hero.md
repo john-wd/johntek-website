@@ -7,8 +7,8 @@ sectionClasses:
   - c-hero
 primary: Book a call
 primary_url: /contact/
-secondary: View Experience
-secondary_url: /resume
+secondary: Explore my services
+secondary_url: /services/
 image: /images/lp/hero.svg
 overlay: false
 opacity: 1

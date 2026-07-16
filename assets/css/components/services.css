@@ -204,7 +204,7 @@
     font-weight: var(--weight-bold, 600);
 
     &::after {
-        content: "→";
+        content: "➜";
         font-size: var(--text-xl);
     }
 }

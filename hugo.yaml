@@ -5,7 +5,7 @@ enableRobotsTXT: true
 
 params:
   tagline: Driving Evolution
-  description: Remote backend and cloud engineering for teams that value clarity, reliability, and long-term maintainability.
+  description: Remote backend and cloud engineering for teams that value clarity, reliability and long-term maintainability.
   reading_speed: 212
   fonts:
     - name: "Montserrat"
@@ -15,7 +15,7 @@ params:
     name: John Wojcikiewicz
     role: Founder
     picture: /images/me.jpg
-    description: "Backend & cloud engineering consultancy focused on scalable systems, modernization, and reliability"
+    description: "Backend & cloud engineering consultancy focused on scalable systems, modernization and reliability"
   social:
     - name: "Email"
       url: "mailto:john@johntekconsulting.com"

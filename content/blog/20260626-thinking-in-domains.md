@@ -37,7 +37,7 @@ In this article, I use "domain" in a practical implementation sense: a cohesive 
 ownership and boundaries. In stricter DDD terminology, some of these units might be described as subdomains or bounded
 contexts.
 
-Domains are responsible for the logic that operates on the entities they own, and each exposes a well-defined API that
+Domains are responsible for the logic that operates on the entities they own and each exposes a well-defined API that
 applications or other domains can use to interact with it.
 
 I say "other domains" because domains may depend on each other to define higher-level functionality. In an
@@ -132,7 +132,7 @@ architecture, but the principle is the same: **domains abstract away details, so
 
 When drawing a dependency diagram between domains, think about which capabilities are more stable and isolated and which
 ones coordinate or build on top of them. Ask how the domains interact with each other. Does it make sense for `Product`
-to depend on `Cart`? Does `Payment` depend on an `Order`, or should it receive a payment request through an explicit
+to depend on `Cart`? Does `Payment` depend on an `Order` or should it receive a payment request through an explicit
 contract?
 
 After a few rounds of modeling, you should have a clearer understanding of the system's dependencies and the boundaries
@@ -165,15 +165,15 @@ In addition to these, borrow Evans' advice and **Model Out Loud**:
 > "One of the best ways to refine a model is to explore with speech, trying out loud various constructs from possible
 > model variations. Rough edges are easy to hear.
 >
-> - “If we give the Routing Service an origin, destination, and arrival time, it can look up the stops the cargo will
+> - “If we give the Routing Service an origin, destination and arrival time, it can look up the stops the cargo will
 >   have to make and, well . . . stick them in the database.” **(vague and technical)**
-> - “The origin, destination, and so on . . . it all feeds into the Routing Service, and we get back an Itinerary that
+> - “The origin, destination and so on . . . it all feeds into the Routing Service and we get back an Itinerary that
 >   has everything we need in it.” **(more complete, but verbose)**
 > - “A Routing Service finds an Itinerary that satisfies a Route Specification.” **(concise)**
 >
 > Domain-Driven Design, 2003, page 19
 
-He argues that language is powerful, and phrasing a model in different ways helps you identify domain boundaries,
+He argues that language is powerful and phrasing a model in different ways helps you identify domain boundaries,
 dependencies and responsibilities faster.
 
 ## Conclusion
