@@ -1,8 +1,4 @@
 {{ define "main" }}
-{{$services := .RegularPages.ByParam "weight"}}
-{{$filtered := where $services ".Params.special" nil}}
-{{$special := index (where $services ".Params.special" true) 0}}
-
 <main>
     {{ with .Params.hero }}
     <header class="c-service-hero">
@@ -34,20 +30,9 @@
     </header>
     {{- end -}}
 
-    <div class="l-container">
-
+    <div class="l-container c-service-list__body">
         <div class="c-service__content">
             {{ .Content }}
-        </div>
-        
-        <div id="catalog" class="c-service-list__content" id="service-options">
-            <div class="l-service-grid">
-                {{ range $filtered }}
-                {{ partial "services/card.html" (dict "service" . "special" false) }}
-                {{ end }}
-    
-                {{ partial "services/card.html" (dict "service" $special "special" true) }}
-            </div>
         </div>
     </div>
 </main>

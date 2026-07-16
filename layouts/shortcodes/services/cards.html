@@ -1,0 +1,13 @@
+{{- $services := .Page.RegularPages.ByParam "weight" -}}
+{{- $filtered := where $services ".Params.special" nil -}}
+{{- $special := index (where $services ".Params.special" true) 0 -}}
+
+<div class="c-service-list__content" id="catalog">
+    <div class="l-service-grid">
+        {{ range $filtered }}
+        {{ partial "services/card.html" (dict "service" . "special" false) }}
+        {{ end }}
+
+        {{ partial "services/card.html" (dict "service" $special "special" true) }}
+    </div>
+</div>
