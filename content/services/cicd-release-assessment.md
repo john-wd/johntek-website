@@ -5,7 +5,8 @@ featured: true
 weight: 10
 price: 9500
 title: CI/CD and Release Assessment
-highlight: Most popular
+# highlight: Most popular
+raised: true
 description: >
   Identify the bottlenecks making builds, tests and releases slow or unreliable.
   Receive a practical roadmap for creating faster feedback loops and safer deployments.

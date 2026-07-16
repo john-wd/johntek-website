@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: var(--space-4);
+    gap: var(--space-6);
 }
 
 .c-service-list__content {
@@ -18,7 +18,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: calc(100% / 3 - var(--space-3));
+    overflow: hidden;
+    width: calc(100% / 3 - var(--space-5));
     padding: var(--space-7) var(--space-6);
     background-color: var(--color-bg-alt);
     border-radius: var(--radius-2xl);
@@ -28,6 +29,66 @@
     &:hover {
         z-index: 1;
         transform: scale(1.1) translateY(-20px);
+    }
+}
+
+.c-service-ribbon {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: var(--space-7);
+    right: calc(-1 * (var(--space-8) + var(--space-1)));
+    width: calc(var(--space-8) * 4);
+    padding: var(--space-2) var(--space-3);
+    color: #fff;
+    background-color: var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold, 700);
+    line-height: var(--leading-tight);
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.c-service-card--raised {
+    --service-border-angle: 0deg;
+
+    border-color: transparent;
+    background:
+        linear-gradient(var(--color-bg-alt), var(--color-bg-alt)) padding-box,
+        conic-gradient(
+            from var(--service-border-angle),
+            var(--color-accent),
+            #60a5fa,
+            #22d3ee,
+            var(--color-accent-2),
+            var(--color-accent)
+        ) border-box;
+    transform: scale(1.05) translateY(-10px);
+    animation: service-card-border 3s linear infinite;
+}
+
+@property --service-border-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes service-card-border {
+    to {
+        --service-border-angle: 360deg;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .c-service-card--raised {
+        animation: none;
     }
 }
 
@@ -76,6 +137,7 @@
     padding-top: var(--space-4);
     color: var(--color-accent);
     font-size: var(--text-lg);
+    font-weight: var(--weight-bold, 600);
 
     &::after {
         content: "→";

@@ -5,7 +5,7 @@ featured: true
 weight: 20
 price: 15000
 title: Developer Experience Assessment
-highlight: Comprehensive package
+highlight: Comprehensive
 description: >
   Discover where engineering friction is slowing delivery as the product and team grow.
   Improve the tools, workflows and processes developers depend on every day.

@@ -1,6 +1,10 @@
 {{- $service := .service -}}
 {{- $special := .special | default false -}}
-<article class="c-service-card{{ if $special }} c-service-card--special{{ end }}">
+<article class="c-service-card{{ if $special }} c-service-card--special{{ end }} {{ if $service.Params.Raised }} c-service-card--raised{{ end }}">
+    {{ with $service.Params.Highlight }}
+    <div class="c-service-ribbon">{{ . }}</div>
+    {{ end }}
+
     {{ if $special }}
     <div class="c-service-badge">Ongoing partnership</div>
     {{ end }}
