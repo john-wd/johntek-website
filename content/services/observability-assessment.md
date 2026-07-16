@@ -31,31 +31,21 @@ deliverables:
 
 Collecting logs and metrics is not the same as knowing whether customers are receiving a reliable service. This assessment connects telemetry, incident workflows, and user journeys so teams can detect meaningful problems earlier and diagnose them faster.
 
-It is designed for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## What we will examine
 
 The review follows operational signals from collection through action:
 
-- Application and infrastructure metrics
-- Logs, distributed traces, and instrumentation
-- Dashboards, alerts, and notification paths
-- Incident investigation and diagnosis workflows
-- Service-level indicators and objectives
-- Critical user journeys and application performance
-- Telemetry coverage, retention, tool usage, and cost
+{{< range_param key="scope" >}}
 
 The focus is on useful signals and decisions, not simply increasing telemetry volume.
 
 ## What you will receive
 
-- An observability inventory and coverage map
-- The most important visibility gaps
-- Operational impact and risk analysis
-- Recommended metrics, logs, traces, and instrumentation
-- A dashboard and alerting plan
-- Tooling and deployment recommendations
-- Estimated costs and a prioritized implementation roadmap
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 

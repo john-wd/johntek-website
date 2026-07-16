@@ -31,17 +31,15 @@ deliverables:
 
 When a specific engineering problem keeps consuming time without a clear explanation, a broad transformation program is often too much, too soon. This focused diagnostic examines one problem area, gathers the available evidence, and turns it into a practical course of action.
 
-The engagement is designed for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## What we will examine
 
 We will focus on one selected engineering problem and trace it through the systems and workflows that shape it. Depending on the issue, the work can include:
 
-- One primary repository, pipeline, system, or developer workflow
-- Up to two stakeholder interviews
-- Available performance data, operational signals, and technical evidence
-- Existing documentation and previous attempts to solve the problem
-- The dependencies and constraints that influence the current situation
+{{< range_param key="scope" >}}
 
 Keeping the scope deliberately narrow allows the investigation to go beyond surface-level symptoms within {{% param "duration" %}}.
 
@@ -49,12 +47,7 @@ Keeping the scope deliberately narrow allows the investigation to go beyond surf
 
 At the end of the diagnostic, you will receive:
 
-- A concise assessment of the current state
-- The evidence behind the principal sources of friction
-- The five highest-impact findings
-- Recommended immediate actions
-- A practical 30-day improvement plan
-- A leadership readout that connects the technical findings to delivery impact
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 

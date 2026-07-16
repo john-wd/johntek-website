@@ -31,19 +31,15 @@ deliverables:
 
 Some engineering priorities need more than an assessment but do not justify an immediate full-time principal-level hire. This engagement embeds architecture and developer experience expertise directly into the team to provide both technical direction and hands-on execution.
 
-It is intended for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## Where I can contribute
 
 The engagement can be shaped around the team's highest-impact priorities, including:
 
-- Architecture and platform initiatives
-- Developer tooling and CI/CD improvements
-- Complex or ambiguous engineering backlog
-- Observability implementation
-- Technical investigations and proposals
-- Architecture decisions and documentation
-- Engineer mentoring and knowledge transfer
+{{< range_param key="scope" >}}
 
 Priorities are reviewed regularly so the work remains aligned with changing product and engineering needs.
 
@@ -51,12 +47,7 @@ Priorities are reviewed regularly so the work remains aligned with changing prod
 
 Depending on the selected priorities, outcomes can include:
 
-- Implemented engineering improvements
-- Architecture and dependency diagrams
-- Technical proposals and decision records
-- Operational and developer documentation
-- Progress, risk, and recommendation summaries
-- Knowledge transfer and handoff material
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 

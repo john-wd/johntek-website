@@ -23,8 +23,8 @@
 
     <h3>Deliverables</h3>
     <ul class="u-checks">
-        {{ range $service.Params.Deliverables }}
-        <li>{{ . }}</li>
+        {{ range (first 4 $service.Params.Deliverables) }}
+            <li>{{ . }}</li>
         {{ end }}
     </ul>
 

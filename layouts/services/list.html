@@ -14,16 +14,40 @@
             {{ with .Params.description }}
             <p class="c-service-hero__description">{{ . }}</p>
             {{ end }}
+            {{ $primary := .Params.primaryAction }}
+            {{ $secondary := .Params.secondaryAction }}
+            {{ if or $primary $secondary }}
+            <div class="c-cta__actions c-service-hero__actions">
+                {{ with $primary }}
+                <a class="c-button c-button--primary c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}">
+                    {{ .text }}
+                </a>
+                {{ end }}
+                {{ with $secondary }}
+                <a class="c-button c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}">
+                    {{ .text }}
+                </a>
+                {{ end }}
+            </div>
+            {{ end }}
         </div>
     </header>
     {{- end -}}
-    <div class="l-container c-service-list__content">
-        <div class="l-service-grid">
-            {{ range $filtered }}
-            {{ partial "services/card.html" (dict "service" . "special" false) }}
-            {{ end }}
 
-            {{ partial "services/card.html" (dict "service" $special "special" true) }}
+    <div class="l-container">
+
+        <div class="c-service__content">
+            {{ .Content }}
+        </div>
+        
+        <div id="catalog" class="c-service-list__content" id="service-options">
+            <div class="l-service-grid">
+                {{ range $filtered }}
+                {{ partial "services/card.html" (dict "service" . "special" false) }}
+                {{ end }}
+    
+                {{ partial "services/card.html" (dict "service" $special "special" true) }}
+            </div>
         </div>
     </div>
 </main>

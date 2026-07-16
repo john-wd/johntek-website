@@ -32,29 +32,21 @@ deliverables:
 
 Slow pipelines and fragile releases rarely come from one isolated tool. They emerge from the interaction between build architecture, test strategy, environments, automation, and the manual decisions surrounding deployment. This assessment follows that complete path to show where time and confidence are being lost.
 
-It is designed for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## What we will examine
 
 The assessment reviews the path from a developer's change to a production release, including:
 
-- CI/CD pipelines and release workflows
-- Build and test performance, including flaky or unreliable tests
-- Deployment automation and manual approval steps
-- Environment, configuration, and secrets management
-- Developer wait time and feedback-loop quality
-- Pipeline reliability, resource usage, and avoidable cost
+{{< range_param key="scope" >}}
 
 The review connects technical bottlenecks to their effect on lead time, release frequency, and operational risk.
 
 ## What you will receive
 
-- A current-state workflow and pipeline analysis
-- The principal performance bottlenecks and reliability risks
-- Quick wins that can improve feedback speed immediately
-- A recommended release workflow
-- A prioritized implementation roadmap
-- Suggested performance and delivery metrics
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 

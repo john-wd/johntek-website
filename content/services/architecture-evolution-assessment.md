@@ -32,31 +32,21 @@ deliverables:
 
 As a successful product grows, design decisions that were once appropriate can begin to slow change. This assessment identifies which parts of the architecture remain sound, which constraints now create delivery risk, and how the system can evolve incrementally.
 
-It is designed for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## What we will examine
 
 The assessment reviews the structures that determine how safely and independently the system can change:
 
-- Repository, module, and component organization
-- Domain boundaries and ownership
-- Dependencies, coupling, and change propagation
-- Data ownership and integration patterns
-- Scalability and reliability constraints
-- Testing implications of the current design
-- Existing architecture documentation and decisions
+{{< range_param key="scope" >}}
 
 The aim is to separate genuine architectural constraints from problems better solved through tooling, tests, or clearer ownership.
 
 ## What you will receive
 
-- Current architecture and dependency diagrams
-- A clear account of architecture strengths and risks
-- The main sources of coupling and delivery friction
-- Modularization and boundary-improvement opportunities
-- A recommended architecture direction
-- Alternatives, trade-offs, and migration risks
-- An incremental modernization roadmap
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 

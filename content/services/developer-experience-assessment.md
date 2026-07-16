@@ -33,31 +33,21 @@ deliverables:
 
 Developer experience is shaped by the entire path from onboarding and local setup to testing, review, deployment, and production support. Small delays across that path compound into slower delivery, more interruptions, and reduced confidence as the team grows.
 
-This assessment is intended for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## What we will examine
 
 The review follows the workflows developers rely on to deliver and operate software:
 
-- Local development, environment setup, and onboarding
-- CI/CD and testing feedback loops
-- Git, pull request, and code review workflows
-- Internal tooling, automation, and self-service capabilities
-- Documentation and knowledge-sharing practices
-- Work management and engineering-system integrations
-- Architecture friction that makes routine changes difficult
-- Existing approaches to measuring developer productivity
+{{< range_param key="scope" >}}
 
 The focus remains on the systems around developers—not on measuring individual output.
 
 ## What you will receive
 
-- A developer workflow and friction map
-- Prioritized sources of delay and cognitive load
-- Tooling and process recommendations
-- High-level architecture findings
-- A practical developer experience metrics framework
-- Quick wins and a longer-term improvement roadmap
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 

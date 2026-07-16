@@ -33,33 +33,21 @@ deliverables:
 
 Cloud environments often accumulate complexity as products, teams, and operational requirements expand. This assessment determines whether the current platform can scale reliably and securely without creating unnecessary cost or slowing developers down.
 
-It is intended for {{% param "bestFor" %}}
+## Audience
+
+{{% param "bestFor" %}}
 
 ## What we will examine
 
 The review covers the architecture and operating model of the cloud platform:
 
-- Account, subscription, and environment organization
-- Compute, storage, database, and messaging choices
-- Networking and service connectivity
-- Scalability, failure isolation, and recovery behavior
-- Infrastructure as code and change management
-- Identity, secrets, and configuration practices
-- Deployment architecture
-- Backup and disaster recovery readiness
-- Cloud costs and developer usability
+{{< range_param key="scope" >}}
 
 The assessment considers reliability, security, operability, and cost together rather than optimizing any one dimension in isolation.
 
 ## What you will receive
 
-- A current cloud architecture diagram
-- Reliability and scalability risks
-- An infrastructure-as-code assessment
-- Cost and operational complexity findings
-- A recommended target architecture
-- Architecture alternatives and their trade-offs
-- A prioritized cloud improvement roadmap
+{{< range_param key="deliverables" >}}
 
 ## How the engagement works
 
