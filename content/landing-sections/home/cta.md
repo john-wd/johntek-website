@@ -5,13 +5,13 @@ weight: 80
 sectionClasses:
   - c-cta__section
 backgroundColor: var(--color-main-bg)
-primary: Book a call
+primary: Book a 15-minute intro call
 primary_url: /contact/
-secondary: See my experience
-secondary_url: /resume/
+secondary: Explore services
+secondary_url: /services/
 ---
 
-## Let’s accelerate your engineering velocity
+## Ship faster with a more dependable platform
 
-Book a brief 15 minute introductory call to pinpoint current platform constraints, eliminate delivery 
+Book a brief 15-minute introductory call to identify current platform constraints, reduce delivery
 friction and prepare your backend architecture to scale confidently.

@@ -20,10 +20,17 @@ params:
         url: "#catalog"
 ---
 
-Your engineering organization may have outgrown its original systems if releases
+If your engineering organization may have outgrown its original systems if releases
 are becoming slower, architectural changes are increasingly risky, production issues
 are difficult to diagnose or developers spend too much time working around internal
-friction.
+friction, then certainly Johntek can help you.
+
+Johntek is a seasoned engineering partner with great experience in a variety of difficult
+technical challenges, ranging from compliance, to operational excellence. My experience
+can translate into specialized services to attend your concerns.
+
+Check the services catalog below to find the **right solution** for your particular
+engineering challenges.
 
 {{< services/cards >}}
 

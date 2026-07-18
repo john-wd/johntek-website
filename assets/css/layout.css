@@ -145,3 +145,10 @@
       align-items: flex-start;
   }
 }
+
+@media (max-width: 40rem) {
+  .l-grid--2,
+  .l-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}

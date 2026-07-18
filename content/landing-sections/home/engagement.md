@@ -40,7 +40,7 @@ items:
     content: |
       ### Embedded Engineering
 
-      Best for teams that need senior hands-on support inside an existing product roadmap or engineering workflow.
+      Best for teams that need experienced hands-on support inside an existing product roadmap or engineering workflow.
 
       - Work directly with your engineering team
       - Contribute to backend and infrastructure delivery

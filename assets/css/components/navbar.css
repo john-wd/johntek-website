@@ -166,7 +166,7 @@
 }
 
 .has-hero .c-nav__link {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.85);
   transition: color 0.3s, background 0.3s;
 }
 

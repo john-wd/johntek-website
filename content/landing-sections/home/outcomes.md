@@ -2,7 +2,7 @@
 title: Technical work tied to operational impact
 type: grid
 landingPage: home
-weight: 30
+weight: 15
 nav:
   id: outcomes
   label: Business Outcomes

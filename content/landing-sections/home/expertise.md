@@ -5,9 +5,9 @@ landingPage: home
 weight: 20
 nav:
   id: expertise
-  label: expertise
+  label: Expertise
 description: >
-  Senior engineering support for developer experience, backend, cloud, infrastructure and reliability work.
+  Principal-level support across developer experience, backend, cloud, infrastructure and reliability.
 classes:
   - l-grid--2
   - u-checks
