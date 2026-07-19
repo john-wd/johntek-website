@@ -4,6 +4,7 @@ draft: false
 weight: 50
 group: Improve operational confidence
 price: 10500
+discountPrice: 7500
 title: Observability and Operational Insight Assessment
 description: >
   Give engineering leaders a clear view of system health, production failures and real user experience.

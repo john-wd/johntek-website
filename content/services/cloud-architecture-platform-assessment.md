@@ -4,6 +4,7 @@ draft: false
 weight: 40
 group: Evolve technical foundations
 price: 12000
+discountPrice: 8500
 title: Cloud Architecture and Platform Assessment
 description: >
   Evaluate whether the cloud platform can support the company's next stage of growth reliably, securely and without

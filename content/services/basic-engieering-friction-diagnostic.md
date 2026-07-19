@@ -5,6 +5,7 @@ featured: true
 weight: 0
 group: Accelerate delivery
 price: 3500
+discountPrice: 2500
 duration: One week
 highlight: Basic package
 title: Engineering Friction Diagnostic

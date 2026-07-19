@@ -5,6 +5,7 @@ featured: true
 weight: 20
 group: Accelerate delivery
 price: 15000
+discountPrice: 10500
 title: Developer Experience Assessment
 highlight: Comprehensive
 description: >

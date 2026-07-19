@@ -5,6 +5,7 @@ featured: true
 weight: 30
 group: Evolve technical foundations
 price: 14000
+discountPrice: 10000
 title: Architecture Evolution Assessment    
 description: >
   Make an existing codebase easier to change, test and scale without defaulting to a costly rewrite.

@@ -22,12 +22,32 @@
             <p class="c-service-summary__duration">{{ . }}</p>
             {{ end }}
             {{ with .Params.price }}
-            <p class="c-service-summary__price">$ {{ . }}</p>
+            <p class="c-service-summary__price">
+                <span class="c-service-price__starting-at">Starting at</span>
+                {{ with $.Params.discountPrice }}
+                <span>$ {{ . }}<sup class="c-service-price__asterisk">*</sup></span>
+                <span class="c-service-summary__original">$ {{ $.Params.price }}</span>
+                {{ else }}
+                $ {{ . }}
+                {{ end }}
+            </p>
             <p class="c-service-summary__note">Fixed-price engagement</p>
             {{ end }}
             {{ with .Params.pricePerHour }}
-            <p class="c-service-summary__price">$ {{ . }} <span class="c-service-summary__unit">per hour</span></p>
+            <p class="c-service-summary__price">
+                <span class="c-service-price__starting-at">Starting at</span>
+                {{ with $.Params.discountPrice }}
+                <span>$ {{ . }}<sup class="c-service-price__asterisk">*</sup></span>
+                <span class="c-service-summary__original">$ {{ $.Params.pricePerHour }}</span>
+                {{ else }}
+                $ {{ . }}
+                {{ end }}
+                <span class="c-service-summary__unit">per hour</span>
+            </p>
             <p class="c-service-summary__note">Flexible embedded engagement</p>
+            {{ end }}
+            {{ with .Params.discountPrice }}
+            <p class="c-service-summary__discount-note">* Founding Client Program price. <a href="{{ "/client-founding-program/" | relURL }}">Learn about the program</a>.</p>
             {{ end }}
             <a class="c-button c-button--primary c-service-summary__cta" href="{{ "/contact/" | relURL }}">
                 Discuss this service

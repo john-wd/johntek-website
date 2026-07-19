@@ -12,10 +12,17 @@
     <h2>{{ $service.Title }}</h2>
 
     <div class="c-service-price">
-        {{ if $special }}
-        $ {{ $service.Params.PricePerHour }} <span class="c-service-price__unit">per hour</span>
+        <span class="c-service-price__starting-at">Starting at</span>
+        {{ with $service.Params.DiscountPrice }}
+        <span class="c-service-price__discounted">$ {{ . }}<sup class="c-service-price__asterisk">*</sup></span>
+        <span class="c-service-price__original">$ {{ if $special }}{{ $service.Params.PricePerHour }}{{ else }}{{ $service.Params.Price }}{{ end }}</span>
+        {{ if $special }}<span class="c-service-price__unit">per hour</span>{{ end }}
         {{ else }}
-        $ {{ $service.Params.Price }}
+            {{ if $special }}
+            $ {{ $service.Params.PricePerHour }} <span class="c-service-price__unit">per hour</span>
+            {{ else }}
+            $ {{ $service.Params.Price }}
+            {{ end }}
         {{ end }}
     </div>
 

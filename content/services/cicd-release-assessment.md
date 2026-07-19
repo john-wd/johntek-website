@@ -5,6 +5,7 @@ featured: true
 weight: 10
 group: Accelerate delivery
 price: 9500
+discountPrice: 7000
 title: CI/CD and Release Assessment
 # highlight: Most popular
 raised: true

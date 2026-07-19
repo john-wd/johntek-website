@@ -3,6 +3,7 @@ date: 2026-07-16T09:00:00
 draft: false
 special: true
 pricePerHour: 160
+discountPrice: 110
 weight: 60
 group: Extend engineering capacity
 title: Embedded Architecture and Developer Experience Partner
