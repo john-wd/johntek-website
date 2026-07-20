@@ -47,9 +47,20 @@
             <p class="c-service-summary__note">Flexible embedded engagement</p>
             {{ end }}
             {{ with .Params.discountPrice }}
-            <p class="c-service-summary__discount-note">* Founding Client Program price. <a href="{{ "/client-founding-program/" | relURL }}">Learn about the program</a>.</p>
+            <p class="c-service-summary__discount-note">* Founding Client Program price. 
+                <a href="{{ "/client-founding-program/" | relURL }}"
+                    data-analytics-event="navigation_click"
+                    data-analytics-location="service_summary"
+                    data-analytics-service-name="{{ $.Title }}">
+                    Learn about the program
+                </a>.
+            </p>
             {{ end }}
-            <a class="c-button c-button--primary c-service-summary__cta" href="{{ "/contact/" | relURL }}">
+            <a class="c-button c-button--primary c-service-summary__cta" href="{{ "/contact/" | relURL }}"
+                data-analytics-event="cta_click"
+                data-analytics-name="Discuss this service"
+                data-analytics-location="service_summary"
+                data-analytics-service-name="{{ .Title }}">
                 Discuss this service
             </a>
         </aside>

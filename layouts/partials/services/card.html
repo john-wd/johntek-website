@@ -35,7 +35,12 @@
         {{ end }}
     </ul>
 
-    <a href="{{ $service.Permalink }}" class="c-service-explore">
+    <a href="{{ $service.Permalink }}" class="c-service-explore"
+        data-analytics-event="cta_click"
+        data-analytics-name="Explore Service"
+        data-analytics-location="service_card"
+        data-analytics-service-name="{{ $service.Title }}"
+        data-analytics-service-group="{{ $service.Params.Group }}">
         Explore Service
     </a>
 </article>

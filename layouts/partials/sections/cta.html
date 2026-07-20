@@ -4,9 +4,19 @@
         {{ .Content }}
     </div>
     <div class="c-cta__actions">
-        <a class="c-button c-button--primary c-button--lg" href="{{ .Params.primary_url | default "#contact" }}">{{ .Params.primary }}</a>
+        <a class="c-button c-button--primary c-button--lg" href="{{ .Params.primary_url | default "#contact" }}"
+          data-analytics-event="cta_click"
+          data-analytics-name="{{ .Params.primary }}"
+          data-analytics-location="cta_section"
+          data-analytics-section-id="{{ .Params.nav.id | default .File.ContentBaseName }}"
+          data-analytics-landing-page="{{ .Params.landingPage }}">{{ .Params.primary }}</a>
         {{ with .Params.secondary }}
-        <a class="c-button c-button--lg" href="{{ $.Params.secondary_url | default "#experience" }}">{{ . }}</a>
+        <a class="c-button c-button--lg" href="{{ $.Params.secondary_url | default "#experience" }}"
+          data-analytics-event="cta_click"
+          data-analytics-name="{{ . }}"
+          data-analytics-location="cta_section"
+          data-analytics-section-id="{{ $.Params.nav.id | default $.File.ContentBaseName }}"
+          data-analytics-landing-page="{{ $.Params.landingPage }}">{{ . }}</a>
         {{ end }}
     </div>
   </div>

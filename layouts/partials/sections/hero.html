@@ -17,11 +17,21 @@
       {{ if or .Params.primary .Params.secondary }}
       <div class="c-hero__actions">
         {{ with .Params.primary }}
-        <a class="c-button c-button--hero c-button--lg" href="{{ $.Params.primary_url | default "#contact" }}">{{ . }}</a>
+        <a class="c-button c-button--hero c-button--lg" href="{{ $.Params.primary_url | default "#contact" }}"
+          data-analytics-event="cta_click"
+          data-analytics-name="{{ . }}"
+          data-analytics-location="hero"
+          data-analytics-section-id="{{ $.Params.nav.id | default $.File.ContentBaseName }}"
+          data-analytics-landing-page="{{ $.Params.landingPage }}">{{ . }}</a>
         {{ end }}
 
         {{ with .Params.secondary }}
-        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.Params.secondary_url | default "/resume" }}">{{ . }}</a>
+        <a class="c-button c-button--hero-outline c-button--lg" href="{{ $.Params.secondary_url | default "/resume" }}"
+          data-analytics-event="cta_click"
+          data-analytics-name="{{ . }}"
+          data-analytics-location="hero"
+          data-analytics-section-id="{{ $.Params.nav.id | default $.File.ContentBaseName }}"
+          data-analytics-landing-page="{{ $.Params.landingPage }}">{{ . }}</a>
         {{ end }}
       </div>
       {{ end }}

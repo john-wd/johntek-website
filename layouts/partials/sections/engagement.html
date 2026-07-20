@@ -27,7 +27,12 @@
             </div>
 
             {{ with .link }}
-                <a href="{{ .url }}" class="c-engagement__item--link">{{ .text | markdownify }}</a>
+                <a href="{{ .url }}" class="c-engagement__item--link"
+                  data-analytics-event="cta_click"
+                  data-analytics-name="{{ .text | markdownify | plainify }}"
+                  data-analytics-location="engagement_card"
+                  data-analytics-section-id="{{ $.Params.nav.id | default $.File.ContentBaseName }}"
+                  data-analytics-landing-page="{{ $.Params.landingPage }}">{{ .text | markdownify }}</a>
             {{ end }}
         </div>
         {{ end }}

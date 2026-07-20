@@ -40,6 +40,14 @@
     ahrefs_analytics_script.setAttribute('data-key', 'lwTw1jz9N2eRI1zLX0IoQQ');
     document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
     </script>
+    
+    <script>
+        window.isProduction = true;
+    </script>
+{{ else }}
+    <script>
+        window.isProduction = false;
+    </script>
 {{ end }}
 
 <!-- Custom script for simple UX -->

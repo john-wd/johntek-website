@@ -15,12 +15,18 @@
             {{ if or $primary $secondary }}
             <div class="c-cta__actions c-service-hero__actions">
                 {{ with $primary }}
-                <a class="c-button c-button--primary c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}">
+                <a class="c-button c-button--primary c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"
+                    data-analytics-event="cta_click"
+                    data-analytics-name="{{ .text }}"
+                    data-analytics-location="services_hero">
                     {{ .text }}
                 </a>
                 {{ end }}
                 {{ with $secondary }}
-                <a class="c-button c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}">
+                <a class="c-button c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"
+                    data-analytics-event="cta_click"
+                    data-analytics-name="{{ .text }}"
+                    data-analytics-location="services_hero">
                     {{ .text }}
                 </a>
                 {{ end }}
