@@ -3,7 +3,7 @@ date: 2026-07-19T09:00:00
 draft: false
 title: Client Founding Program
 label: Incentive program
-validThrough: 2026-12-31
+validThrough: December 1st, 2026
 discount: "30%"
 description: >
   Receive a 30% discount on your first qualifying Johntek assessment through the Client Founding Program.
@@ -35,6 +35,8 @@ The program does not provide a reduced or experimental version of the service. T
 
 The program is only available to selected companies whose challenges, technical environment and timing align with Johntek's expertise.
 
+This founding-client rate provides your team with senior, high-leverage support at a preferential rate, allowing me to validate and polish my engagement frameworks for early partners as I scale
+
 A suitable founding client should:
 
 - Have a clear engineering, architecture, cloud, delivery or observability challenge
@@ -52,8 +54,8 @@ The founding-client discount is calculated against Johntek's standard fee for th
 
 For example:
 
-> Standard assessment fee: $10,000  
-> Founding-client discount: $3,000  
+> CI/CD assessment fee: $9,500
+> Founding-client discount: $2,500
 > Final professional fee: $7,000
 
 The exact standard fee, discount and final engagement price will be shown separately in the proposal.
@@ -68,11 +70,11 @@ Founding clients are asked to help Johntek improve and demonstrate its services 
 - Considering an honest testimonial after successful delivery
 - Considering permission for an anonymized case study
 
-A positive testimonial is never required. Client names, logos, quotations and confidential information will only be published with separate written approval.
+A positive testimonial is never required. Client names, logos, quotations and confidential information will only be published with separate written consent.
 
 ## Program validity
 
-The Client Founding Program is available for qualifying agreements signed through **December 31, 2026**.
+The Client Founding Program is available for qualifying agreements signed through **{{% param "validThrough"%}}**.
 
 Availability is limited and the program may close before that date once the available founding-client engagements have been filled.
 
@@ -95,4 +97,9 @@ A proposal must be accepted and the required initial payment received before the
 
 If your engineering organization is experiencing growing delivery friction, architecture constraints, cloud complexity or limited production visibility, we can determine whether the program is a good fit during a short introductory conversation.
 
-[Discuss your engineering challenges](/contact/)
+{{<link 
+  text="Discuss your engineering challenges" href="/contact/" 
+  event="cta_click"
+  name="Terms and Conditions CTA"
+  location="client_founding_program"
+/>}}
