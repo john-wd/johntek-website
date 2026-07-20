@@ -1,14 +1,14 @@
 ---
 date: 2026-07-16T09:00:00
-draft: false
 special: true
 pricePerHour: 160
 discountPrice: 110
+duration: Ongoing
 weight: 60
 group: Extend engineering capacity
 title: Embedded Architecture and Developer Experience Partner
 description: >
-  Add senior architecture and developer experience expertise directly to the engineering team.
+  Add principal-level architecture and developer experience expertise directly to the engineering team.
   Execute high-impact priorities while improving the systems and practices around them.
 bestFor: >
   Teams needing experienced technical leadership and execution capacity without immediately hiring a full-time principal engineer.
@@ -29,9 +29,14 @@ deliverables:
   - Knowledge transfer and handoff material
 ---
 
-## Add senior technical leverage where the team needs it most
+## Add principal technical leverage where the team needs it most
 
-Some engineering priorities need more than an assessment but do not justify an immediate full-time principal-level hire. This engagement embeds architecture and developer experience expertise directly into the team to provide both technical direction and hands-on execution.
+Some engineering priorities need more than an assessment but do not justify an immediate full-time principal-level hire.
+This engagement embeds architecture and developer experience expertise directly into the team to provide both technical
+direction and hands-on execution on current roadmaps or pre-planned initiatives.
+
+We embed immediately into your team's existing structure without the hiring lag you would face while looking for a
+principal-level engineer.
 
 ## Audience
 
@@ -53,10 +58,17 @@ Depending on the selected priorities, outcomes can include:
 
 ## How the engagement works
 
-I work within the team's existing planning, communication and delivery practices while bringing principal-level attention to architecture and developer effectiveness. Work is made visible through agreed priorities, regular progress updates, documented decisions and clear escalation of risks.
+I work within the team's existing planning, communication and delivery practices while bringing principal-level
+attention to architecture and developer effectiveness. Work is made visible through agreed priorities, regular progress
+updates, documented decisions and clear escalation of risks.
 
-The engagement can combine strategic guidance with implementation. That means recommendations can be tested against the real system and transferred to the team as maintainable working changes.
+I embed directly into your team's infrastructure, sharing communication channels and working closely with your engineers
+to ensure the work is integrated into your existing practices.
+
+The engagement can combine strategic guidance with implementation of complex poorly defined problems. That means
+recommendations can be tested against the real system and transferred to the team as maintainable working changes.
 
 ## Investment
 
-This embedded engagement is billed at **${{% param "pricePerHour" %}} per hour**. Expected availability, priorities, communication cadence and an initial review point are agreed before work begins.
+This embedded engagement is billed at **${{% param "pricePerHour" %}} per hour**. Expected availability, priorities,
+communication cadence and an initial review point are agreed before work begins.

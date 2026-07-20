@@ -1,14 +1,14 @@
 ---
 date: 2026-07-16T09:00:00
-draft: false
 weight: 40
 group: Evolve technical foundations
 price: 12000
 discountPrice: 8500
+duration: Two weeks
 title: Cloud Architecture and Platform Assessment
 description: >
-  Evaluate whether the cloud platform can support the company's next stage of growth reliably, securely and without
-  unnecessary cost or operational complexity.
+  Evaluate whether the cloud platform can support the company's evolution, securely and without unnecessary cost or 
+  operational complexity. Optimize cloud resources for scalability and reliability.
 bestFor: >
   Growing companies whose original cloud setup is becoming expensive, difficult to operate or risky to scale.
 scope:
@@ -33,7 +33,12 @@ deliverables:
 
 ## Prepare the cloud platform for the next stage of growth
 
-Cloud environments often accumulate complexity as products, teams and operational requirements expand. This assessment determines whether the current platform can scale reliably and securely without creating unnecessary cost or slowing developers down.
+Cloud environments often accumulate complexity as products, teams and operational requirements expand. You may be
+deploying your system in non-ideal solutions because of how you are used to deploy, your systems may be running in
+over-provisioned or under-utilized resources and you may be paying more for services you don't use, for example.
+
+This assessment determines whether the current platform can scale reliably and securely without creating unnecessary
+cost or slowing developers down, while proposing optimization opportunities for your requirements.
 
 ## Audience
 
@@ -45,7 +50,8 @@ The review covers the architecture and operating model of the cloud platform:
 
 {{< range_param key="scope" >}}
 
-The assessment considers reliability, security, operability and cost together rather than optimizing any one dimension in isolation.
+The assessment considers reliability, security, operability and cost together rather than optimizing any one dimension
+in isolation.
 
 ## What you will receive
 
@@ -53,10 +59,17 @@ The assessment considers reliability, security, operability and cost together ra
 
 ## How the engagement works
 
-We establish the expected growth, reliability and compliance needs before reviewing representative infrastructure, configurations, deployment paths and operational evidence. Current strengths are documented alongside gaps so useful platform investments are preserved.
+We establish the expected growth, reliability and compliance needs before reviewing representative infrastructure,
+configurations, deployment paths and operational evidence. Then the infrastructure is analyzed to identify strengths and
+gaps and documented, so future investments can be made informed.
 
-The recommendations distinguish urgent risk reduction from longer-term platform evolution and provide an ordered path toward the target architecture.
+Optimization opportunities are identified and documented on a prioritized list for costs and operational efficiency and
+a roadmap is proposed for implementation.
+
+The recommendations distinguish urgent risk reduction from longer-term platform evolution and provide an ordered path
+toward the target architecture.
 
 ## Investment
 
-The fixed price for this assessment is **${{% param "price" %}}**. Cloud environments, applications and access requirements are confirmed before kickoff.
+The fixed price for this assessment starts at **${{% param "price" %}}**. Cloud environments, applications and access
+requirements are confirmed before kickoff.

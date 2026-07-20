@@ -1,18 +1,19 @@
 ---
 date: 2026-07-16T09:00:00
-draft: false
 featured: true
 weight: 20
 group: Accelerate delivery
 price: 15000
 discountPrice: 10500
+duration: One month
 title: Developer Experience Assessment
 highlight: Comprehensive
 description: >
-  Discover where engineering friction is slowing delivery as the product and team grow.
-  Improve the tools, workflows and processes developers depend on every day.
+  Discover where engineering friction is slowing engineering productivity across tools, workflows and processes.
+  Improve each to enhance your developers' velocity.
 bestFor: >
-  Engineering leaders seeing slower delivery, difficult onboarding, inconsistent workflows or increasing developer frustration.
+  Engineering leaders seeing slower delivery, difficult onboarding, inconsistent workflows or increasing developer 
+  frustration.
 scope:
   - Local development and onboarding
   - CI/CD and testing feedback loops
@@ -33,7 +34,15 @@ deliverables:
 
 ## Remove friction from everyday engineering work
 
-Developer experience is shaped by the entire path from onboarding and local setup to testing, review, deployment and production support. Small delays across that path compound into slower delivery, more interruptions and reduced confidence as the team grows.
+Developer experience encompasses the entire path ranging from onboarding and local setup up to the usual developer
+cycle: implementing, designing, testing, reviewing, deploying and giving production support. Delays in each one of these
+stages compounds into slower developer velocity and increased engineering frustration, which can lead to churn.
+
+This often signals the wrong issue: instead of addressing the root cause, business usually responds by hiring more
+staff.
+
+With proper optimized developer workflows and tooling, your engineers can do more, faster and with more confidence as
+your solutions evolve.
 
 ## Audience
 
@@ -41,11 +50,12 @@ Developer experience is shaped by the entire path from onboarding and local setu
 
 ## What we will examine
 
-The review follows the workflows developers rely on to deliver and operate software:
+The review follows the tools, processes, workflows and architecture that developers rely on to deliver and operate
+software:
 
 {{< range_param key="scope" >}}
 
-The focus remains on the systems around developers—not on measuring individual output.
+The focus remains on the systems around developers and not on measuring individual output.
 
 ## What you will receive
 
@@ -53,10 +63,17 @@ The focus remains on the systems around developers—not on measuring individual
 
 ## How the engagement works
 
-The assessment combines stakeholder interviews, workflow observation, technical review and available delivery evidence. Findings are grouped by impact and effort so leaders can distinguish immediate fixes from platform or architecture investments.
+The assessment combines stakeholder interviews, engineering surveys and interview,s workflow observation, technical
+review, broad architecture analysis and available delivery evidence. Findings are grouped by impact and effort so
+leaders can distinguish immediate fixes from platform or architecture investments.
 
-Recommendations are grounded in the team's actual constraints. The result is a shared view of where engineering time is going and a credible sequence for improving it.
+All findings are analyzed through the lens of specialized research. When appropriate, given your team's context, we may
+recommend framework strategies to expose metrics for monitoring ongoing developer experience.
+
+Recommendations are grounded in the team's actual constraints. The result is a shared view of where engineering time is
+going and a credible sequence for improving it.
 
 ## Investment
 
-The fixed price for this assessment is **${{% param "price" %}}**. The participating teams, workflows and technical systems are confirmed during scoping.
+The fixed price starts at **${{% param "price" %}}**. Depending on your complexity, the price may increase. The
+ggparticipating teams, workflows and technical systems are confirmed during scoping.

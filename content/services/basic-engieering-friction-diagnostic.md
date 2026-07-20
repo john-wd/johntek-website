@@ -1,6 +1,5 @@
 ---
 date: 2026-07-16T09:00:00
-draft: false
 featured: true
 weight: 0
 group: Accelerate delivery
@@ -31,7 +30,9 @@ deliverables:
 
 ## Find the source of persistent engineering friction
 
-When a specific engineering problem keeps consuming time without a clear explanation, a broad transformation program is often too much, too soon. This focused diagnostic examines one problem area, gathers the available evidence and turns it into a practical course of action.
+When a specific engineering problem keeps consuming time without a clear explanation, a broad transformation program is
+often too much, too soon. This focused diagnostic examines one problem area, gathers the available evidence and turns it
+into a practical course of action.
 
 ## Audience
 
@@ -39,11 +40,13 @@ When a specific engineering problem keeps consuming time without a clear explana
 
 ## What we will examine
 
-We will focus on one selected engineering problem and trace it through the systems and workflows that shape it. Depending on the issue, the work can include:
+We will focus on one selected engineering problem and trace it through the systems and workflows that shape it.
+Depending on the issue, the work can include:
 
 {{< range_param key="scope" >}}
 
-Keeping the scope deliberately narrow allows the investigation to go beyond surface-level symptoms within {{% param "duration" %}}.
+Keeping the scope deliberately narrow allows the investigation to go beyond surface-level symptoms within **{{% param
+"duration" %}}**.
 
 ## What you will receive
 
@@ -53,10 +56,14 @@ At the end of the diagnostic, you will receive:
 
 ## How the engagement works
 
-The week begins by agreeing on the problem statement and the evidence needed to investigate it. The middle of the engagement is used for interviews, technical review and analysis. The final stage turns those findings into prioritized recommendations and a clear readout for technical and business stakeholders.
+The week begins by agreeing on the problem statement and the evidence needed to investigate it. The middle of the
+engagement is used for interviews, technical review and analysis. The final stage turns those findings into prioritized
+recommendations and a clear readout for technical and business stakeholders.
 
-The goal is not simply to describe the problem. It is to give your team enough clarity to decide what to fix now, what to investigate next and whether a larger initiative is justified.
+Our goal is to give your team enough clarity to decide what to fix now, what to investigate next and whether a larger
+initiative is justified.
 
 ## Investment
 
-The fixed price for this diagnostic is **${{% param "price" %}}**. The scope is agreed before the engagement begins so that the investigation remains focused and the outcome is predictable.
+The fixed price for this diagnostic starts at **${{% param "price" %}}**. The scope is agreed before the engagement
+begins so that the investigation remains focused and the outcome is predictable.
