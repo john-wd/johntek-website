@@ -1,8 +1,8 @@
 ---
 date: 2026-07-16T09:00:00
 special: true
-pricePerHour: 160
-discountPrice: 110
+pricePerHour: 140
+discountPrice: 98
 duration: Ongoing
 weight: 60
 group: Extend engineering capacity
