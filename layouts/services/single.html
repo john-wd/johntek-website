@@ -36,8 +36,8 @@
             {{ with .Params.pricePerHour }}
             <p class="c-service-summary__price">
                 <span class="c-service-price__starting-at">Starting at</span>
-                {{ with $.Params.discountPrice }}
-                <span>$ {{ . }}<sup class="c-service-price__asterisk">*</sup></span>
+                {{ if and $.Site.Params.enableDiscount $.Params.DiscountPrice }}
+                <span>$ {{ $.Params.DiscountPrice }}<sup class="c-service-price__asterisk">*</sup></span>
                 <span class="c-service-summary__original">$ {{ $.Params.pricePerHour }}</span>
                 {{ else }}
                 $ {{ . }}
