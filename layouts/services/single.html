@@ -24,11 +24,11 @@
             {{ with .Params.price }}
             <p class="c-service-summary__price">
                 <span class="c-service-price__starting-at">Starting at</span>
-                {{ with $.Params.discountPrice }}
-                <span>$ {{ . }}<sup class="c-service-price__asterisk">*</sup></span>
+                {{ if and $.Site.Params.enableDiscount $.Params.DiscountPrice }}
+                <span>$ {{ $.Params.DiscountPrice }}<sup class="c-service-price__asterisk">*</sup></span>
                 <span class="c-service-summary__original">$ {{ $.Params.price }}</span>
                 {{ else }}
-                $ {{ . }}
+                $ {{ $.Params.price }}
                 {{ end }}
             </p>
             <p class="c-service-summary__note">Fixed-price engagement</p>
@@ -46,6 +46,7 @@
             </p>
             <p class="c-service-summary__note">Flexible embedded engagement</p>
             {{ end }}
+            {{ if site.Params.enableDiscount }}
             {{ with .Params.discountPrice }}
             <p class="c-service-summary__discount-note">* Founding Client Program price. 
                 <a href="{{ "/client-founding-program/" | relURL }}"
@@ -55,6 +56,7 @@
                     Learn about the program
                 </a>.
             </p>
+            {{ end }}
             {{ end }}
             <a class="c-button c-button--primary c-service-summary__cta" href="{{ "/contact/" | relURL }}"
                 data-analytics-event="cta_click"

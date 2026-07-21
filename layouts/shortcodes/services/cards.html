@@ -12,7 +12,7 @@
                 {{ partial "services/card.html" (dict "service" . "special" false) }}
                 {{ end }}
             </div>
-            {{ if where .Pages ".Params.discountPrice" "!=" nil }}
+            {{ if and site.Params.enableDiscount (where .Pages ".Params.discountPrice" "!=" nil) }}
             <p class="c-service-group__discount-note">* Founding Client Program price. 
                 <a href="{{ "/client-founding-program/" | relURL }}"
                     data-analytics-event="navigation_click"
@@ -30,6 +30,7 @@
             <div class="l-service-grid">
                 {{ partial "services/card.html" (dict "service" $special "special" true) }}
             </div>
+            {{ if site.Params.enableDiscount }}
             {{ with $special.Params.discountPrice }}
             <p class="c-service-group__discount-note">* Founding Client Program price. 
                 <a href="{{ "/client-founding-program/" | relURL }}"
@@ -39,6 +40,7 @@
                     Learn about the program
                 </a>.
             </p>
+            {{ end }}
             {{ end }}
         </section>
     </div>

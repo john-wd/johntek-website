@@ -4,6 +4,7 @@ title: Johntek Consulting LLC
 enableRobotsTXT: true
 
 params:
+  enableDiscount: false
   tagline: Driving Evolution
   description: Remote backend and cloud engineering for teams that value clarity, reliability and long-term maintainability.
   reading_speed: 212
