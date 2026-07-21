@@ -115,7 +115,7 @@ in a way, without diligent review, these patterns tend to repeat to new use case
 with each iteration.
 
 These anti-patterns are not healthy and may cause on-call engineers to wake more often at 3 am to troubleshoot hidden
-issues that are blowing up production, or may hinder the ability of the product to evolve easier over time. This cost
+issues that are blowing up production or may hinder the ability of the product to evolve easier over time. This cost
 is a debt on developer experience that will be paid later on.
 
 ### Context becomes harder to preserve
@@ -184,4 +184,4 @@ I believe the strongest use for AI in developer workflows involves these steps:
 In essence, don't delegate your trust to AI yet.
 
 If AI-generated code is already entering your production codebase, Johntek can help you review the workflow, 
-identify risk areas, and define guardrails before technical debt compounds. [Get in touch](/contact).
+identify risk areas and define guardrails before technical debt compounds. [Get in touch](/contact).

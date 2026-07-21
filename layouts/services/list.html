@@ -1,0 +1,45 @@
+{{ define "main" }}
+<main>
+    {{ with .Params.hero }}
+    <header class="c-service-hero">
+        <div class="l-container c-service-hero__inner">
+            {{ with .Params.label }}
+            <p class="c-service-hero__eyebrow">{{ . }}</p>
+            {{ end }}
+            <h1>{{ .Title }}</h1>
+            {{ with .Params.description }}
+            <p class="c-service-hero__description">{{ . }}</p>
+            {{ end }}
+            {{ $primary := .Params.primaryAction }}
+            {{ $secondary := .Params.secondaryAction }}
+            {{ if or $primary $secondary }}
+            <div class="c-cta__actions c-service-hero__actions">
+                {{ with $primary }}
+                <a class="c-button c-button--primary c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"
+                    data-analytics-event="cta_click"
+                    data-analytics-name="{{ .text }}"
+                    data-analytics-location="services_hero">
+                    {{ .text }}
+                </a>
+                {{ end }}
+                {{ with $secondary }}
+                <a class="c-button c-button--lg" href="{{ if strings.HasPrefix .url "#" }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"
+                    data-analytics-event="cta_click"
+                    data-analytics-name="{{ .text }}"
+                    data-analytics-location="services_hero">
+                    {{ .text }}
+                </a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </header>
+    {{- end -}}
+
+    <div class="l-container c-service-list__body">
+        <div class="c-service__content">
+            {{ .Content }}
+        </div>
+    </div>
+</main>
+{{ end }}

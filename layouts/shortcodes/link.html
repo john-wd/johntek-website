@@ -1,0 +1,16 @@
+{{- $href := .Get "href" -}}
+{{- if not $href -}}
+  {{- errorf "The link shortcode requires an href: %s" .Position -}}
+{{- end -}}
+{{- $text := .Inner | default (.Get "text") -}}
+<a href="{{ $href | safeURL }}"
+  {{- with .Get "event" }} data-analytics-event="{{ . }}"{{ end -}}
+  {{- with .Get "name" }} data-analytics-name="{{ . }}"{{ end -}}
+  {{- with .Get "location" }} data-analytics-location="{{ . }}"{{ end -}}
+  {{- with .Get "section_id" }} data-analytics-section-id="{{ . }}"{{ end -}}
+  {{- with .Get "landing_page" }} data-analytics-landing-page="{{ . }}"{{ end -}}
+  {{- with .Get "parent_menu" }} data-analytics-parent-menu="{{ . }}"{{ end -}}
+  {{- with .Get "link_type" }} data-analytics-link-type="{{ . }}"{{ end -}}
+  {{- with .Get "service_name" }} data-analytics-service-name="{{ . }}"{{ end -}}
+  {{- with .Get "service_group" }} data-analytics-service-group="{{ . }}"{{ end -}}
+>{{ $text | markdownify }}</a>

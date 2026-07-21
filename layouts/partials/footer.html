@@ -11,7 +11,10 @@
         <p class="c-footer__heading">Navigation</p>
         <ul class="c-footer__list">
           {{ range .Site.Menus.main }}
-          <li><a class="c-footer__link" href="{{ .URL }}">{{ .Name }}</a></li>
+          <li><a class="c-footer__link" href="{{ .URL }}"
+              data-analytics-event="navigation_click"
+              data-analytics-name="{{ .Name }}"
+              data-analytics-location="footer_primary">{{ .Name }}</a></li>
           {{ end }}
         </ul>
       </div>
@@ -21,7 +24,11 @@
         <p class="c-footer__heading">Connect</p>
         <ul class="c-footer__list">
           {{ range . }}
-          <li><a class="c-footer__link" href="{{ .url }}">{{ .name }}</a></li>
+          <li><a class="c-footer__link" href="{{ .url }}"
+              data-analytics-event="navigation_click"
+              data-analytics-name="{{ .name }}"
+              data-analytics-location="footer_social"
+              data-analytics-link-type="{{ if strings.HasPrefix .url "mailto:" }}email{{ else }}social{{ end }}">{{ .name }}</a></li>
           {{ end }}
         </ul>
       </div>

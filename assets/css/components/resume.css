@@ -2,14 +2,12 @@
   max-width: 64rem;
   margin: 0 auto;
   padding: var(--space-8) var(--space-2);
-}
-
-/* Stacked paper idea, got from https://codepen.io/mlms13/pen/ngbMxq */
-.c-resume {
   background: var(--color-bg-alt);
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   position: relative;
 }
+
+/* Stacked paper idea, got from https://codepen.io/mlms13/pen/ngbMxq */
 .c-resume:before, .c-resume:after {
   content: "";
   height: 98%;
@@ -221,10 +219,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .c-resume:before {
-      background: color-mix(in srgb, var(--color-bg-alt) 96%, white);
-    }
+    .c-resume:before,
     .c-resume:after {
       background: color-mix(in srgb, var(--color-bg-alt) 96%, white);
-    } 
+    }
 }

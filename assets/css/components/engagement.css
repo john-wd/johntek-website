@@ -8,6 +8,10 @@
   }
 }
 
+.c-engagement__item--link {
+    margin-top: var(--space-4);
+}
+
 .c-engagement-stepper {
   display: flex;
   flex-direction: row;
@@ -79,4 +83,51 @@
 
 .c-engagement__bg-highlight {
     background-color: var(--color-surface);
+}
+
+@media (max-width: 48rem) {
+  .c-engagement-stepper {
+    flex-direction: column;
+    align-self: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  .c-engagement-stepper__step {
+    width: 100%;
+    min-height: 4.5rem;
+    padding: 0 0 var(--space-6) calc(2.5rem + var(--space-4));
+    text-align: left;
+  }
+
+  .c-engagement-stepper__step--number {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .c-engagement-stepper__step:not(:last-child)::after {
+    top: 2.5rem;
+    bottom: 0;
+    left: 1.25rem;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .c-engagement-stepper__step--name {
+    margin-top: 0;
+    padding-top: var(--space-2);
+  }
+
+  .c-engagement-stepper__step--description {
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .c-engagement-stepper__step:last-child {
+    min-height: 0;
+    padding-bottom: 0;
+  }
 }

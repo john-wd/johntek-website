@@ -1,0 +1,175 @@
+services:
+  - name: Engineering Friction Diagnostic
+    featured: true
+    price: 3500
+    url: /services/engineering-friction-diagnostic/
+    description: >
+      Examine one high-friction engineering area in a focused one-week engagement.
+      Identify what is creating the problem and determine the most valuable next steps.
+    bestFor: >
+      Teams wanting independent technical insight before committing to a broader assessment or implementation initiative.
+    scope:
+      - One selected engineering problem area
+      - Up to two stakeholder interviews
+      - One primary system, repository, pipeline or workflow
+      - Available technical evidence and performance data
+      - Existing attempts to address the problem
+    deliverables:
+      - Concise current-state assessment
+      - Evidence behind the principal sources of friction
+      - Five highest-impact findings
+      - Recommended immediate actions
+      - 30-day improvement plan
+      - Leadership readout
+      
+  - name: CI/CD and Release Assessment
+    featured: true
+    price: 9500
+    url: /services/cicd-and-release-assessment/
+    description: >
+      Identify the bottlenecks making builds, tests and releases slow or unreliable.
+      Receive a practical roadmap for creating faster feedback loops and safer deployments.
+    bestFor: >
+      Engineering teams experiencing slow pipelines, unreliable releases, deployment anxiety or growing CI costs.
+    scope:
+      - CI/CD pipelines and release workflows
+      - Build and test performance
+      - Pipeline reliability and flaky tests
+      - Deployment automation
+      - Environment and configuration management
+      - Manual steps and developer wait time
+    deliverables:
+      - Current workflow and pipeline analysis
+      - Key bottlenecks and reliability risks
+      - Quick wins and improvement opportunities
+      - Recommended release workflow
+      - Prioritized implementation roadmap
+      - Suggested performance and delivery metrics
+
+  - name: Developer Experience Assessment
+    featured: true
+    price: 15000
+    url: /services/developer-experience-assessment/
+    description: >
+      Discover where engineering friction is slowing delivery as the product and team grow.
+      Improve the tools, workflows and processes developers depend on every day.
+    bestFor: >
+      Engineering leaders seeing slower delivery, difficult onboarding, inconsistent workflows or increasing developer frustration.
+    scope:
+      - Local development and onboarding
+      - CI/CD and testing feedback loops
+      - Git and pull request workflows
+      - Developer tooling and automation
+      - Documentation and knowledge sharing
+      - Work management and engineering integrations
+      - High-level architecture friction
+      - Developer productivity measurement
+    deliverables:
+      - Developer workflow and friction map
+      - Prioritized sources of delay and cognitive load
+      - Tooling and process recommendations
+      - High-level architecture findings
+      - Developer experience metrics framework
+      - Quick wins and long-term improvement roadmap
+
+  - name: Architecture Evolution Assessment
+    featured: true
+    price: 14000
+    url: /services/architecture-evolution-assessment/
+    description: >
+      Make an existing codebase easier to change, test and scale without defaulting to a costly rewrite.
+      Preserve sound decisions while addressing structures that create friction.
+    bestFor: >
+      Teams with a validated product that now struggle to add features, change existing behavior or scale development safely.
+    scope:
+      - Repository and module structure
+      - Component and domain boundaries
+      - Dependencies and coupling
+      - Data ownership and integration patterns
+      - Scalability and reliability constraints
+      - Testing implications
+      - Architecture documentation and decisions
+    deliverables:
+      - Current architecture and dependency diagrams
+      - Architecture strengths and risks
+      - Sources of coupling and delivery friction
+      - Modularization opportunities
+      - Recommended architecture direction
+      - Trade-offs and migration risks
+      - Incremental modernization roadmap
+
+  - name: Cloud Architecture and Platform Assessment
+    price: 12000
+    url: /services/cloud-architecture-and-platform-assessment/
+    description: >
+      Evaluate whether the cloud platform can support the company's next stage of growth reliably, securely and without
+      unnecessary cost or operational complexity.
+    bestFor: >
+      Growing companies whose original cloud setup is becoming expensive, difficult to operate or risky to scale.
+    scope:
+      - Cloud account and environment organization
+      - Compute, storage, database and messaging choices
+      - Networking and service connectivity
+      - Scalability and failure isolation
+      - Infrastructure as code
+      - Identity, secrets and configuration
+      - Deployment architecture
+      - Backup and disaster recovery
+      - Cloud costs and developer usability
+    deliverables:
+      - Current cloud architecture diagram
+      - Reliability and scalability risks
+      - Infrastructure as code assessment
+      - Cost and operational complexity findings
+      - Recommended target architecture
+      - Architecture alternatives and trade-offs
+      - Prioritized cloud improvement roadmap
+
+  - name: Observability and Operational Insight Assessment
+    price: 10500
+    url: /services/observability-assessment
+    description: >
+      Give engineering leaders a clear view of system health, production failures and real user experience.
+      Turn telemetry into actionable operational insight.
+    bestFor: >
+      Teams that discover problems through customers, struggle to diagnose incidents or cannot measure production performance.
+    scope:
+      - Application and infrastructure metrics
+      - Logs, traces and instrumentation
+      - Dashboards and alerts
+      - Incident investigation workflows
+      - Service-level indicators and objectives
+      - User journey and application performance
+      - Telemetry coverage, retention and cost
+    deliverables:
+      - Observability inventory and coverage map
+      - Critical visibility gaps
+      - Operational impact and risk analysis
+      - Recommended metrics, logs and traces
+      - Dashboard and alerting plan
+      - Tooling and deployment recommendations
+      - Estimated costs and implementation roadmap
+
+  - name: Embedded Architecture and Developer Experience Partner
+    pricePerHour: 160
+    url: /services/embedded-architecture-and-developer-experience-partner/
+    description: >
+      Add senior architecture and developer experience expertise directly to the engineering team.
+      Execute high-impact priorities while improving the systems and practices around them.
+    bestFor: >
+      Teams needing experienced technical leadership and execution capacity without immediately hiring a full-time principal engineer.
+    scope:
+      - Architecture and platform initiatives
+      - Developer tooling and CI/CD improvements
+      - Complex engineering backlog
+      - Observability implementation
+      - Technical investigations and proposals
+      - Architecture decisions and documentation
+      - Engineer mentoring and knowledge transfer
+    deliverables:
+      - Implemented engineering priorities
+      - Architecture and dependency diagrams
+      - Technical proposals and decision records
+      - Operational and developer documentation
+      - Progress, risk and recommendation summaries
+      - Knowledge transfer and handoff material

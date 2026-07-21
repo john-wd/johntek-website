@@ -2,11 +2,11 @@
 title: Technical work tied to operational impact
 type: grid
 landingPage: home
-weight: 30
+weight: 15
 nav:
   id: outcomes
   label: Business Outcomes
-description: The goal is more stable systems, lower operational drag, and better delivery capacity.
+description: The goal is more stable systems, lower operational drag and better delivery capacity.
 backgroundColor: var(--color-surface)
 classes:
   - l-grid--2

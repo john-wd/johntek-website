@@ -1,9 +1,10 @@
 ---
+title: Trusted by Engineering Leaders
 type: testimonials
 landingPage: home
-weight: 35
+weight: 10
 nav:
   id: testimonials
   label: Testimonials
-description: See what my clients think about my work
+description: First-hand accounts of the technical leadership, delivery and collaboration brought to client teams.
 ---

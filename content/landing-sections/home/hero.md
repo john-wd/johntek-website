@@ -1,23 +1,23 @@
 ---
-title: Driving Evolution in Systems That Scale Reliably
+title: Ship Backend Changes Faster Without Sacrificing Reliability
 type: hero
 landingPage: home
-weight: 10
+weight: 0
 sectionClasses:
   - c-hero
-primary: Book a call
+primary: Book a 15-minute intro call
 primary_url: /contact/
-secondary: View Experience
-secondary_url: /resume
+secondary: Explore services
+secondary_url: /services/
 image: /images/lp/hero.svg
 overlay: false
 opacity: 1
 ---
 
-Independent platform capability for scaling engineering teams. Trimming open-to-shipped loops from hours to minutes while safeguarding backend stability.
+Principal-level platform and backend engineering for scaling teams that need to shorten delivery cycles without putting production stability at risk.
 
 - Developer experience
 - Backend architecture
 - Observability
 
-All engagements are fully remote.
+Independent, hands-on support. Available for fully remote engagements.

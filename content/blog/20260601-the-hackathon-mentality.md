@@ -120,7 +120,7 @@ I'd recommend, in no particular order:
 - Prefer deleting unnecessary abstractions over accepting “flexible” code.
 - Review for system fit, not only for correctness.
 
-The last bullet is the most important one, and often I find myself writing code on my own instead of relying on agents,
+The last bullet is the most important one and often I find myself writing code on my own instead of relying on agents,
 because I find it faster to do this rather than waiting for the agent to generate the code, saving precious tokens.
 
 In the end, always ask yourself the following:
@@ -133,7 +133,7 @@ AI assisted development is not going away anytime soon. The teams that benefit m
 automation with strong architectural judgment.
 
 If your team is modernizing a legacy system or trying to keep a growing codebase maintainable, 
-Johntek can help define the boundaries, review the architecture, and keep implementation aligned with long-term evolution.
+Johntek can help define the boundaries, review the architecture and keep implementation aligned with long-term evolution.
 
 If this is something you'd like to do, call me on [one of my channels here](/contact).
 

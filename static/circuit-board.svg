@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1568 882" role="img" aria-labelledby="title desc">
   <title id="title">Glowing blue circuit board</title>
-  <desc id="desc">A dark blue circuit board with routed traces, processor blocks, vias, and cyan indicator lights.</desc>
+  <desc id="desc">A dark blue circuit board with routed traces, processor blocks, vias and cyan indicator lights.</desc>
   <defs>
     <radialGradient id="background" cx=".52" cy=".48" r=".82">
       <stop stop-color="#074eac"/>

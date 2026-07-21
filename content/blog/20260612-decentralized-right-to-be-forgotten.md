@@ -15,7 +15,7 @@ categories:
 ---
 Since the European General Data Protection Regulation (GDPR) began to take effect, many other countries 
 have adopted similar privacy laws. One of the policies included in these kinds of privacy laws is ["The 
-Right to be Forgotten"](https://gdpr-info.eu/art-17-gdpr/), or put simply, the right that users have to 
+Right to be Forgotten"](https://gdpr-info.eu/art-17-gdpr/) or put simply, the right that users have to 
 request the deletion of their data from that service databases.
 
 Even though there are slight variations between the legislations, the core principle remains the same: 
@@ -53,7 +53,7 @@ explicitly for clarity.
 
 - It is a complex SaaS business deployed in the cloud, with dozens of services.
 - Your system is decentralized, many services run independently and communicate with each other.
-- Service boundaries separate system domains logically (payments module, identity, cart, orders, etc).
+- Service boundaries separate system domains logically (payments module, identity, cart orders, etc).
 - Services own the business data they are responsible for.
 - User-related data may exist outside transactional services, including logs, analytics pipelines, 
   data warehouses and third-party processors, for example.
@@ -125,7 +125,7 @@ on the restored backup so you can replay the events.
 
 ### User account deletion service
 
-This is the core service that handles requests, stores metadata in the database, orchestrates lifecycle and manages
+This is the core service that handles requests, stores metadata in the database orchestrates lifecycle and manages
 the deletion metadata.
 
 In its database you want to store the request data (which user id is requesting, when the request was made, who made 
@@ -150,7 +150,7 @@ in a shared library that your services can use directly to remove boilerplate.
 
 You can do something like this:
 
-- Define some `Event` data struct that contains the `user_id`, `date_created`, and `status` fields.
+- Define some `Event` data struct that contains the `user_id`, `date_created` and `status` fields.
 - Define a `Forgetter` interface that accepts a custom function to handle the deletion process on a domain
 - Define a custom Subscriber wrapper that subscribes a function to a Subscription and automatically handles 
   retries and error handling.
@@ -195,7 +195,7 @@ func (d *DomainDeleter) Delete(ctx context.Context, userId string) error {
 ```
 
 Each domain will have its own design logic and dependencies, so this is just an example to illustrate 
-how you can use it.  The core component reports errors, pushes failed messages to the DLQ, and publishes 
+how you can use it.  The core component reports errors, pushes failed messages to the DLQ and publishes 
 status updates based on the returned error.
 
 ### Scheduler lifecycle control
@@ -267,13 +267,13 @@ beforehand.
 Monitoring and alerting is invaluable and, I would say, indispensable here, catching small issues 
 with API changes early on, never getting close to the legal deadline.
 
-If your user deletion process still depends on manual tickets, direct database scripts, or a central service 
+If your user deletion process still depends on manual tickets, direct database scripts or a central service 
 that knows too much about every domain, this is a sign that the architecture may not scale with your 
 compliance requirements.
 
 A robust deletion workflow should be auditable, domain-owned, idempotent, observable and safe to retry. 
 It should also make failures visible before they become legal or operational problems.
 
-If you are designing this kind of workflow, or if you are unsure whether your current architecture can 
+If you are designing this kind of workflow or if you are unsure whether your current architecture can 
 handle deletion requests reliably, [I can help you](/contact) assess the risks and design a practical 
 implementation for your system.

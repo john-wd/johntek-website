@@ -19,12 +19,21 @@
                 <div class="c-engagement-stepper__step">
                     <span class="c-engagement-stepper__step--number">{{ add $i 1 }}</span>
                     <span class="c-engagement-stepper__step--name">{{ $step.name }}</span>
-                    <span class="c-engagement-stepper__step--description">{{ $step.description }}</span>
+                    <span class="c-engagement-stepper__step--description">{{ $step.description | markdownify }}</span>
                 </div>
                 {{ end }}
             </div>
             {{ end }}
             </div>
+
+            {{ with .link }}
+                <a href="{{ .url }}" class="c-engagement__item--link"
+                  data-analytics-event="cta_click"
+                  data-analytics-name="{{ .text | markdownify | plainify }}"
+                  data-analytics-location="engagement_card"
+                  data-analytics-section-id="{{ $.Params.nav.id | default $.File.ContentBaseName }}"
+                  data-analytics-landing-page="{{ $.Params.landingPage }}">{{ .text | markdownify }}</a>
+            {{ end }}
         </div>
         {{ end }}
     </div>

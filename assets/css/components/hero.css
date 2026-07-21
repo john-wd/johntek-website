@@ -3,7 +3,7 @@
   overflow: hidden;
   background: var(--color-main-bg);
   color: #fff;
-  padding: calc(var(--space-8) + 12rem) 0 var(--space-8) !important;
+  padding: calc(var(--space-8) + var(--space-8)) 0 var(--space-8) !important;
   margin-bottom: var(--space-8);
 }
 
@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 36rem;
+  min-height: 30rem;
 }
 
 .c-hero__label {
@@ -88,7 +88,7 @@
 
 @media (min-width: 48rem) {
   .c-hero {
-    padding: calc(6rem + 5rem) 0 6rem;
+    padding: 9rem 0 5rem !important;
   }
 }
 
@@ -188,4 +188,14 @@
     .c-hero__content {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 40rem) {
+  .c-hero__actions {
+    flex-direction: column;
+  }
+
+  .c-hero__actions .c-button {
+    width: 100%;
+  }
 }

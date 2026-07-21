@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main class="c-service-page">
+    <header class="c-service-hero">
+        <div class="l-container c-service-hero__inner">
+            <a class="c-service-hero__back" href="{{ .Parent.RelPermalink }}">← All services</a>
+            <p class="c-service-hero__eyebrow">{{ .Params.label }}</p>
+            <h1>{{ .Title }}</h1>
+            {{ with .Params.description }}
+            <p class="c-service-hero__description">{{ . }}</p>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="l-container c-service-page__layout">
+        <article class="c-service-content c-prose">
+            {{ .Content }}
+        </article>
+    </div>
+</main>
+{{ end }}

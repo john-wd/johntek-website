@@ -1,0 +1,47 @@
+{{- $services := .Page.RegularPages.ByParam "weight" -}}
+{{- $filtered := where $services ".Params.special" nil -}}
+{{- $special := index (where $services ".Params.special" true) 0 -}}
+
+<div class="c-service-list__content" id="catalog">
+    <div class="l-service-groups">
+        {{ range $filtered.GroupByParam "group" }}
+        <section class="c-service-group c-service-group--{{ .Key | anchorize }}" aria-labelledby="service-group-{{ .Key | anchorize }}">
+            <h2 class="c-service-group__title" id="service-group-{{ .Key | anchorize }}">{{ .Key }}</h2>
+            <div class="l-service-grid">
+                {{ range .Pages }}
+                {{ partial "services/card.html" (dict "service" . "special" false) }}
+                {{ end }}
+            </div>
+            {{ if and site.Params.enableDiscount (where .Pages ".Params.discountPrice" "!=" nil) }}
+            <p class="c-service-group__discount-note">* Founding Client Program price. 
+                <a href="{{ "/client-founding-program/" | relURL }}"
+                    data-analytics-event="navigation_click"
+                    data-analytics-name="Learn about the program"
+                    data-analytics-location="service_group">
+                    Learn about the program
+                </a>.
+            </p>
+            {{ end }}
+        </section>
+        {{ end }}
+
+        <section class="c-service-group c-service-group--{{ $special.Params.group | anchorize }}" aria-labelledby="service-group-{{ $special.Params.group | anchorize }}">
+            <h2 class="c-service-group__title" id="service-group-{{ $special.Params.group | anchorize }}">{{ $special.Params.group }}</h2>
+            <div class="l-service-grid">
+                {{ partial "services/card.html" (dict "service" $special "special" true) }}
+            </div>
+            {{ if site.Params.enableDiscount }}
+            {{ with $special.Params.discountPrice }}
+            <p class="c-service-group__discount-note">* Founding Client Program price. 
+                <a href="{{ "/client-founding-program/" | relURL }}"
+                    data-analytics-event="navigation_click"
+                    data-analytics-name="Learn about the program"
+                    data-analytics-location="service_group">
+                    Learn about the program
+                </a>.
+            </p>
+            {{ end }}
+            {{ end }}
+        </section>
+    </div>
+</div>

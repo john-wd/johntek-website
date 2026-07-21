@@ -1,5 +1,8 @@
 ---
 title: Tools organized by the problems they solve
+description: >
+  Technologies are recommended by the use case and your business needs. These are a subset of
+  technologies I master.
 type: grid
 landingPage: home
 weight: 70

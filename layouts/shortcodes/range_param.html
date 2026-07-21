@@ -1,0 +1,22 @@
+{{ $keyString := .Get "key" }}
+{{ $checks := false }}
+{{ if .Get "checks" }}
+  {{ $checks = .Get "checks" }}
+{{ end }}
+
+{{ $keys := split $keyString "." }}
+{{ $target := .Page.Params }}
+
+{{ range $keys }}
+  {{ $target = index $target . }}
+{{ end }}
+
+{{ if and (not (eq $target nil)) (reflect.IsSlice $target) }}
+  <ul {{if $checks}}class="u-checks"{{end}}>
+    {{ range $target }}
+      <li>
+        {{ . }}
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

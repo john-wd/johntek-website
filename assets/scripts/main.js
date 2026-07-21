@@ -103,10 +103,10 @@ function setupMobileShare() {
   document.addEventListener("click", async (event) => {
       const button = event.target.closest(".c-share-native");
       if (!button) return;
-  
+
       const title = button.dataset.title;
       const url = button.dataset.url;
-  
+
       if (navigator.share) {
         try {
           await navigator.share({ title, url });
@@ -124,10 +124,53 @@ function setupMobileShare() {
 
 }
 
+function setupAnalytics() {
+  if (!window.isProduction) {
+    console.warn("Analytics are not enabled in development mode.");
+    return;
+  };
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-analytics-event]");
+    if (!link) return;
+
+    const eventName = link.dataset.analyticsEvent;
+    const nameKey = eventName === "cta_click" ? "cta_name" : "link_name";
+    const locationKey =
+      eventName === "cta_click" ? "cta_location" : "navigation_location";
+
+    const payload = {
+      event: eventName,
+      [nameKey]: link.dataset.analyticsName,
+      [locationKey]: link.dataset.analyticsLocation,
+      link_url: link.getAttribute("href"),
+      page_path: window.location.pathname,
+      page_title: document.title,
+    };
+
+    const optionalParameters = {
+      section_id: link.dataset.analyticsSectionId,
+      landing_page: link.dataset.analyticsLandingPage,
+      parent_menu: link.dataset.analyticsParentMenu,
+      link_type: link.dataset.analyticsLinkType,
+      service_name: link.dataset.analyticsServiceName,
+      service_group: link.dataset.analyticsServiceGroup,
+    };
+
+    Object.entries(optionalParameters).forEach(([key, value]) => {
+      if (value) payload[key] = value;
+    });
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+  });
+}
+
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
     setupNavigation();
     setupCarousel();
     setupMobileShare();
+    setupAnalytics();
   });
 })();

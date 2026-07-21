@@ -1,0 +1,46 @@
+{{- $service := .service -}}
+{{- $special := .special | default false -}}
+<article class="c-service-card{{ if $special }} c-service-card--special{{ end }} {{ if $service.Params.Raised }} c-service-card--raised{{ end }}">
+    {{ with $service.Params.Highlight }}
+    <div class="c-service-ribbon">{{ . }}</div>
+    {{ end }}
+
+    {{ if $special }}
+    <div class="c-service-badge">Ongoing partnership</div>
+    {{ end }}
+
+    <h2>{{ $service.Title }}</h2>
+
+    <div class="c-service-price">
+        <span class="c-service-price__starting-at">Starting at</span>
+        {{ if and site.Params.enableDiscount $service.Params.DiscountPrice }}
+        <span class="c-service-price__discounted">$ {{ $service.Params.DiscountPrice }}<sup class="c-service-price__asterisk">*</sup></span>
+        <span class="c-service-price__original">$ {{ if $special }}{{ $service.Params.PricePerHour }}{{ else }}{{ $service.Params.Price }}{{ end }}</span>
+        {{ if $special }}<span class="c-service-price__unit">per hour</span>{{ end }}
+        {{ else }}
+            {{ if $special }}
+            $ {{ $service.Params.PricePerHour }} <span class="c-service-price__unit">per hour</span>
+            {{ else }}
+            $ {{ $service.Params.Price }}
+            {{ end }}
+        {{ end }}
+    </div>
+
+    <p>{{ $service.Params.BestFor }}</p>
+
+    <h3>Deliverables</h3>
+    <ul class="u-checks">
+        {{ range (first 4 $service.Params.Deliverables) }}
+            <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    <a href="{{ $service.Permalink }}" class="c-service-explore"
+        data-analytics-event="cta_click"
+        data-analytics-name="Explore Service"
+        data-analytics-location="service_card"
+        data-analytics-service-name="{{ $service.Title }}"
+        data-analytics-service-group="{{ $service.Params.Group }}">
+        Explore Service
+    </a>
+</article>

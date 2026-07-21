@@ -26,7 +26,7 @@ items:
   - content: |
       ### Ownership
 
-      Direct accountability and senior level involvement.
+      Direct accountability and principle level involvement.
     icon:
       name: icon-person
       fill: true

@@ -1,6 +1,9 @@
 <nav class="c-nav" aria-label="Primary">
   <div class="l-container c-nav__inner">
-    <a class="c-nav__brand" href="{{ .Site.Home.RelPermalink }}">
+    <a class="c-nav__brand" href="{{ .Site.Home.RelPermalink }}"
+        data-analytics-event="navigation_click"
+        data-analytics-name="{{ site.Title }}"
+        data-analytics-location="header_logo">
         {{ $logo := resources.Get "logo.svg" }}
         {{ $logo.Content | safeHTML}}
     </a>
@@ -52,6 +55,9 @@
             href="{{ $item.URL }}"
             {{ if $isActive }}aria-current="page" {{ end }}
             {{ if $hasAnchors }}aria-haspopup="true" aria-expanded="false"  {{ end }}
+            data-analytics-event="navigation_click"
+            data-analytics-name="{{ $item.Name }}"
+            data-analytics-location="header_primary"
             >
             {{ $item.Name }}
             </a>
@@ -69,6 +75,11 @@
                 <a
                 class="c-nav__dropdown-link"
                 href="{{ $page.RelPermalink }}#{{ .id | default $section.File.ContentBaseName }}"
+                data-analytics-event="navigation_click"
+                data-analytics-name="{{ .label }}"
+                data-analytics-location="header_dropdown"
+                data-analytics-parent-menu="{{ $item.Name }}"
+                data-analytics-section-id="{{ .id | default $section.File.ContentBaseName }}"
                 >
                 {{ .label }}
                 </a>
@@ -83,8 +94,11 @@
     
         <div class="c-nav__actions">
         {{ $ctaURL := default "/contact/" .Site.Params.cta_url }} {{ $ctaLabel :=
-        default "Book a kickoff call" .Site.Params.cta_label }}
+        default "Book a 15-minute intro call" .Site.Params.cta_label }}
         <a class="c-button c-button--primary" href="{{ $ctaURL }}"
+            data-analytics-event="cta_click"
+            data-analytics-name="{{ $ctaLabel }}"
+            data-analytics-location="header"
             >{{ $ctaLabel }}</a
         >
         </div>

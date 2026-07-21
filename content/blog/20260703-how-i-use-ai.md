@@ -115,7 +115,7 @@ I give the AI my proposed design and ask for three to five alternative architect
 prompt by asking it to optimize for some specific characteristic, such as high reliability or low latency.
 
 Finally, I ask it to format the result as a comparison matrix table so I can easily see the pros and cons of each
-alternative, and use it in my decision documentation.
+alternative and use it in my decision documentation.
 
 Comparing these AI-generated alternatives against my original plan ensures that my final technical choices are
 intentional, better justified and easier to document.
@@ -212,4 +212,4 @@ Used effectively, AI can help senior engineers get more done faster without dele
 
 But if AI-generated code snippets are silently creeping into your production environment without architectural guardrails, 
 it's time to clean up the technical debt before it becomes a business crisis.  [Reach out to Johntek Consulting](/about) 
-today to set up clear engineering standards, establish workflow guardrails, and keep your systems scalable for the long haul.
+today to set up clear engineering standards, establish workflow guardrails and keep your systems scalable for the long haul.

@@ -4,8 +4,9 @@ title: Johntek Consulting LLC
 enableRobotsTXT: true
 
 params:
+  enableDiscount: false
   tagline: Driving Evolution
-  description: Remote backend and cloud engineering for teams that value clarity, reliability, and long-term maintainability.
+  description: Remote backend and cloud engineering for teams that value clarity, reliability and long-term maintainability.
   reading_speed: 212
   fonts:
     - name: "Montserrat"
@@ -15,7 +16,7 @@ params:
     name: John Wojcikiewicz
     role: Founder
     picture: /images/me.jpg
-    description: "Backend & cloud engineering consultancy focused on scalable systems, modernization, and reliability"
+    description: "Backend & cloud engineering consultancy focused on scalable systems, modernization and reliability"
   social:
     - name: "Email"
       url: "mailto:john@johntekconsulting.com"
@@ -41,12 +42,15 @@ menus:
     - name: "About"
       pageRef: "/about/"
       weight: 15
+    - name: "Services"
+      pageRef: "/services/"
+      weight: 20
     - name: "Resume"
       pageRef: "/resume/"
-      weight: 20
+      weight: 30
     - name: "Blog"
       pageRef: "/blog/"
-      weight: 30
+      weight: 40
     - name: "Contact"
       pageRef: "/contact/"
       weight: 40

@@ -1,0 +1,71 @@
+{{ define "main" }}
+<main class="c-service-page">
+    <header class="c-service-hero">
+        <div class="l-container c-service-hero__inner">
+            <a class="c-service-hero__back" href="{{ .Parent.RelPermalink }}">← All services</a>
+            <p class="c-service-hero__eyebrow">Focused engineering service</p>
+            <h1>{{ .Title }}</h1>
+            {{ with .Params.description }}
+            <p class="c-service-hero__description">{{ . }}</p>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="l-container c-service-page__layout">
+        <article class="c-service-content c-prose">
+            {{ .Content }}
+        </article>
+
+        <aside class="c-service-summary" aria-label="Engagement summary">
+            <p class="c-service-summary__label">Engagement</p>
+            {{ with .Params.duration }}
+            <p class="c-service-summary__duration">{{ . }}</p>
+            {{ end }}
+            {{ with .Params.price }}
+            <p class="c-service-summary__price">
+                <span class="c-service-price__starting-at">Starting at</span>
+                {{ if and $.Site.Params.enableDiscount $.Params.DiscountPrice }}
+                <span>$ {{ $.Params.DiscountPrice }}<sup class="c-service-price__asterisk">*</sup></span>
+                <span class="c-service-summary__original">$ {{ $.Params.price }}</span>
+                {{ else }}
+                $ {{ $.Params.price }}
+                {{ end }}
+            </p>
+            <p class="c-service-summary__note">Fixed-price engagement</p>
+            {{ end }}
+            {{ with .Params.pricePerHour }}
+            <p class="c-service-summary__price">
+                <span class="c-service-price__starting-at">Starting at</span>
+                {{ with $.Params.discountPrice }}
+                <span>$ {{ . }}<sup class="c-service-price__asterisk">*</sup></span>
+                <span class="c-service-summary__original">$ {{ $.Params.pricePerHour }}</span>
+                {{ else }}
+                $ {{ . }}
+                {{ end }}
+                <span class="c-service-summary__unit">per hour</span>
+            </p>
+            <p class="c-service-summary__note">Flexible embedded engagement</p>
+            {{ end }}
+            {{ if site.Params.enableDiscount }}
+            {{ with .Params.discountPrice }}
+            <p class="c-service-summary__discount-note">* Founding Client Program price. 
+                <a href="{{ "/client-founding-program/" | relURL }}"
+                    data-analytics-event="navigation_click"
+                    data-analytics-location="service_summary"
+                    data-analytics-service-name="{{ $.Title }}">
+                    Learn about the program
+                </a>.
+            </p>
+            {{ end }}
+            {{ end }}
+            <a class="c-button c-button--primary c-service-summary__cta" href="{{ "/contact/" | relURL }}"
+                data-analytics-event="cta_click"
+                data-analytics-name="Discuss this service"
+                data-analytics-location="service_summary"
+                data-analytics-service-name="{{ .Title }}">
+                Discuss this service
+            </a>
+        </aside>
+    </div>
+</main>
+{{ end }}
