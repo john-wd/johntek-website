@@ -2,51 +2,59 @@
 date: '2026-07-24T11:07:35-06:00'
 draft: false
 featured: true
-title: '7 Impacts of AI Adoption on Developer Productivity, and What to Do About it'
+title: '7 Impacts of AI Adoption on Developer Productivity and What to Do About It'
 description: >
-  In this article we explore the data collected by the Faros 2026 report, The Acceleration Whiplash, on the impacts of
-  using AI agents in the developer life cycle. I give my thoughs as an expert on DevEx.
+  Faros's 2026 report reveals how AI agents are affecting software delivery, from higher code throughput to slower
+  workflows and more incidents. I examine the findings from a developer experience perspective and propose ways to
+  reduce the risks.
 image: /images/posts/20260724/cover.jpg
-categories: 
-  - ai
+categories:
+  - AI
   - Developer Experience
 layout: "blog"
 ---
 
-Faros recently published a report on the impacts of AI adoption during the developer lifecycle, backed by the telemetry
-data they captured from the past two years in over 22000 developers across 4000 organizations that opted out to their
+Faros recently published a report on the impacts of AI adoption across the software development lifecycle, backed by
+telemetry data captured over two years from more than 22,000 developers across 4,000 organizations that opted into its
 platform.
 
-They call this report "The Acceleration Whiplash" because this data raises concerning trends about the real impact
-that AI generated code is having in production solutions. The whiplash captures the essence of their findings: the
-promised gains in productivity and efficiency of AI agents is coming back as a whiplash.
+They call the report "The Acceleration Whiplash" because the data raises concerning questions about the real impact
+AI-generated code is having on production systems. The promised gains in productivity and efficiency appear to be coming
+back as a whiplash later in the delivery process.
 
-They measured that **80% of developers use AI on a daily basis**, so adoption in their dataset is commonplace. However,
-some of their core findings are:
+The report found that **80% of developers use AI daily**, so adoption is commonplace in its dataset. However, some of
+the core findings are:
 
-- Code throughput is up in many dimensions
+- Code throughput is increasing across several dimensions
 - Code churn is surprisingly high
-- PRs are getting more complex
-- Bugs and incidents are increasing
-- Parallel development is unprecedented
-- Actual workflow speed is diminishing
+- PRs are getting larger and more complex
+- Bugs and production incidents are increasing
+- Developers are doing an unprecedented amount of work in parallel
+- Review queues are growing
+- Overall workflow speed is decreasing
 
-A handful of these are quite extraordinary, so I am writing this article to propagate their findings, give my thoughts
-on them and propose some ideas on how to mitigate them.
+The data shows strong associations between AI adoption and these delivery patterns, although it does not necessarily
+prove that AI alone caused every change. Team structure, process maturity and the types of work being performed may also
+affect the results.
 
-If you are curious, I leave the link to their report below (access behind a form):
+Still, several findings are extraordinary. I am writing this article to propagate them, give my thoughts and propose
+some ideas for mitigating the risks.
+
+The full report requires submitting a form:
+
 [The Acceleration Whiplash](https://www.faros.ai/research/ai-acceleration-whiplash)
 
-## The report data
+## Seven impacts of AI adoption
 
-Below I will summarize the most interesting key findings from their report and give my own thoughts.
+Below, I summarize the most interesting findings from the report and give my own interpretation of what they may mean
+for engineering teams.
 
-### Developers are working more in parallel
+### 1. Developers are working more in parallel
 
-Now that AI tools can spawn agents to work on individual tasks, loop and create even sub-agents to create mini teams
-to implement features, they realized that they could do work in parallel; while they wait for the first squad to finish
-Task 1, they are already prompting another squad for Task 2. Do this a couple of times and it seems that you are
-getting effective use of your time, right?
+AI tools can spawn agents to work on individual tasks, loop and even create sub-agents that behave like mini teams.
+While developers wait for the first squad to finish Task 1, they can already prompt another squad to work on Task 2.
+
+Do this a couple of times and it seems that you are making effective use of your time, right?
 
 {{<
   figure
@@ -55,237 +63,380 @@ getting effective use of your time, right?
   alt="Developer with multiple AI agents working in parallel"
 >}}
 
-The report shows that developers have an increased **67.4% of PR context in day**, **17.7% increase of tasks** daily,
-showing the increase work they do. However, **13.8% of the work is restarted** and **26% tasks in flight stalls**. We
-infer from this that developers are struggling with **context switching**, so much that some work is paused and other
-work is trashed altogether.
+The report found a **67.4% increase in PR contexts handled per day** and a **17.7% increase in daily tasks**, showing
+that developers are working across more concurrent streams. However, **13.8% more work is restarted**, while **26% more
+tasks in flight stall**.
 
-Context switching is a problem that increases the cognitive load of your developers; each time they context switch, it 
-take a little while to remember what they were doing and what they need to do next. If they jump from agent thread to 
-the other, then they'll need to regain that context once again. 
+We can infer from this that developers may be struggling with **context switching**, to the point that some work is
+paused while other work is discarded altogether.
 
-This seems to line up with the annedoctal evidence of frustrated developers saying they feel much tired after work
-when they start using AI and orchestrating tasks.
+Context switching increases the cognitive load on developers. Each time they switch contexts, it takes a while to
+remember what they were doing, reconstruct the relevant information and decide what to do next. If they jump from one
+agent thread to another, they need to regain that context repeatedly.
 
-Now here is the interesting bit: **if they are losing context due to switching, how will the engineers validate the
-generated code before publishing a PR?** This is a question worth asking, because the incentive is to hand wave it
-and let the PR process catch inconsistencies generated by those agents.
+This seems to align with the anecdotal reports of developers saying they feel more tired after work once they start
+orchestrating several AI tasks in parallel.
 
-We will see that this effect is captured by other metrics in the next sections.
+Here is the interesting bit: **if engineers are losing context due to switching, how will they properly validate the
+generated code before publishing a PR?**
 
-### Code throughput is up
+The incentive may be to hand-wave that validation and let the PR process catch inconsistencies generated by the agents.
+We will see signs of this effect in other metrics.
 
-More code is being created than ever. There was an increase of:
-- 33.7% of tasks per developer
-- 66.2% of epics completed per developer
-- 16.2% PR merge per developer
-- 210% of tasks completed per team with PRs
+### 2. Code throughput is increasing
 
-The fact is **developers are pushing more code**, this cannot be denied. To the leadership, the most impressive metric
-is the increase of 66% of epics completed per developer. The 210% PR increase is also telling, as the main mode for
-agentic AI usage is for code production. This is what the AI providers are most targeting their tools for.
+More code is being created than ever. The report found an increase of:
 
-### Deployments are down churn shoot up
+- 33.7% in tasks per developer
+- 66.2% in epics completed per developer
+- 16.2% in PR merges per developer
+- 210% in tasks completed per team with PRs
 
-On the other hand, there is an decrease in deployments: -11.7% of deployments per week. This can either be 
-attributed to teams being careful with deployments and having longer QA times or to failures in acceptance delaying
-those deployments.
+The fact is that **developers are pushing more code**. This cannot be denied.
 
-What is more shocking is the **increase in code churn: 861% of the produced code is being deleted**. The authors go on
-to explain three reasons for this churn:
+For engineering leadership, the most impressive metric may be the 66.2% increase in epics completed per developer. The
+increase in tasks completed with PRs is also telling, because code production remains the primary use case targeted by
+providers of agentic AI tools.
 
-- Generated code is accepted, but they are insufficient, then those **changes are reverted**.
-- Developers are tackling large **refactoring tasks** that are were creeping in the backlog for a while, now that they 
-  have capacity for.
-- AI is just **accelerating the pace of code improvement** in general; now developers can return and redo something
-  they were not satisfied with.
+However, producing and merging more code does not necessarily mean that more value is reaching production. The next
+metrics show why throughput alone is an incomplete measure of productivity.
 
-This can be easily measured by getting the contextual information about these deletions: on PRs, if large deletions are
-also accompanied by large additions, it is a sign of refactoring. Just deletions outright is a sign of scrapped 
+### 3. Deployments are decreasing while code churn is rising
+
+Despite the increase in code throughput, deployments per week decreased by **11.7%**.
+
+This may mean teams are becoming more careful and spending longer in QA. It may also indicate that failures during
+review or acceptance are delaying deployments.
+
+More strikingly, **code churn increased by 861%**. In other words, substantially more recently produced code is being
+changed or deleted.
+
+The authors propose three possible reasons:
+
+- Generated code is accepted but proves insufficient, so the **changes are reverted**
+- Developers are using their additional capacity to address large **refactoring tasks** that had been sitting in the
+backlog
+- AI is **accelerating the pace of code improvement**, allowing developers to return to and redo implementations they
+were not satisfied with
+
+The meaning of this churn depends on the context surrounding the deletions. If large deletions are accompanied by large
+additions, that may indicate refactoring. Large deletions without replacement may indicate reverted or abandoned
 features.
 
-The study did not have this level of granularity, but you can measure it yourself by looking at the commit history.
+The study did not provide this level of granularity, but teams can measure it by examining their own commit and PR
+history.
 
-What is key here is since code is cheap to produce, developers are more likely to producing code that will not go
-to production. I leave here two final hypothesis to explain, that could very well be the case:
+The key point is that, because code has become cheaper to produce, developers may be more willing to create code that
+will never reach production. I would add two hypotheses that could help explain the increase:
 
-- **AI tools are used to create POCs, prototypes or initial implementations** that are then reworked with proper 
-  design and implementation, so the initial POC is discarded.
-- AI code is too verbose, they are accepted and merged, then in another iteration, a lot is cleaned up (the 
-  [Hackathon Mentality](/blog/20260601-the-hackathon-mentality/) that I previously wrote about).
+- **AI tools are being used to create POCs, prototypes or initial implementations** that are later reworked with a
+proper design, causing the initial version to be discarded
+- AI-generated code is often verbose, accepted and merged, then heavily cleaned up in a later iteration, reflecting
+the [Hackathon Mentality](/blog/20260601-the-hackathon-mentality/) I previously wrote about
 
-### Code complexity is increasing
+### 4. Code changes are becoming more complex
 
-As the velocity of code submitted increases, so does the complexity and quality of these changes. Some indicators of
-code complexity include:
-- **PR size:** the bigger the PR, more logic exists and more complexity it introduces.
-- **Number of files touched:** indicative of organization complexity (more places required to make a change).
-- **Repositories changed:** changes requiring multiple repositories means features introducing domain relationships.
+As the volume of submitted code increases, so does the size and breadth of the changes. Some indicators of code
+complexity include:
 
-The last point must be understood with an asterisk: it is common for products having multiple repositories, one for
-backend, another for frontend, another for ops (configuration), and so on. So increases to this metric may only tell
-that developers are now touching multiple repositories within a single agent session.
+- **PR size:** the larger the PR, the more logic reviewers must understand and the more opportunities there are for
+defects
+- **Number of files touched:** this may indicate organizational complexity because more areas of the system must be
+changed to implement a feature
+- **Repositories changed:** changes across multiple repositories may indicate broader domain and system relationships
+
+The last point needs an asterisk. Many products already use separate repositories for the backend, frontend,
+infrastructure configuration and other components. An increase in repositories touched may simply mean developers can
+now modify several parts of a product within a single agent session.
 
 Now to the numbers:
+
 - 51.3% increase in average PR size
-- 59.7% increase in average number of files touched per PR
-- 149.9% increase in average files touched per developer per month
-- 11.7% increase in average number of repositories touched per developer per month
+- 59.7% increase in the average number of files touched per PR
+- 149.9% increase in files touched per developer per month
+- 11.7% increase in repositories touched per developer per month
 
 {{<
   figure
   src="/images/posts/20260724/complexity.jpg"
   width="100%"
-  alt="Complex code leads to more lines of code leads to more comments"
+  alt="Complex code leads to more lines of code and more review comments"
   caption="Increased code complexity implies more PR discussions"
 >}}
 
-We have previously discussed that AI tends to generate verbose and super defensive code, which increases the line number
-of PRs and, consequently, increses the complexity of the code; more things can break if there is more logic involved.
+AI tends to generate verbose and overly defensive code, which increases the number of lines in a PR and, consequently,
+the amount of logic reviewers must evaluate. More things can break when more logic is involved.
 
-For number of files touched, we see that the ~150% figure is a signal of engineering empowerment; now developers are 
-more comfortable touching files they usually don't touch.
+The roughly 150% increase in files touched per developer may be a sign of engineering empowerment. Developers may now
+feel more comfortable modifying files they would not usually touch.
 
-Alternatively, coupled with the ~60% increase of files touched per PR, it can tell that subsequent iterations of code
-is simply adding hacks and shortcuts in the codabase, disregarding design principles, which in turn requires more
-files to be touched to deliver new features. This is kind of the effect I was alluding in this 
-[other article](/blog/20260619-single-generation-vs-organic-generation/). If my concerns are proven to be right, then
-I estimate this increase of average files will continue to grow.
+Alternatively, coupled with the roughly 60% increase in files touched per PR, it may indicate that subsequent iterations
+are adding hacks and shortcuts to the codebase while disregarding its design principles. That makes future features
+require changes across even more files.
 
-### Code quality is getting worse
+This is the effect I discussed in
+[this article](/blog/20260619-single-generation-vs-organic-generation/). If my concerns are correct, the average number
+of files required for each change will continue to grow.
 
-Another worrysome data is the quality of code being submitted to review and pushed to production. The data says that
-there is an increase of **25% of comments per PR** and a rise of **22% of comment length**. 
+### 5. Code review is becoming more demanding
 
-PR comments and open time are indicatives of poor code quality or just overall complexity. The seniors gatekeeping the 
-features need to take time to analyze the code complexity and ask changes on poor quality code, which increases the
-threads of comments and open time.
+Another concerning finding is the quality and complexity of the code being submitted for review. The report found a
+**25% increase in comments per PR** and a **22% increase in average comment length**.
 
-It is important to note that PR reviews are also done by AI agents, and as we now, they are verbose. So the average
-comment length metric is skewed by this.
+PR comments and open time can indicate poor code quality, higher complexity or both. Senior engineers responsible for
+protecting the quality of the system must spend more time understanding the changes and requesting corrections. This
+increases both the number of review threads and the time PRs remain open.
 
-On the bright side, the amount of comments per PR may indicate that the generated code is just under heavier scrutiny
-by humans, which is good, even though it introduces a tight bottleneck.
+It is important to note that some PR reviews are also performed by AI agents and, as we know, they tend to be verbose.
+This may partially skew the average comment-length metric.
+
+On the bright side, more comments may indicate that generated code is under heavier scrutiny. That is good for quality,
+even though it may create a tight bottleneck in the delivery process.
 
 {{<
-   figure 
-   src="/images/posts/20260724/wtfs.jpeg"
-   alt="Code quality measured as wtfs per minute"
-   width="80%"
+  figure
+  src="/images/posts/20260724/wtfs.jpeg"
+  alt="Code quality measured as WTFs per minute"
+  width="80%"
 >}}
 
-The most concerning bit is the last metric that says that **31.3% of PRs are merged without review**. Again, the caveat
-here could be simple PRs with few lines of code that peers just approve without any comments, which is a good practice.
-The worrying alternative is that peers are just LGTMing to not slow down the pipeline and letting bugs slide, which
-seems to be exactly what is happening.
+The report also found that **31.3% more PRs were merged without review**.
 
-#### Poor code in production
+There is an important caveat here. Some of these may be simple PRs with only a few lines of code that peers approve
+without leaving comments. That can be reasonable when the risk is low.
 
-The data is very dire about this, there was an increase of:
-- 242.7% of incidents per PR
-- 57.9% montly incidents
-- 54% bugs per developer
-- 28.7% bugs per PR
-- 12.6% reopened Jira tickets
+The worrying alternative is that reviewers are approving PRs with a quick LGTM to avoid slowing down the pipeline,
+allowing defects to slide through. The production metrics make this possibility difficult to ignore, even though they do
+not prove exactly how individual reviews were performed.
 
-Think about it, the throughtput is increasing, and the data shows that even that there is an increase of incidents per
-PR. So an increase of incidents per PR is actually worse than the 242%, relatively speaking. 
+### 6. More bugs and incidents are reaching production
 
-Reopened Jira tickets indicates that incomplete features are being pushed in, then require rework to fix the missing
-pieces.
+The production data is particularly concerning. The report found an increase of:
 
-Now, the increase of bugs per developer and PR is also concerning, because it indicates there is no proper review or
-the review process became a rubberstamp process where peers just approve without due diligence. In any case, it is
-undeniable the pressure these reviews put on Senior engineers reviewing a high volume of generated code.
+- 242.7% in incidents per PR
+- 57.9% in monthly incidents
+- 54% in bugs per developer
+- 28.7% in bugs per PR
+- 12.6% in reopened Jira tickets
 
-### Workflow speed is actually getting slower
+Think about it: throughput is increasing, but incidents are also increasing on a per-PR basis. This means the rise in
+production problems cannot be explained only by teams shipping a larger number of PRs.
 
-Now all this data points to gains in productivity, right? Throughtput is up, there is increase in PRs being merged
-with no comments, work in parallel is up. Everything trending upwards. Unfortunately the data says otherwise.
+Reopened Jira tickets suggest that incomplete or incorrect features are being marked as finished and later require
+rework to address missing pieces.
 
-Paradoxically, tasks tracked in Jira and similar systems are getting slower through the change pipeline. An increaes of
-**225% in tasks spending in progress**! Not only that, the report goes on to show:
+The increase in bugs per developer and per PR is also concerning. It suggests that the review and validation process is
+not absorbing the additional volume of generated code effectively.
 
-- 81.8% average time of tasks in TODO
-- 156.6% median time until first review
-- 199.6% average of PR review time
-- 480.4% average time to complete from code commit to production
+One possible explanation is that there is not enough review. Another is that review has become a rubber-stamp process in
+which peers approve changes without the necessary due diligence. A third possibility is that the changes have become too
+broad for reviewers to fully evaluate within the available time.
 
-With more work being done by parallelizing agents, it seems that more tickets are being created than ever too. So much
-that even when working in parallel, there was still an increase of 81% of tickets in the TODO list. The report does not
-mention the aomunt of ticket creation, but I would guess this must be the main issue.
+In every case, senior engineers must absorb the pressure created by a high volume of generated code.
 
-The other interesting figure is the median time until the first review. Likely, and this was pointed by the authors,
-it is a reflection of the amount of reviews **being done by senior engineers**. They have much more to review, so there
-is a queue of PRs waiting to be reviewed, increasing this delay until the first review. The 199% increase on the average
-of review time supports this hypothesis, because once reviewed, the senior takes more cognitive effort to evaluate the
-increased complexity and breadth of the changes, not to mention time to formulate feedback.
+### 7. Overall workflow speed is decreasing
 
-This PR review drag causes two consequences:
-1. slowing down the average lead time to start->finish a task, evidenced by the 480% increase.
-2. just rubberstamping PRs, which is evidenced by the number of PRs with no review and increased incidents we discussed
-   prior.
+At first, all these metrics may appear to point to productivity gains. Throughput is up, more PRs are being merged and
+developers are doing more work in parallel. Everything seems to be trending upwards.
+
+Unfortunately, the end-to-end delivery data says otherwise.
+
+Tasks tracked in Jira and similar systems are moving more slowly through the change pipeline. The report found a **225%
+increase in the time tasks spend in progress**. It also found:
+
+- 81.8% increase in the average time tasks remain in TODO
+- 156.6% increase in the median time until first review
+- 199.6% increase in average PR review time
+- 480.4% increase in average time from code commit to production
+
+With more work being done through parallel agents, it seems likely that more tickets are also being created. Even with
+the additional parallelism, the average time tickets spend in TODO increased by 81.8%.
+
+The report does not mention the volume of ticket creation, but I suspect this is part of the issue. More work may be
+entering the system than the team can actually complete.
+
+The median time until first review is another important metric. As the authors point out, it may reflect the amount of
+review work **being handled by senior engineers**.
+
+They have more code to review, so a queue of PRs forms, increasing the delay before the first review. The 199.6%
+increase in average review time supports this hypothesis. Once a review begins, the senior engineer must spend more
+cognitive effort evaluating the increased complexity and breadth of the changes, then formulate useful feedback.
+
+This PR review drag creates two consequences:
+
+1. It slows the lead time from starting a task to finishing it, contributing to the 480.4% increase from commit to
+production.
+2. It creates pressure to rubber-stamp PRs, which is consistent with the increase in unreviewed changes and production
+incidents discussed earlier.
 
 ## Key takeaways
 
-- More work is being done in parallel with agents, touching more code and repositories, yielding more lines of code
-- Changes are getting more complex, diffucult to review and stalling development process
-- Code owners are getting overwhelmed with PR reviews, which can lead to LGTMing PRs outright
-- More complex code is shipping more bugs and issues to production, requiring rework
-- PRs touching more code and repositories increases the blast radius, evidenced by the increased numbers of incidents
-- Overall, there was a slowdown of workflow productivity for tasks and deployment frequency
+- Developers are doing more work in parallel with agents, touching more code and more repositories
+- Code throughput is increasing, but deployment frequency is decreasing
+- Changes are becoming larger, broader and more difficult to review
+- Senior engineers and code owners are being overwhelmed by the review workload
+- More bugs and incidents are reaching production, creating additional rework
+- PRs touching more code and repositories increase the potential blast radius of each change
+- Overall workflow speed is decreasing despite the increase in code production
 
-## Conclusion
+## What engineering teams should do
 
-AI code agents can help in software engineering tasks, offloading tasks to them and they will execute and deliver the
-outcomes you want. If you are concise and specific in your prompt, you can get good results of it. Left unchecked, they
-are prone to take shortcuts and come with their own code styling, what I call the 
-[Hackathon Mentality](/blog/20260601-the-hackathon-mentality/).
-
-This report aggregated data from the first two years that we had these AI tools, and it shows a concerning trends:
-increased incidents, code complexity, PR times, lines of code and so on.
-
-Codebases are organic and are made to grow, if code is more complex and need to touch more things to get a task done,
-more and more will be required to keep in the context window, which may trigger problems like context rot, as 
-discussed in this [other article of mine](/blog/20260619-single-generation-vs-organic-generation/).
-
-The biggest two issues here are that senior engineers are more likely to be overworked and burnt out due to the great
-amount of code. They need to separate wheat from shaft, which leads to bigger PR review times which, paradoxically,
-makes the whole developer workflow slower.
+AI adoption should not be evaluated only by how much code developers produce. Teams also need to measure whether that
+code moves through review, deployment and production without creating additional rework.
 
 My recommendations are:
 
-### Keep PRs small and focused 
+### Keep PRs small and focused
 
-This is known in software engineering for decades, smaller PRs are easier to review, troubleshoot and reason about.
-Agents thrive in these tasks.
+Small PRs have been a software engineering best practice for decades. They are easier to understand, review, test and
+troubleshoot.
 
-### Enforce a styleguide and code quality standards
+This becomes even more important when agents are producing the changes. Give agents narrow tasks with clear boundaries
+instead of asking them to implement large features in a single pass.
 
-Take your time to define standards and guidelines for your codebase. Use them as a baseline for agents and enforce 
-these in code reviews. Google has a rigorous quality training they apply to onboardees which pays off when they are
-more experienced with the code. This makes reviewing PRs much more efficient when you are submitting changes.
+Teams can enforce limits on PR size, files touched and unrelated changes. When a task requires a large implementation,
+break it into a sequence of independently reviewable changes.
 
-### Make code changes good before review
+Agents thrive when the scope is constrained. Reviewers do too.
 
-Slow down publishing a PR. Train your engineers to always review their changes before publishing PRs until they are
-happy with the results. Don't overburden your fellow colleagues with loads of code you didn't even review yourself.
+### Enforce a style guide and code quality standards
 
-### Track Jira work metrics and monitor your system
+Agents bring their own assumptions about naming, architecture, error handling, abstractions and code organization.
+Without clear guidance, their output may be technically valid while remaining inconsistent with the rest of the
+codebase.
 
-Work restarts, tickets moved back to In Progress mean PRs are incomplete and need to be reworked. This is a signal
-that your engineers are not enforcing the quality standards that are needed to keep the codebase healthy. Track
-incidents, make sure to properly link to a code revision that added that code, so you can tell what introduced these
-issues.
+Take the time to document the standards agents and engineers must follow. This may include things like:
 
-To make most of it, let PRs written by your agents be authored by them too, create a system that shows what code was
-modified by human and what was done by agents. Evaluate these monthly or quaterly.
+- Naming and formatting conventions
+- Architectural boundaries
+- Error-handling practices
+- Testing expectations
+- Rules for introducing dependencies
+- Preferred patterns and known anti-patterns
 
-### Don't offload your trust to agents
+These standards should be available in the repository and included in the context provided to coding agents.
 
-Code reviews might be a bottleneck, but you don't want to just blindly approve everything to make the system faster.
-For high impact changes, always require senior feedback, for low impact, you can transfer more trust to these agents.
+Automated checks should enforce everything that can be verified mechanically. Human reviewers can then focus on design,
+maintainability and business correctness instead of repeatedly correcting style issues.
+
+### Review AI-generated changes before opening a PR
+
+Opening a PR should not be the first time an engineer properly reads the generated code.
+
+Engineers should review, run and validate every change before asking someone else to review it. They should understand
+the implementation, remove unnecessary abstractions, verify edge cases and confirm that the change follows the
+codebase's existing design.
+
+The engineer publishing the PR remains responsible for the code, regardless of whether it was written manually or
+generated by an agent.
+
+This prevents senior engineers from becoming the first line of quality control for large amounts of unchecked code.
+
+### Reduce unnecessary parallel work
+
+Running several agents at the same time can feel productive because many tasks appear to be moving. However, every
+additional thread increases the amount of context the engineer must retain.
+
+Limit the number of concurrent tasks according to their complexity. Engineers should finish, validate or deliberately
+pause one unit of work before starting too many others.
+
+Teams should also make paused work visible. A growing number of stalled branches, abandoned PRs and restarted tickets
+may indicate that parallelism is creating more unfinished work rather than more completed work.
+
+The goal is not to maximize the number of active agents. It is to maximize the amount of valuable work that reaches
+production.
+
+### Protect the review capacity of senior engineers
+
+If AI increases code production without increasing review capacity, senior engineers become the bottleneck.
+
+Teams should reserve senior review for changes that carry meaningful architectural, security or operational risk.
+Low-risk changes can use lighter review paths when automated tests, static analysis and ownership rules provide enough
+confidence.
+
+PRs should also include the information reviewers need:
+
+- The problem being solved
+- The chosen approach
+- Important trade-offs
+- Areas of risk
+- Evidence that the change was tested
+- Whether and how AI was used
+
+This reduces the time reviewers spend reconstructing the author's reasoning from the diff.
+
+### Track rework and delivery metrics
+
+More commits, PRs and completed tickets do not necessarily mean the team is delivering more value.
+
+Track metrics that reveal whether AI-generated work is moving through the complete delivery system:
+
+- PR size and files touched
+- Time until first review
+- Total review time
+- Code churn
+- Reopened tickets
+- Work restarted or abandoned
+- Deployment frequency
+- Change failure rate
+- Incidents associated with recent changes
+
+These metrics should be evaluated together. A rise in throughput accompanied by slower reviews, lower deployment
+frequency and more incidents is not a productivity improvement.
+
+Track the metrics over time and compare them across teams, repositories and types of work. This can help identify where
+AI is useful and where it is creating additional friction.
+
+### Make AI-generated changes visible
+
+Teams should know how much of their code is being created or substantially modified by agents.
+
+Where possible, identify agent-generated work through commit metadata, PR labels or development tooling. This does not
+need to be used to punish engineers or reject AI usage. It provides the context needed to evaluate its actual impact.
+
+Review these changes monthly or quarterly and compare them with churn, review time, reopened work and production
+incidents.
+
+Without this visibility, teams may know that AI adoption is increasing without knowing whether it is improving the
+system.
+
+### Do not delegate trust to agents
+
+Code review may become a bottleneck, but blindly approving more changes is not a sustainable way to make the pipeline
+faster.
+
+Trust should be based on the risk of the change, the quality of the validation and the maturity of the surrounding
+systems.
+
+High-impact changes should continue to require experienced human review. This includes changes involving architecture,
+authentication, billing, data integrity, security and critical production paths.
+
+Lower-impact changes can receive more automated treatment when the team has strong tests, clear ownership, reliable CI
+and well-defined quality standards.
+
+AI agents can produce code, tests and review comments, but they should not be the final authority on whether a change is
+safe to ship.
+
+## Conclusion
+
+AI agents can increase the amount of code an engineering team produces, but code production is only one part of software
+delivery. If review queues grow, rework increases and more incidents reach production, higher output does not translate
+into higher productivity.
+
+Codebases are organic systems built to evolve. If each change becomes more complex and requires touching more parts of
+the system, engineers and agents must retain more information in their context. This can eventually trigger problems
+such as context rot, as discussed in
+[this article](/blog/20260619-single-generation-vs-organic-generation/).
+
+The two biggest risks are that senior engineers become overworked by the volume of generated code and that teams respond
+by weakening their review standards. Senior engineers must separate the wheat from the chaff, which increases review
+time and, paradoxically, makes the entire development workflow slower.
+
+Engineering leaders should evaluate AI adoption across the entire delivery system, including PR size, review time, code
+churn, reopened work, deployment frequency and production incidents. 
 
 ## References
 
-- https://www.faros.ai/research/ai-acceleration-whiplash
+- [The Acceleration Whiplash](https://www.faros.ai/research/ai-acceleration-whiplash)
+- [The Hackathon Mentality](/blog/20260601-the-hackathon-mentality/)
+- [Single Generation vs. Organic Generation](/blog/20260619-single-generation-vs-organic-generation/)
